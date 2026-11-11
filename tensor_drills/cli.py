@@ -1,4 +1,4 @@
-"""Set up, find, and run NumPy and PyTorch interview drills."""
+"""Set up, find, and run NumPy and PyTorch practice drills."""
 
 import argparse
 import sys

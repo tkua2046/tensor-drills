@@ -1,0 +1,13 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Use the same indices to select coordinate pairs and every row and column combination.",
+  "topics": ["indexing", "shapes"],
+  "prerequisites": [
+    {
+      "capability": "Select values by pairing row indices with their corresponding column indices.",
+      "practice_drill": "numpy/row-gather"
+    }
+  ],
+  "workload": 2
+}

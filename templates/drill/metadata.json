@@ -1,0 +1,8 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "GOAL_SENTENCE",
+  "topics": [],
+  "prerequisites": [],
+  "workload": 1
+}

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "tensor-drills"
 version = "0.1.0"
-description = "Reusable NumPy and PyTorch interview drills and local checker"
+description = "Hands-on NumPy and PyTorch exercises with local checks"
 readme = "README.md"
 requires-python = ">=3.12"
 
@@ -22,8 +22,8 @@ include-package-data = false
 
 [tool.setuptools.package-data]
 tensor_drills = [
-    "examples/README.md",
-    "examples/drills/**/*.md",
-    "examples/drills/**/*.json",
-    "examples/drills/**/*.py",
+    "practice/README.md",
+    "practice/drills/**/*.md",
+    "practice/drills/**/*.json",
+    "practice/drills/**/*.py",
 ]

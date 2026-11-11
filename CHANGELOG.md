@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Added
+
+- Practice Boolean masks, stacking and concatenation, paired and Cartesian indexing, and multi-axis reductions in both NumPy and PyTorch.
+- Start PyTorch practice with an atomic row-gathering drill.
+- Try an optional array and tensor indexing warm-up from the practice workspace.
+
 ## 0.1.0 - 2026-11-11
 
 ### Added

@@ -1,0 +1,12 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Gather one score per row using its supplied column index and verify the result's shape and dtype.",
+  "topics": ["indexing", "shapes", "dtypes"],
+  "prerequisites": [
+    {
+      "capability": "Read a 2D tensor's shape and index an element."
+    }
+  ],
+  "workload": 1
+}

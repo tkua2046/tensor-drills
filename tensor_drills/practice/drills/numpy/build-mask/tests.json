@@ -1,0 +1,66 @@
+{
+  "dependencies": ["numpy"],
+  "cases": [
+    {
+      "name": "both endpoints",
+      "inputs": {
+        "values": [-2, 0, 3, 4, 7],
+        "dtype": "int64",
+        "lower": 0,
+        "upper": 4
+      },
+      "expected": [
+        [false, true, true, false, false],
+        [true, false, false, true, true]
+      ]
+    },
+    {
+      "name": "fractional matrix",
+      "inputs": {
+        "values": [
+          [-1.25, -0.5, 0.125],
+          [0.75, 1.5, 0.5]
+        ],
+        "dtype": "float32",
+        "lower": -0.5,
+        "upper": 0.75
+      },
+      "expected": [
+        [
+          [false, true, true],
+          [false, false, true]
+        ],
+        [
+          [true, false, false],
+          [true, true, false]
+        ]
+      ]
+    },
+    {
+      "name": "integer values with fractional bounds",
+      "inputs": {
+        "values": [0, 1, 2],
+        "dtype": "int64",
+        "lower": 0.5,
+        "upper": 2.5
+      },
+      "expected": [
+        [false, true, true],
+        [true, false, false]
+      ]
+    },
+    {
+      "name": "equal bounds",
+      "inputs": {
+        "values": [-1, 0, 1],
+        "dtype": "int64",
+        "lower": 0,
+        "upper": 0
+      },
+      "expected": [
+        [false, false, false],
+        [true, true, true]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "dependencies": [],
+  "cases": [
+    {
+      "name": "example case",
+      "inputs": {"values": [1, 2, 3]},
+      "expected": 6
+    }
+  ]
+}

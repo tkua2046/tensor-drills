@@ -103,8 +103,17 @@ class ListTests(unittest.TestCase):
 
         result = self.run_list("--library", "numpy")
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("numpy/row-gather (atomic create", result.stdout)
-        self.assertEqual(result.stdout.count("Prepares for: pytorch/classifier"), 1)
+        row_gather = next(
+            entry for entry in result.stdout.split("\n\n")
+            if entry.startswith("numpy/row-gather (atomic create")
+        )
+        prepares_for = next(
+            line.strip().removeprefix("Prepares for: ").split(", ")
+            for line in row_gather.splitlines()
+            if line.strip().startswith("Prepares for: ")
+        )
+        self.assertEqual(prepares_for.count("pytorch/classifier"), 1)
+        self.assertIn("numpy/paired-cartesian", prepares_for)
         self.assertNotIn("pytorch/classifier (composite debug", result.stdout)
 
     def test_missing_workspace_reports_how_to_select_one(self):

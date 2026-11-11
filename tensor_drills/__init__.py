@@ -17,8 +17,8 @@ _DRILL_ID = re.compile(r"[a-z0-9][a-z0-9-]*/[a-z0-9][a-z0-9-]*")
 def init_workspace(directory: str | Path) -> Path:
     """Copy the bundled drills into a new, editable workspace."""
     destination = Path(directory).resolve()
-    examples = files(__name__).joinpath("examples")
-    with as_file(examples) as source:
+    practice = files(__name__).joinpath("practice")
+    with as_file(practice) as source:
         return shutil.copytree(
             source,
             destination,

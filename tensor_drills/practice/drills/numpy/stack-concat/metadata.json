@@ -1,0 +1,12 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Combine two matrices along a new axis and along an existing axis.",
+  "topics": ["shapes", "axes", "joining"],
+  "prerequisites": [
+    {
+      "capability": "Read the row and column axes of a matrix."
+    }
+  ],
+  "workload": 2
+}

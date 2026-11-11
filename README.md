@@ -1,35 +1,41 @@
 # Tensor Drills
 
-Tensor Drills runs fixed tests for NumPy and PyTorch interview exercises. It ships with row gathering, classifier debugging, and inline validation, each with a Markdown review rubric.
+Learn NumPy and PyTorch through hands-on exercises. Practice writing and debugging code, from indexing arrays to fixing training loops. Each drill gives you a task and starter code. Run local tests for feedback as you work, then use the rubric to review your solution and reasoning.
 
-See the [changelog](CHANGELOG.md) for changes to the package.
+## Try your first drill
 
-## Install and run
-
-From the project directory, activate a Python 3.12 or newer environment. Choose the `numpy` or `pytorch` extra for one drill bank, or install both as shown.
+Choose NumPy or PyTorch and use Python 3.12 or newer. From a checkout of this repository on macOS or Linux, install the extra for your track and create a practice workspace. The commands below use NumPy. For PyTorch, substitute `'.[pytorch]'` in the install command. Use `'.[numpy,pytorch]'` to practice both.
 
 ```sh
-uv pip install '.[numpy,pytorch]'
-tensor-drills init practice
-cd practice
-tensor-drills list
-tensor-drills check numpy/row-gather
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install '.[numpy]'
+tensor-drills init ../tensor-drills-practice
+cd ../tensor-drills-practice
 ```
 
-The same install works with `python -m pip install '.[numpy,pytorch]'`. The plain package has no numerical library dependencies. The `init` command copies the examples into a new directory so you can edit and keep attempts there. Open its README to choose a drill and see how to submit an attempt for review.
+Open the prompt in your practice workspace and run the check for your track.
 
-## Find a drill
+| Track | Prompt in your workspace | Check |
+| --- | --- | --- |
+| NumPy | `drills/numpy/row-gather/prompt.md` | `tensor-drills check numpy/row-gather` |
+| PyTorch | `drills/pytorch/row-gather/prompt.md` | `tensor-drills check pytorch/row-gather` |
 
-Run `tensor-drills list` from the practice workspace root, or pass `--workspace path/to/practice`. It lists drills with a `metadata.json` file and shows their goals, topics, workloads, and prerequisites.
+The starter is unfinished, so this first check should fail. Edit `attempt.py` next to the prompt and rerun the check as you work. After your attempt, use `rubric.md` in the same folder to review your reasoning. If you want a person or an LLM to review it, share your code, check output, and any explanation the prompt asks for.
+
+## Choose a drill
+
+In either library, practice row gathering, Boolean masks, joining matrices, indexing, and reductions. If you already know how a PyTorch training loop works, try [classifier debugging](tensor_drills/practice/drills/pytorch/classifier/prompt.md) and [inline validation](tensor_drills/practice/drills/pytorch/inline-validation/prompt.md).
+
+See the skill map for available drills and what to practice next. [Shared skills](docs/SKILL_MAP.md#shared-skills) · [NumPy skills](docs/SKILL_MAP.md#numpy) · [PyTorch skills](docs/SKILL_MAP.md#pytorch)
+
+Run `tensor-drills list` in your practice workspace to compare goals, prerequisites, and workload. The catalog also shows which drills prepare you for others.
 
 ```sh
-tensor-drills list --library numpy --scope atomic --task-type create
-tensor-drills list --library pytorch --topic autograd --topic evaluation --workload 3
+tensor-drills list --library pytorch --scope atomic --topic indexing
 ```
 
-Filters combine. Repeat `--topic` to require every named topic. `--workload` matches an exact rating from 1 to 5. Once you choose a drill, open `drills/<drill-id>/prompt.md` in the workspace.
-
-When a drill is linked as prerequisite practice, its entry also shows which drills it prepares you for.
+Once you choose a drill, open `drills/<drill-id>/prompt.md` and run `tensor-drills check <drill-id>`. Use `tensor-drills list --help` for more filters.
 
 ## Python API
 
@@ -38,10 +44,10 @@ The checker can also run against any workspace with the same drill layout. It pr
 ```python
 from tensor_drills import check, init_workspace
 
-workspace = init_workspace("practice")
+workspace = init_workspace("api-practice")
 status = check("numpy/row-gather", workspace=workspace)
 ```
 
 The untouched NumPy starter returns status `1`. Pass `attempt=...` to check a saved file. Existing workspaces that contain a variant can run it with `variant=True` or the CLI flag `--variant`.
 
-For drill authoring, tests, and package builds, see [DEVNOTES.md](DEVNOTES.md).
+See the [documentation index](docs/README.md) for design and curriculum docs, the [drill authoring guide](docs/DRILL_AUTHORING.md) for contributing drills, and the [changelog](CHANGELOG.md) for release notes.

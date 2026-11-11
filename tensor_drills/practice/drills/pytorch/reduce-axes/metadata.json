@@ -1,0 +1,12 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Reduce across multiple axes, keep dimensions for broadcasting, and use the result to center the input.",
+  "topics": ["reductions", "broadcasting", "axes", "shapes"],
+  "prerequisites": [
+    {
+      "capability": "Read a 3D shape and understand what a sum and mean over an axis represent."
+    }
+  ],
+  "workload": 3
+}

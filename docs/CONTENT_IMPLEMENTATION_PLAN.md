@@ -1,0 +1,144 @@
+# Content Implementation Plan
+
+NumPy and PyTorch have independent delivery sequences. Each track starts with core skills and can ship its drills as soon as they meet the acceptance criteria. Where the learning outcome matches, both tracks use the same authoring brief and validate their own implementations. [Skill map](SKILL_MAP.md) · [Acceptance for every delivery](#acceptance-for-every-delivery)
+
+[NumPy delivery](#numpy-delivery) · [PyTorch delivery](#pytorch-delivery) · [Shared authoring briefs](#shared-authoring-briefs)
+
+## NumPy delivery
+
+| Milestone | What to deliver | Why this order |
+| --- | --- | --- |
+| 1. Core shape and selection (implemented) | Boolean mask construction, stack and concatenate, paired and Cartesian indexing, and multi-axis reductions. [Shapes, dtypes, and storage](#shapes-dtypes-and-storage) · [Indexing and masks](#indexing-and-masks) · [Reductions and projection](#reductions-and-projection) | These drills extend the bundled row-gather exercise with practice in creating masks and reasoning about indices and axes. |
+| 2. Core array operations | Deliver `numpy/convert-dtype`, `numpy/independent-slice`, `numpy/indexed-sum`, `numpy/shared-weight-matmul`, and `numpy/row-mean`. [Shapes, dtypes, and storage](#shapes-dtypes-and-storage) · [Indexing and masks](#indexing-and-masks) · [Reductions and projection](#reductions-and-projection) · [NumPy reductions and broadcasting](#numpy-reductions-and-broadcasting) | Practice dtype conversion and storage, then build the reductions and matrix products used in row centering, grouped statistics, and batched projection. |
+| 3. Numerical foundations | Add stable row softmax, precise summation, and seeded sampling. [NumPy numerical workflows](#numpy-numerical-workflows) | Practice stable normalization and accumulator choices before masking and combining operations. |
+| 4. Applied array operations | Add image layout, row centering, window and causal masks, noncontiguous flattening, expansion and copying, masked mean, and batched projection. [Shared skills](SKILL_MAP.md#shared-skills) · [Reductions and projection](#reductions-and-projection) | Build row centering on row mean from Milestone 2. Deliver masked mean before batched projection, which also builds on shared-weight matrix multiplication from Milestone 2. |
+| 5. Applied numerics and data workflows | Add masked normalization and preprocessing, then ignored score gathering, groups and metrics, sequence summaries and loss, masked ranking, and distances and nearest neighbors. [NumPy numerical workflows](#numpy-numerical-workflows) · [NumPy pairwise computations](#numpy-pairwise-computations) | Masked statistics and stable reductions prepare learners for tasks that add a denominator, grouping rule, or memory constraint. |
+| 6. Depth | Add sorted search and partitioning, windows and unique groups, grouped extrema and probabilities, solves and pairwise metrics, attention, and streaming. [NumPy skill map](SKILL_MAP.md#numpy) | Choose deeper topics according to learner needs and prioritize outcomes with clear checks. |
+
+## PyTorch delivery
+
+| Milestone | What to deliver | Why this order |
+| --- | --- | --- |
+| 1. Core shape and selection (implemented) | Boolean mask construction, stack and concatenate, paired and Cartesian indexing, multi-axis reductions, and gathering one value per row. [Shapes, dtypes, and storage](#shapes-dtypes-and-storage) · [Indexing and masks](#indexing-and-masks) · [Reductions and projection](#reductions-and-projection) · [PyTorch selection and broadcasting](#pytorch-selection-and-broadcasting) | These drills build the axis and selection skills used for class scores and batched training inputs. |
+| 2. Core tensor operations | Deliver `pytorch/convert-dtype`, `pytorch/independent-slice`, `pytorch/indexed-sum`, `pytorch/shared-weight-matmul`, `pytorch/time-mean`, and `pytorch/sequence-offset`. [Shapes, dtypes, and storage](#shapes-dtypes-and-storage) · [Indexing and masks](#indexing-and-masks) · [Reductions and projection](#reductions-and-projection) · [PyTorch selection and broadcasting](#pytorch-selection-and-broadcasting) | Practice dtype conversion and storage, then build the indexed sums, matrix products, axis choice, and operand alignment used in routing and batched calculations. |
+| 3. Autograd and training foundations | Add device placement and NumPy conversion, module forward, scalar backward, gradient accumulation, detach, evaluation mode and recording, a supervised update, batching, state restore, and row softmax. [PyTorch gradients and training](#pytorch-gradients-and-training) · [PyTorch data and model state](#pytorch-data-and-model-state) | Deliver module forward and scalar backward before the training step. Use the bundled classifier repair as follow-up practice. Add data input and persistence after basic module use and a supervised update. |
+| 4. Applied tensor operations | Add image layout, broadcasting in calculations, window and causal masks, noncontiguous flattening, expansion and copying, masked mean, and batched projection. [Shared skills](SKILL_MAP.md#shared-skills) · [Reductions and projection](#reductions-and-projection) | Deliver masked mean before batched projection, which also builds on shared-weight matrix multiplication from Milestone 2. |
+| 5. Applied gradients and model workflows | Add higher-rank gathering, differentiable masked softmax, token loss, feature routing, head packing, and buffer registration. Use the bundled inline validation drill for training and evaluation practice. [PyTorch skill map](SKILL_MAP.md#pytorch) · [PyTorch graph, masking, and routing](#pytorch-graph-masking-and-routing) | Add gradient or state requirements after learners can work with the underlying tensor operation. Deliver scalar backward before token loss. |
+| 6. Depth | Add saved-tensor mutation and non-scalar backward, then matrix VJPs, shared-weight VJPs, and custom backward. Add microbatch updates, rectangular causal attention, and a focused causal-mask debugging exercise if it adds distinct practice. [PyTorch skill map](SKILL_MAP.md#pytorch) | Build on the track's earlier gradient and attention work. Prioritize outcomes with clear contracts and checks. |
+
+## Shared authoring briefs
+
+Use the same brief when both libraries teach the same outcome. Supply each drill with its own starter, inputs, fixtures, and checks. Assume basic Python and the ability to read the labeled axes in the prompt. A dash indicates that the scope and task type are open.
+
+### Shapes, dtypes, and storage
+
+| Planned drill | Scope and task type | Goal | Why it belongs | Acceptance evidence |
+| --- | --- | --- | --- | --- |
+| [`numpy/stack-concat`](../tensor_drills/practice/drills/numpy/stack-concat/prompt.md), [`pytorch/stack-concat`](../tensor_drills/practice/drills/pytorch/stack-concat/prompt.md) | Atomic create | Combine two matrices along a new axis and along an existing axis. | Choosing between adding an axis and extending one prepares learners to batch and combine arrays with the intended shape. | Use distinct inputs of the same rectangular shape. For two `(3, 4)` matrices with axis 1, check `(3, 2, 4)` and `(3, 8)` and the position of each input's values. Also check axis 0 and a singleton dimension. |
+| `numpy/image-layout`, `pytorch/image-layout` | Composite create | Convert pixels shaped `(height * width, channels)` to a batch of one in channel-first layout. | Combines reshape and axis reordering so learners track pixel positions through a common layout conversion. | Check the expected `(1, channels, height, width)` shape and pixel positions with a non-square image and distinct channel values. A reshape that skips axis reordering should fail. |
+| `numpy/convert-dtype`, `pytorch/convert-dtype` | Atomic create | Convert numeric input to the requested dtype while preserving its shape. | Isolates the value changes a cast can introduce while leaving the shape intact. | Include fractions such as `-2.75` and `2.75` in a representable float-to-integer cast to distinguish truncation from rounding. Check values, shape, and dtype. Ask the learner to identify the input shape and dtype in the rubric. |
+| `numpy/independent-slice`, `pytorch/independent-slice` | Atomic debug | Edit a slice and return it with storage independent of the source. | Makes shared storage visible through mutation, which a value check on the returned slice alone would miss. | Check the edited result and the original. Mutate the returned slice and verify that the original stays unchanged. Review the explanation of the original alias. |
+
+### Indexing and masks
+
+| Planned drill | Scope and task type | Goal | Why it belongs | Acceptance evidence |
+| --- | --- | --- | --- | --- |
+| [`numpy/build-mask`](../tensor_drills/practice/drills/numpy/build-mask/prompt.md), [`pytorch/build-mask`](../tensor_drills/practice/drills/pytorch/build-mask/prompt.md) | Atomic create | Construct a Boolean mask from two bounds and return its complement. | Learners write the condition themselves, a skill they reuse in filtering, masked reductions, and attention. | Use the half-open interval `[lower, upper)`. Test both endpoints, equal bounds, a matrix with fractional values, and integer values with fractional bounds. Check Boolean dtype, input shape, exact complement, and unchanged input. |
+| [`numpy/paired-cartesian`](../tensor_drills/practice/drills/numpy/paired-cartesian/prompt.md), [`pytorch/paired-cartesian`](../tensor_drills/practice/drills/pytorch/paired-cartesian/prompt.md) | Atomic create | Use the same indices to select coordinate pairs and every row and column combination. | Row gathering covers one selection per row. This drill adds the choice between coordinate pairs and every row–column combination. | Supply two index arrays of shape `(K,)` with unsorted and repeated entries. Check values and shapes `(K,)` and `(K, K)` to catch transposed grids, loss of repeats, and dropped dimensions for `K = 1`. Use the rubric to check the actual indexing operations and index shapes. Link the same library's row-gather drill as prerequisite practice. |
+| `numpy/window-mask`, `pytorch/window-mask` | Composite create | Select rows in a specified slice using a boolean mask aligned to the original input. | Adds coordination between the slice and a supplied mask. Mask construction is practiced separately. | Place valid rows inside and outside the slice. Check the selected values, their order, and the feature dimension. |
+| `numpy/indexed-sum`, `pytorch/indexed-sum` | Atomic create | Sum values into indexed destinations, adding all contributions at repeated indices. | Introduces the repeated-destination behavior needed for grouped statistics and routing. | Check repeated destinations, empty input, output size and dtype, zeros at unused destinations, and unchanged inputs. Assess vectorization in the rubric. |
+
+### Reductions and projection
+
+Link masked mean and shared-weight matrix multiplication from batched projection as optional practice. Supply all inputs in the projection drill.
+
+| Planned drill | Scope and task type | Goal | Why it belongs | Acceptance evidence |
+| --- | --- | --- | --- | --- |
+| [`numpy/reduce-axes`](../tensor_drills/practice/drills/numpy/reduce-axes/prompt.md), [`pytorch/reduce-axes`](../tensor_drills/practice/drills/pytorch/reduce-axes/prompt.md) | Composite create | Reduce across multiple axes, keep dimensions for broadcasting, and use the result to center the input. | Keeping the reduced axes in place lets learners reuse the result in centering and normalization. | Reduce axes 0 and 2 of `(B, R, C)`. Check the sum `(R,)`, mean `(1, R, 1)`, and centered result `(B, R, C)`. Include distinct lengths and singleton axes, nonuniform means, and fractional results with relative and absolute tolerances of `1e-6`. Use the rubric to check the actual reductions and broadcast operands. |
+| `numpy/masked-mean`, `pytorch/masked-mean` | Composite create | Average valid timesteps separately for each sequence and return zeros for a fully masked sequence. | Adds valid counts and empty-row handling to ordinary axis reduction before learners combine it with projection. | State the finite input range in the prompt. Use unequal valid counts, nonconsecutive masks, an excluded outlier, and a fully masked sequence. Check values, shape, dtype, and unchanged inputs. Require finite outputs and no warnings. |
+| `numpy/shared-weight-matmul`, `pytorch/shared-weight-matmul` | Atomic create | Multiply each batch item of shape `(rows, in_features)` by the same `(in_features, out_features)` matrix. | Isolates feature-axis contraction with shared weights before learners work with a different matrix for each batch item. | Check output shape, dtype, and values for distinct batch items and rectangular matrices. Assess vectorized contraction in the rubric. |
+| `numpy/batched-projection`, `pytorch/batched-projection` | Composite create | Apply each batch item's own projection matrix to its mean over valid timesteps. | Combines masked pooling with per-item weights and checks that both calculations stay within each batch item. | Use at least one valid timestep per item, rectangular feature axes, and different masks, inputs, and matrices across items. Check output shape `(batch, out_features)` and batch-local values. Accept equivalent calculation orders that meet the contract. |
+
+## NumPy authoring briefs
+
+### NumPy reductions and broadcasting
+
+| Planned drill | Scope and task type | Goal | Why it belongs | Acceptance evidence |
+| --- | --- | --- | --- | --- |
+| `numpy/row-mean` | Atomic debug | Return one mean per row of a 2D array. | Isolates axis choice before the learner uses the result for row centering. | Check expected means and shapes for a rectangular array and a single-row array. Choose values that distinguish the means from sums along the same axis. The single-row result should have shape `(1,)`. |
+| `numpy/row-center` | Composite create | Subtract each row's own mean from its entries. | Makes the learner align a computed statistic with its source rows, a step reused in standardization. | A rectangular array with different row means distinguishes row centering from column or global centering. Check the expected values within a stated tolerance and verify the original shape. |
+
+For `numpy/row-center`, list computing a mean along a specified axis as a prerequisite and point `practice_drill` to `numpy/row-mean`. Offer a broadcasting reference for aligning length-one axes. [Reviewed resources](RESOURCES.md#reviewed-resources)
+
+### NumPy numerical workflows
+
+Masked standardization combines Boolean selection, axis reductions, and broadcasting. Point learners to `numpy/window-mask` and `numpy/row-center` for optional practice with those capabilities.
+
+| Planned drill | Scope and task type | Goal | Why it belongs | Acceptance evidence |
+| --- | --- | --- | --- | --- |
+| `numpy/masked-softmax` | Composite create | Compute stable float32 probabilities over allowed positions and return zeros for fully masked rows. | Adds mask semantics and low-precision overflow to the stable normalization skill. | Include a broadcastable rank-three mask and a wide `float16` row that overflows a half-precision sum. Compare expected probabilities and check exact masked zeros, float32 dtype, finite outputs, and no warnings. |
+| `numpy/masked-standardize` | Composite create | Select valid observations and standardize each feature using the selected rows. | Applies selection, reduction, and broadcasting in a preprocessing task where excluded values must leave the statistics untouched. | Include an excluded outlier and features with different means and scales. Check the selected rows, their order, and the expected standardized values. |
+| `numpy/precise-sum` | Atomic debug | Sum readings with enough precision to preserve a small residual amid large values. | Isolates a precision failure caused by the accumulator and asks learners to diagnose why a small term disappears. | Check an ordinary sum and a cancellation case that fails with the starter's precision. State the error tolerance and assess the learner's choice of accumulator dtype or calculation in the rubric. |
+| `numpy/seeded-sample` | Atomic create | Draw row indices without replacement using a local generator seeded by the caller. | Practices controlling randomness in reproducible data workflows with a caller-supplied seed. | Check bounds, uniqueness, and repeatability for the same seed. Use two seeds with distinct expected samples under the stated generator and sampling method to catch an implementation that ignores the seed. |
+
+### NumPy pairwise computations
+
+Apply the matrix product, reduction, and numerical precision skills in a composite debug drill. Link `numpy/shared-weight-matmul` as optional practice with feature-axis contraction.
+
+| Planned drill | Scope and task type | Goal | Why it belongs | Acceptance evidence |
+| --- | --- | --- | --- | --- |
+| `numpy/pairwise-squared-distance` | Composite debug | Repair pairwise squared distances between two collections while avoiding a `(left_rows, right_rows, features)` temporary. | Applies axis reasoning and contraction to a pairwise calculation where intermediate memory matters. | Supply a starter that reduces squared norms along the wrong axis. Use distinct row counts and feature width and include an identical pair. Check the shape and nonnegative float64 values against a small independent calculation. Assess the diagnosis and allocation constraint in the rubric. |
+
+## PyTorch authoring briefs
+
+### PyTorch selection and broadcasting
+
+| Planned drill | Scope and task type | Goal | Why it belongs | Acceptance evidence |
+| --- | --- | --- | --- | --- |
+| `pytorch/time-mean` | Atomic create | Average over time to reduce `(batch, time, features)` to `(batch, features)`. | Introduces sequence pooling by reducing time while preserving both batch and feature axes. | Use distinct axis lengths and values whose mean differs from both the sum and the middle timestep. Compare values and shapes. Include singleton batch and feature dimensions to check both axes survive. |
+| `pytorch/sequence-offset` | Atomic debug | Apply each sequence's `(batch, features)` offset at every time step of a `(batch, time, features)` tensor. | Tests operand alignment when equal dimensions can hide broadcasting along the wrong axis. | Use unequal batch and time lengths both greater than one, such as 2 and 3, to expose incompatible alignment. Use equal lengths with distinct offsets across batches to catch incorrect values even when the shape is correct. Check values and shape in both cases. |
+| [`pytorch/row-gather`](../tensor_drills/practice/drills/pytorch/row-gather/prompt.md) | Atomic create | Gather one score per row using its supplied column index and verify the result's shape and dtype. | This gives the PyTorch track its own foundation for class scores and per-item selection in a batch. | Gather from `(N, C)` CPU scores using `(N,)` valid int64 column indices. Check values, dtype, and shape `(N,)` for rectangular inputs with varied and repeated columns, an empty batch, one row, and one column. |
+
+Use the bundled NumPy row-gather contract as a reference for `pytorch/row-gather`. Offer a broadcasting reference for `pytorch/sequence-offset` so learners can look up length-one axes. [NumPy row gathering](../tensor_drills/practice/drills/numpy/row-gather/prompt.md) · [Reviewed resources](RESOURCES.md#reviewed-resources)
+
+### PyTorch gradients and training
+
+The bundled debug drills cover gradient accumulation and recording during evaluation. Link `pytorch/scalar-gradient` from `pytorch/train-step` for optional practice, then link `pytorch/train-step` from the existing training-loop prerequisite in classifier debugging. [PyTorch coverage](CONTENT_DESIGN.md#pytorch-path) · [Classifier metadata](../tensor_drills/practice/drills/pytorch/classifier/metadata.json)
+
+| Planned drill | Scope and task type | Goal | Why it belongs | Acceptance evidence |
+| --- | --- | --- | --- | --- |
+| `pytorch/device-forward` | Composite create | Run a supplied model on a requested device with inputs and intermediate tensors on a compatible device. | Practices propagating the device through a model, inputs, and new allocations in the same forward pass. | Check the forward result and the placement of model parameters, inputs, and intermediates. Run on CPU and any additional device the drill supports when available. Use the rubric to inspect device propagation and detect hard-coded CPU allocations on CPU-only setups. |
+| `pytorch/scalar-gradient` | Atomic create | Use `backward()` to compute the gradient of a nonlinear scalar objective on a trainable leaf. | Lets learners inspect a leaf gradient before adding optimizer state and parameter updates. | Return the leaf and loss. Compare the loss and the leaf's actual `.grad` with analytic results at different inputs. Assess the backward call in the rubric. |
+| `pytorch/train-step` | Composite create | Implement one labeled training update with a supplied model, loss, and optimizer. | Gives learners practice writing the update that they later diagnose in classifier debugging. | Call the step on distinct batches from known initial weights. Check the loss, exactly one optimizer step per call, the gradients at step time, and the resulting parameters. Verify the practice link from classifier debugging. |
+| `pytorch/token-cross-entropy` | Composite create | Compute mean cross-entropy over valid tokens, ignoring target `-100` and returning a differentiable zero when all tokens are ignored. | Adds valid-token averaging and ignored gradients to the basic loss calculation. | Use noncontiguous logits and unequal valid counts. Compare loss and gradients with the valid-token calculation, check ignored and all-ignored gradients are zero, and check inputs stay unchanged. Review the use of cross-entropy on raw logits. |
+
+The proposed `pytorch/classifier-forward` teaches layer registration and the forward pass. Supply fixed layer dimensions and parameter values. Check registered parameter shapes, raw logits for distinct examples, and a singleton batch. Reject a forward that returns probabilities or collapses the batch dimension. Link `pytorch/classifier-forward` from `pytorch/train-step` as optional module construction practice.
+
+### PyTorch data and model state
+
+Supply sample and label data for batching and a model for the save and restore drill so each exercise runs from a fresh workspace.
+
+| Planned drill | Scope and task type | Goal | Why it belongs | Acceptance evidence |
+| --- | --- | --- | --- | --- |
+| `pytorch/labeled-batches` | Composite create | Produce ordered minibatches that keep each sample paired with its label. | Practices the sample and label alignment that a training step assumes. | Use identifiable samples and labels with a dataset size that leaves a partial final batch. Check batch sizes, order, pairing, and that every sample appears once. |
+| `pytorch/model-roundtrip` | Composite create | Save a supplied model's parameters and load them into a fresh instance. | Tests persistence by using the restored model to reproduce predictions in a fresh instance. | Give the source and destination different starting parameters. Compare the restored parameters and predictions with the source values recorded before the round trip through a temporary file. |
+
+### PyTorch graph, masking, and routing
+
+Build on view and copy behavior and scalar backward for the graph and masking drills. The routing drill uses indexing and repeated-destination sums from the core.
+
+| Planned drill | Scope and task type | Goal | Why it belongs | Acceptance evidence |
+| --- | --- | --- | --- | --- |
+| `pytorch/detach-snapshots` | Atomic create | Produce detached tensors with the same values and different storage relationships to a trainable source. | Shows that gradient tracking and storage sharing are separate properties when capturing values. | Check that both outputs match the source values and have no gradient history. Verify the source still requires gradients. Mutate the shared output and check that the source changes and the independent output retains its values. |
+| `pytorch/masked-softmax` | Composite create | Normalize over allowed positions with finite backward gradients and zero outputs for fully masked rows. | Adds backward behavior to masked normalization, including zero gradients at excluded positions. | Include an excluded high logit, a fully masked row, and a row with one allowed value. Compare probabilities and gradients with independent expectations using nonuniform upstream gradients. Check dtype and exact masked zeros in both. |
+| `pytorch/topk-route` | Composite create | Select the highest-scoring items in each batch and sum their feature vectors at the associated destinations. | Combines selection with repeated-destination accumulation while keeping scores, features, and destinations aligned. | Use distinct scores within each batch and distinct feature vectors. Check ordered selected indices and totals for different selections across batches, repeated destinations, and unused destinations. Assess vectorization in the rubric and link `pytorch/indexed-sum` for optional practice. |
+
+## Acceptance for every delivery
+
+- Deliver a complete, independently runnable drill that meets its authoring brief. [Drill package and assessment](INFRA_DESIGN.md#drill-package-and-assessment)
+- Verify the drill in its own track and record the evidence for review. [Verification recipe](DRILL_AUTHORING.md#verify-from-a-fresh-workspace) · [Review handoff](DRILL_AUTHORING.md#hand-off-for-review)
+- Link the shipped drill from the skill map and update its source record. [Skill map](SKILL_MAP.md) · [Drill source records](RESOURCES.md#drill-source-records)
+
+## Learner walkthrough follow-up
+
+A full learner attempt with rubric feedback is still pending and can run alongside catalog work. Observe a learner using the PyTorch classifier drill and review their attempt with the rubric. If they try inline validation, check whether they can diagnose and verify a related bug. Record time to first run, requirements that needed clarification, and gaps in the tests or rubric. [Infrastructure pilot](INFRA_DESIGN.md#pilot)

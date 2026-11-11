@@ -1,6 +1,8 @@
-# NumPy and PyTorch Interview Drill Design
+# Infrastructure Design
 
-Tensor Drills provides NumPy and PyTorch exercises for hands-on ML coding interviews. Each drill pairs a small Python task with local tests and a review rubric.
+Tensor Drills helps learners build NumPy and PyTorch skills through hands-on exercises. Each drill pairs a small Python task with local tests and a review rubric.
+
+This design covers the drill format, catalog, checker, and assessment workflow. [Content design](CONTENT_DESIGN.md) · [Resources and drill sources](RESOURCES.md)
 
 ## Goals and non-goals
 
@@ -32,13 +34,13 @@ Use the feedback to decide what to practice next. If the attempt exposed a gap, 
 ### Optional follow-ups
 
 - During a session, a human or LLM reviewer can ask a reasoning question or request a small code change based on the learner's attempt. For example, ask why a second training batch can expose gradient carryover. If an explanation is required for the main attempt, request it in `prompt.md` and describe what counts as evidence in `rubric.md`.
-- For reusable coding practice, use a standalone drill with its own goal, prompt, starter, fixed tests, and rubric. It can revisit a skill in a different context or add a requirement. Include any working code the new task builds on in its starter. For example, inline validation revisits classifier debugging in a loop that runs validation after each update. [Inline validation drill](../tensor_drills/examples/drills/pytorch/inline-validation/prompt.md)
+- For reusable coding practice, use a standalone drill with its own goal, prompt, starter, fixed tests, and rubric. It can revisit a skill in a different context or add a requirement. Include any working code the new task builds on in its starter. For example, inline validation revisits classifier debugging in a loop that runs validation after each update. [Inline validation drill](../tensor_drills/practice/drills/pytorch/inline-validation/prompt.md)
 
 When a follow-up drill assumes a skill taught by the earlier drill, point to the earlier drill using [`practice_drill`](#linking-prerequisites) in the follow-up's prerequisites. For related practice with no prerequisite, link the follow-up at the end of the earlier prompt as optional next practice.
 
 ### Optional LLM roles
 
-For an interview-style attempt, an LLM can present the task, clarify the requirements, and ask follow-up questions. The learner does the coding, diagnosis, and explanation.
+During a practice session, an LLM can present the task, clarify the requirements, and ask follow-up questions. The learner does the coding, diagnosis, and explanation.
 
 The learner can also ask an LLM to recommend a drill from the available catalog entries based on a practice goal and prior knowledge, or to review a completed attempt using the prompt, rubric, and submission.
 
@@ -46,14 +48,14 @@ The learner can also ask an LLM to recommend a drill from the available catalog 
 
 ### Scope and task type
 
-**Atomic** drills isolate one mechanism. **Composite** drills ask the learner to combine several mechanisms to complete a recognizable ML task.
+**Atomic** drills isolate one mechanism. **Composite** drills ask the learner to combine several mechanisms in one array or tensor task.
 
 **Create** drills start from a stub. **Debug** drills start from faulty code and ask the learner to reproduce the failure, explain the cause, and verify a fix.
 
 | Scope | Create | Debug |
 | --- | --- | --- |
 | **Atomic** | **NumPy** · Gather one score per row using column indices.<br>**PyTorch** · Compute a shared bias gradient from batched upstream gradients. | **NumPy** · Fix the axis in a row-wise mean.<br>**PyTorch** · Fix a parameter snapshot that changes during training. |
-| **Composite** | **NumPy** · Implement batched masked attention with stable softmax and fully masked rows.<br>**PyTorch** · Implement a token classification update that excludes padding from the loss. | **NumPy** · Fix the selection axis and label alignment in batched nearest neighbor search.<br>**PyTorch** · Fix gradient accumulation across batches and active dropout during evaluation. |
+| **Composite** | **NumPy** · Reduce across several axes and broadcast the mean to center the input.<br>**PyTorch** · Implement a token classification update that excludes padding from the loss. | **NumPy** · Fix the selection axis and label alignment in batched nearest neighbor search.<br>**PyTorch** · Fix gradient accumulation across batches and active dropout during evaluation. |
 
 ### Catalog metadata
 
@@ -77,7 +79,7 @@ Use these anchors for workload. Assign 2 or 4 to drills that fall between them. 
 
 ### Example catalog entries
 
-| Field | [numpy/row-gather](../tensor_drills/examples/drills/numpy/row-gather/prompt.md) | [pytorch/classifier](../tensor_drills/examples/drills/pytorch/classifier/prompt.md) |
+| Field | [numpy/row-gather](../tensor_drills/practice/drills/numpy/row-gather/prompt.md) | [pytorch/classifier](../tensor_drills/practice/drills/pytorch/classifier/prompt.md) |
 | --- | --- | --- |
 | Library | NumPy | PyTorch |
 | Scope | Atomic | Composite |
@@ -92,7 +94,7 @@ Use these anchors for workload. Assign 2 or 4 to drills that fall between them. 
 
 ### Linking prerequisites
 
-Inline validation assumes the learner can reason about state across training and evaluation calls. Its metadata points to classifier debugging for practice with that prerequisite. [Inline validation metadata](../tensor_drills/examples/drills/pytorch/inline-validation/metadata.json)
+Inline validation assumes the learner can reason about state across training and evaluation calls. Its metadata points to classifier debugging for practice with that prerequisite. [Inline validation metadata](../tensor_drills/practice/drills/pytorch/inline-validation/metadata.json)
 
 ```json
 {
@@ -123,7 +125,7 @@ The learner should be able to start, run, and submit the drill using `prompt.md`
 - **Contract.** State the interface, input assumptions, required behavior, and any constraints that affect whether an attempt is valid. For debug drills, describe what a correct run does and let the learner infer which state or API calls to change. Use a short example when it clarifies the expected behavior.
 - **Run and submit.** Link the shared setup and name the drill's dependencies. Give the check command, working directory, expected result from the untouched starter, and what to submit. For debug drills, ask for the updated code, check output, and a brief explanation of the cause and verification.
 
-Put the intended diagnosis and repair guidance in `rubric.md` for review after the attempt. Keep full test cases in `tests.json` and discovery fields such as topics and workload in `metadata.json`. The shared README covers environment setup. [Workspace README](../tensor_drills/examples/README.md)
+Put the intended diagnosis and repair guidance in `rubric.md` for review after the attempt. Keep full test cases in `tests.json` and discovery fields such as topics and workload in `metadata.json`. The shared README covers environment setup. [Workspace README](../tensor_drills/practice/README.md)
 
 ### Fixed tests
 
@@ -131,7 +133,7 @@ From a workspace created with `tensor-drills init`, run `tensor-drills check <dr
 
 Use fixed tests for correctness and add larger inputs where they can reliably expose violations of a stated efficiency requirement.
 
-When authoring cases, calculate expected results by hand or with a reference run and save them in the manifest. Verify that the untouched starter fails as described in the prompt, a known-good answer passes, and a plausible wrong answer fails. For a debug drill with multiple bugs covered by fixed tests, leave each bug in place while fixing the others and check that a case still fails.
+When authoring cases, calculate expected results by hand or with a reference run and save them in the manifest. [Verification recipe](DRILL_AUTHORING.md#verify-from-a-fresh-workspace)
 
 ### Reviewer rubric
 
@@ -144,22 +146,6 @@ Use the learner prompt as the source for graded requirements. Keep fixture input
 
 ## Pilot
 
-The pilot uses NumPy row gathering and PyTorch classifier debugging to see whether learners can start a drill, run the checks, and use the feedback. Inline validation shows how a second PyTorch drill can build on classifier debugging.
+The pilot exercised the workflow from opening a prompt to checking and reviewing an attempt. NumPy row gathering illustrates an atomic create drill, classifier debugging illustrates a composite debug drill, and inline validation illustrates a linked follow-up. [NumPy row gathering](../tensor_drills/practice/drills/numpy/row-gather/prompt.md) · [PyTorch classifier debugging](../tensor_drills/practice/drills/pytorch/classifier/prompt.md) · [PyTorch inline validation](../tensor_drills/practice/drills/pytorch/inline-validation/prompt.md)
 
-### NumPy atomic create
-
-Implement `gather_scores(scores, columns)`. Given scores of shape `(N, C)` and valid integer column indices of shape `(N,)`, return the selected values in row order with shape `(N,)` and the input score dtype. For example, `[[10, 20, 30], [40, 50, 60]]` with columns `[2, 0]` gives `[30, 40]`.
-
-Use a rectangular input to expose axis mistakes and repeated column indices to check that each row contributes a value. Use one-row and one-column inputs to check the same contract with singleton dimensions. [Row gathering drill](../tensor_drills/examples/drills/numpy/row-gather/prompt.md)
-
-### PyTorch composite debug
-
-Repair a small CPU classifier with dropout, an optimizer, and two labeled batches. The starter carries gradients between batches and evaluates with dropout active. Each training call must enter training mode and apply one update using the current batch's cross-entropy gradient. Evaluation must return logits in evaluation mode without recording gradients.
-
-Start with fixed weights and a fixed random state. Check the weights after each update and check repeated evaluation. Use training after evaluation as a regression check for the mode transition. The rubric lists the two intended bugs and the evidence for each repair. [Classifier debugging drill](../tensor_drills/examples/drills/pytorch/classifier/prompt.md) · [Reviewer rubric](../tensor_drills/examples/drills/pytorch/classifier/rubric.md)
-
-### Validation and rollout
-
-1. **Validate the exercises.** Validate the fixed tests for each drill and check that a second valid implementation also passes. [Fixed test validation](#fixed-tests)
-2. **Try the pilot with a learner.** Review the classifier attempt with the rubric. If the learner tries inline validation, check whether they can diagnose and verify a related bug in the new code. Record time to first run, requirements that needed clarification, and gaps in the tests or rubric. Use those observations to revise the drill format.
-3. **Expand the catalog.** Fill the remaining cells in both banks using the examples in the drill model. Add further drills where learners show a recurring gap or a fresh task can check transfer.
+The PyTorch walkthrough surfaced issues in the learner prompt and rubric, both of which were revised. [Learner walkthrough follow-up](CONTENT_IMPLEMENTATION_PLAN.md#learner-walkthrough-follow-up)
