@@ -4,7 +4,7 @@ Choose a track and find the skill you want to practice. Each topic lists the int
 
 [Shared skills](#shared-skills) · [NumPy](#numpy) · [PyTorch](#pytorch)
 
-Run `tensor-drills list --library numpy` or `tensor-drills list --library pytorch` in your practice workspace to see the drills you can run. See the implementation plan for the delivery order. [Setup and first drill](../README.md#try-your-first-drill) · [Content implementation plan](CONTENT_IMPLEMENTATION_PLAN.md)
+Run `tensor-drills list --library numpy` or `tensor-drills list --library pytorch` in your practice workspace to see the drills you can run. See the implementation plan for the delivery order and each skill's scheduled or deferred coverage. [Setup and first drill](../README.md#try-your-first-drill) · [Delivery and coverage](CONTENT_IMPLEMENTATION_PLAN.md#skill-coverage)
 
 ## Shared skills
 

@@ -6,7 +6,7 @@ Tensor Drills helps learners who know basic Python become fluent in NumPy and Py
 | --- | --- |
 | [Content Design](CONTENT_DESIGN.md) | Defines the learning goals, criteria for choosing skills and drills, and progression for each track. |
 | [Skill Map](SKILL_MAP.md) | Maps shared and library-specific skills by topic. Describes what to practice and links bundled drills beside the skills they teach. |
-| [Content Implementation Plan](CONTENT_IMPLEMENTATION_PLAN.md) | Sets delivery order for each track, with milestones, authoring briefs, and acceptance criteria. |
+| [Content Implementation Plan](CONTENT_IMPLEMENTATION_PLAN.md) | Sets delivery order for each track, maps skill coverage to milestones or deferrals, and owns authoring briefs and acceptance criteria. |
 | [Infrastructure Design](INFRA_DESIGN.md) | Defines how drills are packaged, discovered, run, and assessed, including the roles of fixed tests and rubrics. |
 | [Drill metadata schema](drill-metadata.schema.json) | Defines the fields and allowed values in a drill's catalog metadata. |
 | [Resources and Drill Sources](RESOURCES.md) | Records public references, drill origins, and applicable attribution. |
@@ -24,7 +24,7 @@ For a specific drill, use the prompt for the learner's task and contract, the fi
 | Change | What to verify |
 | --- | --- |
 | Milestone scope | Name the drills or outcomes that complete the milestone and link their briefs. When later work builds on earlier practice, name where that practice is scheduled. |
-| Skill coverage | Read the linked drill's prompt and fixed cases or rubric. Link it for the outcomes it assesses. Mark practice within a larger task as applied practice. |
+| Skill coverage | Trace each mapped skill to a milestone or explicit deferral in the implementation plan, for each affected track. Read the linked drill's prompt and fixed cases or rubric. Link it for the outcomes it assesses. Mark practice within a larger task as applied practice. |
 | Drill verification | Keep the exact steps and pass criteria in the drill authoring guide. Check summaries against that guide and try any changed commands in a fresh workspace. |
 | Infrastructure definitions and examples | Check that the definition fits the learning goals of both tracks. Link to drill files for contracts and cases. Track pending work in the implementation plan. |
 
