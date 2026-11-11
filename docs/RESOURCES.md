@@ -43,6 +43,11 @@ Link each drill record to its prompt when available. For each public source used
 | [`pytorch/paired-cartesian`](../tensor_drills/practice/drills/pytorch/paired-cartesian/prompt.md) | Original | [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
 | [`pytorch/reduce-axes`](../tensor_drills/practice/drills/pytorch/reduce-axes/prompt.md) | Original | [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#reductions-and-projection). |
 | [`pytorch/row-gather`](../tensor_drills/practice/drills/pytorch/row-gather/prompt.md) | Adapted | Uses the contract of the [NumPy row-gather drill](../tensor_drills/practice/drills/numpy/row-gather/prompt.md) from `v0.1.0`. The starter, fixtures, and checks use CPU tensors and require no NumPy installation. |
+| [`numpy/independent-slice`](../tensor_drills/practice/drills/numpy/independent-slice/prompt.md) | Original | New task and fixtures distinguish source preservation during an edit from independence under later writes. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#shapes-dtypes-and-storage). |
+| [`numpy/indexed-sum`](../tensor_drills/practice/drills/numpy/indexed-sum/prompt.md) | Original | New task and fixtures distinguish repeated-index accumulation, explicit output size, and dtype preservation. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
+| [`pytorch/independent-slice`](../tensor_drills/practice/drills/pytorch/independent-slice/prompt.md) | Original | New task and fixtures distinguish source preservation during an edit from independence under later writes. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#shapes-dtypes-and-storage). |
+| [`pytorch/indexed-sum`](../tensor_drills/practice/drills/pytorch/indexed-sum/prompt.md) | Original | New task and fixtures distinguish repeated-index accumulation, explicit output size, and dtype preservation. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
+| [`pytorch/sequence-offset`](../tensor_drills/practice/drills/pytorch/sequence-offset/prompt.md) | Original | New task and fixtures contrast unequal-axis errors with equal-axis misalignment. PyTorch broadcasting semantics remains a behavior reference in [reviewed resources](#reviewed-resources). [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#pytorch-selection-and-broadcasting). |
 
 ### Planned drills
 
@@ -51,6 +56,5 @@ Link each drill record to its prompt when available. For each public source used
 | `numpy/row-mean` | Original | NumPy Quickstart as a behavior reference for reductions. |
 | `numpy/row-center` | Original | NumPy broadcasting rules as a behavior reference. |
 | `pytorch/time-mean` | Original | The PyTorch Fundamentals exercises inform the position of reductions in the skill map. |
-| `pytorch/sequence-offset` | Original | PyTorch broadcasting semantics as a behavior reference. |
 
 Update the skill map and the drill source record in the same change as the drill. When revisiting a source, record the section or revision actually consulted. [Skill map](SKILL_MAP.md)

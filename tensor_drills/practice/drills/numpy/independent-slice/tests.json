@@ -1,0 +1,135 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "middle slice",
+      "inputs": {
+        "values": [
+          10,
+          20,
+          30,
+          40
+        ],
+        "dtype": "int64",
+        "start": 1,
+        "stop": 3,
+        "step": 1,
+        "increment": 100
+      },
+      "expected": [
+        120,
+        130
+      ]
+    },
+    {
+      "name": "stepped slice",
+      "inputs": {
+        "values": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "dtype": "float32",
+        "start": 0,
+        "stop": 7,
+        "step": 2,
+        "increment": -0.5
+      },
+      "expected": [
+        0.5,
+        2.5,
+        4.5,
+        6.5
+      ]
+    },
+    {
+      "name": "zero increment still independent",
+      "inputs": {
+        "values": [
+          4,
+          8,
+          12,
+          16
+        ],
+        "dtype": "float64",
+        "start": 1,
+        "stop": 4,
+        "step": 1,
+        "increment": 0
+      },
+      "expected": [
+        8,
+        12,
+        16
+      ]
+    },
+    {
+      "name": "one selected element",
+      "inputs": {
+        "values": [
+          -2.5,
+          3.25,
+          8.5
+        ],
+        "dtype": "float64",
+        "start": 1,
+        "stop": 2,
+        "step": 1,
+        "increment": 0.5
+      },
+      "expected": [
+        3.75
+      ]
+    },
+    {
+      "name": "empty slice",
+      "inputs": {
+        "values": [
+          2,
+          4,
+          6
+        ],
+        "dtype": "int64",
+        "start": 1,
+        "stop": 1,
+        "step": 2,
+        "increment": 9
+      },
+      "expected": []
+    },
+    {
+      "name": "empty source",
+      "inputs": {
+        "values": [],
+        "dtype": "float32",
+        "start": 0,
+        "stop": 0,
+        "step": 1,
+        "increment": 2
+      },
+      "expected": []
+    },
+    {
+      "name": "scalar rounding before addition",
+      "inputs": {
+        "values": [
+          1000
+        ],
+        "dtype": "float32",
+        "start": 0,
+        "stop": 1,
+        "step": 1,
+        "increment": -999.99999
+      },
+      "expected": [
+        0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,423 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "repeated destinations",
+      "inputs": {
+        "values": [
+          3,
+          5,
+          7
+        ],
+        "dtype": "int64",
+        "destinations": [
+          1,
+          1,
+          3
+        ],
+        "size": 5
+      },
+      "expected": [
+        0,
+        8,
+        0,
+        7,
+        0
+      ]
+    },
+    {
+      "name": "unsorted repeated destinations",
+      "inputs": {
+        "values": [
+          4,
+          -2,
+          7,
+          3,
+          -1
+        ],
+        "dtype": "int32",
+        "destinations": [
+          3,
+          0,
+          3,
+          1,
+          0
+        ],
+        "size": 6
+      },
+      "expected": [
+        -3,
+        3,
+        0,
+        11,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "fractional contributions",
+      "inputs": {
+        "values": [
+          1.5,
+          -2,
+          0.25,
+          4
+        ],
+        "dtype": "float32",
+        "destinations": [
+          2,
+          0,
+          2,
+          0
+        ],
+        "size": 4
+      },
+      "expected": [
+        2,
+        0,
+        1.75,
+        0
+      ]
+    },
+    {
+      "name": "one destination",
+      "inputs": {
+        "values": [
+          1.25,
+          -0.5,
+          2
+        ],
+        "dtype": "float64",
+        "destinations": [
+          0,
+          0,
+          0
+        ],
+        "size": 1
+      },
+      "expected": [
+        2.75
+      ]
+    },
+    {
+      "name": "empty input with destinations",
+      "inputs": {
+        "values": [],
+        "dtype": "float64",
+        "destinations": [],
+        "size": 4
+      },
+      "expected": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "zero output size",
+      "inputs": {
+        "values": [],
+        "dtype": "int32",
+        "destinations": [],
+        "size": 0
+      },
+      "expected": []
+    },
+    {
+      "name": "one contribution",
+      "inputs": {
+        "values": [
+          -3
+        ],
+        "dtype": "int64",
+        "destinations": [
+          0
+        ],
+        "size": 3
+      },
+      "expected": [
+        -3,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "float32 cancellation",
+      "inputs": {
+        "values": [
+          100,
+          1e-05,
+          -100
+        ],
+        "destinations": [
+          0,
+          0,
+          0
+        ],
+        "size": 1,
+        "dtype": "float32"
+      },
+      "expected": [
+        1e-05
+      ]
+    },
+    {
+      "name": "float64 cancellation",
+      "inputs": {
+        "values": [
+          100,
+          1e-05,
+          -100
+        ],
+        "destinations": [
+          0,
+          0,
+          0
+        ],
+        "size": 1,
+        "dtype": "float64"
+      },
+      "expected": [
+        1e-05
+      ]
+    },
+    {
+      "name": "small contribution at a separate destination",
+      "inputs": {
+        "values": [
+          100,
+          1e-05
+        ],
+        "destinations": [
+          0,
+          1
+        ],
+        "size": 3,
+        "dtype": "float32"
+      },
+      "expected": [
+        100,
+        1e-05,
+        0
+      ]
+    },
+    {
+      "name": "many small contributions",
+      "inputs": {
+        "values": [
+          1,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          0.01,
+          -1
+        ],
+        "destinations": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "size": 2,
+        "dtype": "float32"
+      },
+      "expected": [
+        0.98,
+        0
+      ]
+    }
+  ]
+}

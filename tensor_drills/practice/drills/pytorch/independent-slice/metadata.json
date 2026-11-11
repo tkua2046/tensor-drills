@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "debug",
+  "goal": "Edit a slice and return it with storage independent of the source.",
+  "topics": [
+    "indexing",
+    "storage",
+    "dtypes"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Use basic slicing and elementwise addition on a one-dimensional tensor."
+    }
+  ],
+  "workload": 1
+}

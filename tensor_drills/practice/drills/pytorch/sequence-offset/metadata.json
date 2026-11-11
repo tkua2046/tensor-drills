@@ -1,0 +1,15 @@
+{
+  "scope": "atomic",
+  "task_type": "debug",
+  "goal": "Apply each sequence's `(batch, features)` offset at every time step of a `(batch, time, features)` tensor.",
+  "topics": [
+    "broadcasting",
+    "shapes"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Read batch, time, and feature axes and perform elementwise tensor addition."
+    }
+  ],
+  "workload": 1
+}

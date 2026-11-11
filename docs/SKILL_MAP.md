@@ -19,7 +19,7 @@ These skills apply to both libraries. Use the drill link for your track.
 | Axis movement and insertion | Check positions after a permutation and preserve a singleton batch when squeezing. | — |
 | Stacking and concatenation | Compare stacking on a new axis with concatenating along an existing axis. | [NumPy](../tensor_drills/practice/drills/numpy/stack-concat/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/stack-concat/prompt.md) |
 | Splitting | Split unequal sections and join them in order. | — |
-| Slicing and storage | Create a stepped view and an independent copy. Diagnose unintended mutation through a view. | — |
+| Slicing and storage | Create a stepped view and an independent copy. Diagnose unintended mutation through a view. | Independent result and alias diagnosis: [NumPy](../tensor_drills/practice/drills/numpy/independent-slice/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/independent-slice/prompt.md). Shared-view return practice remains planned. |
 | Image layout | Reshape and permute a non-square image to channel-first layout. | — |
 | Noncontiguous layout | Flatten a transposed or stepped input in logical order and observe its storage relationship. | — |
 | Expansion and copying | Compare a broadcast expansion with an independently writable copy. | — |
@@ -36,7 +36,7 @@ These skills apply to both libraries. Use the drill link for your track.
 | Masked replacement and assignment | Compare a shape-preserving new result with assignment that intentionally mutates shared storage. | — |
 | Mask alignment | Apply each timestep flag across features without storing repeated masks. | — |
 | Slicing and masks | Select valid rows from a slice using a mask aligned to the original input. | — |
-| Repeated destinations | Sum all contributions at repeated indices and leave unused destinations at zero. | — |
+| Repeated destinations | Sum all contributions at repeated indices and leave unused destinations at zero. | [NumPy](../tensor_drills/practice/drills/numpy/indexed-sum/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/indexed-sum/prompt.md) |
 | Aligning values and indices | Pair row maxima with their indices and keep labels aligned through a top-k selection. | — |
 | Causal masking | Compare query and key positions, then combine the mask with padding. | — |
 
@@ -46,7 +46,7 @@ These skills apply to both libraries. Use the drill link for your track.
 | --- | --- | --- |
 | Single-axis reductions | Reduce one axis while preserving the others. | — |
 | Multi-axis reductions | Reduce across several axes and retain dimensions so the result can broadcast when centering the input. | [NumPy](../tensor_drills/practice/drills/numpy/reduce-axes/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/reduce-axes/prompt.md) |
-| Broadcasting | Align per-timestep or per-sequence operands with a batch of sequences. | — |
+| Broadcasting | Align per-timestep or per-sequence operands with a batch of sequences. | Per-sequence offsets: [PyTorch](../tensor_drills/practice/drills/pytorch/sequence-offset/prompt.md) |
 | Broadcasting in a calculation | Apply sample offsets and feature scales, or broadcast a computed row mean to center an array. | — |
 | Masked mean | Count valid timesteps and handle an all-invalid sequence. | — |
 | Elementwise and matrix products | Compare the values of two products that have the same output shape. | — |

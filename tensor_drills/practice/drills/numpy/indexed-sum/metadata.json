@@ -1,0 +1,17 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Sum values into indexed destinations, adding all contributions at repeated indices.",
+  "topics": [
+    "indexing",
+    "reductions",
+    "dtypes"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Select values using supplied integer indices.",
+      "practice_drill": "numpy/row-gather"
+    }
+  ],
+  "workload": 1
+}

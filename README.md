@@ -25,7 +25,7 @@ The starter is unfinished, so this first check should fail. Edit `attempt.py` ne
 
 ## Choose a drill
 
-In either library, practice row gathering, Boolean masks, joining matrices, indexing, and reductions. If you already know how a PyTorch training loop works, try [classifier debugging](tensor_drills/practice/drills/pytorch/classifier/prompt.md) and [inline validation](tensor_drills/practice/drills/pytorch/inline-validation/prompt.md).
+In either library, practice row gathering, Boolean masks, joining matrices, indexing, reductions, independent slice repair, and indexed sums. PyTorch also has per-sequence broadcasting repair. If you already know how a PyTorch training loop works, try [classifier debugging](tensor_drills/practice/drills/pytorch/classifier/prompt.md) and [inline validation](tensor_drills/practice/drills/pytorch/inline-validation/prompt.md).
 
 See the skill map for available drills and what to practice next. [Shared skills](docs/SKILL_MAP.md#shared-skills) · [NumPy skills](docs/SKILL_MAP.md#numpy) · [PyTorch skills](docs/SKILL_MAP.md#pytorch)
 

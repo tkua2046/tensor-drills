@@ -66,7 +66,7 @@ class ListTests(unittest.TestCase):
 
         for filters in (
             ("--topic", "indexing", "--topic", "autograd"),
-            ("--library", "numpy", "--task-type", "debug"),
+            ("--library", "numpy", "--topic", "__missing_topic__"),
         ):
             with self.subTest(filters=filters):
                 result = self.run_list(*filters)
