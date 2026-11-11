@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tensor Drills catalog metadata",
+  "description": "The metadata.json file in a drill directory. The directory supplies the drill ID and library.",
+  "type": "object",
+  "required": ["scope", "task_type", "goal", "topics", "prerequisites", "workload"],
+  "additionalProperties": false,
+  "properties": {
+    "scope": {
+      "enum": ["atomic", "composite"]
+    },
+    "task_type": {
+      "enum": ["create", "debug"]
+    },
+    "goal": {
+      "description": "One observable outcome. Use the same sentence in the drill prompt.",
+      "type": "string",
+      "pattern": "\\S"
+    },
+    "topics": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "\\S"},
+      "uniqueItems": true
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["capability"],
+        "additionalProperties": false,
+        "properties": {
+          "capability": {"type": "string", "pattern": "\\S"},
+          "practice_drill": {
+            "description": "Optional ID of an existing drill that teaches or practices this capability.",
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*/[a-z0-9][a-z0-9-]*$"
+          }
+        }
+      }
+    },
+    "workload": {
+      "description": "Relative amount of work in the main attempt, assuming the learner meets the prerequisites.",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    }
+  }
+}

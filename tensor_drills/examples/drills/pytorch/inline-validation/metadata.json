@@ -1,0 +1,13 @@
+{
+  "scope": "composite",
+  "task_type": "debug",
+  "goal": "Diagnose incorrect behavior when validation runs between training updates, then verify the repair across batches.",
+  "topics": ["training-loop", "autograd", "evaluation"],
+  "prerequisites": [
+    {
+      "capability": "Follow a PyTorch training step and an evaluation pass, and explain how their state can affect the next call.",
+      "practice_drill": "pytorch/classifier"
+    }
+  ],
+  "workload": 3
+}

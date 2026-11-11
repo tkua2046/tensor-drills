@@ -1,0 +1,1 @@
+include CHANGELOG.md DEVNOTES.md docs/DESIGN.md docs/drill-metadata.schema.json check.py

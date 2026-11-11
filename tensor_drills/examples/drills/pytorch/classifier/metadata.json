@@ -1,0 +1,10 @@
+{
+  "scope": "composite",
+  "task_type": "debug",
+  "goal": "Diagnose incorrect behavior across training and evaluation, then verify the repair across multiple batches.",
+  "topics": ["training-loop", "autograd", "evaluation"],
+  "prerequisites": [
+    {"capability": "Follow the forward pass, loss, backward pass, and optimizer step in a basic training loop."}
+  ],
+  "workload": 3
+}
