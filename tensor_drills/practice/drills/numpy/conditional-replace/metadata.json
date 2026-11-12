@@ -1,0 +1,17 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Return an independent, shape-preserving result with negative entries replaced by zero.",
+  "topics": [
+    "masking",
+    "storage",
+    "shapes"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Construct a Boolean mask from comparisons.",
+      "practice_drill": "numpy/build-mask"
+    }
+  ],
+  "workload": 1
+}

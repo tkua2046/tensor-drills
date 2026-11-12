@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "debug",
+  "goal": "Return one mean per row of a 2D array.",
+  "topics": [
+    "reductions",
+    "axes",
+    "shapes"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Read the labeled axes and understand the arithmetic mean of a sequence of numbers."
+    }
+  ],
+  "workload": 1
+}

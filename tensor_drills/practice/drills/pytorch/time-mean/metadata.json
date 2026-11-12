@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Average over time to reduce `(batch, time, features)` to `(batch, features)`.",
+  "topics": [
+    "reductions",
+    "axes",
+    "shapes"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Read the labeled axes and understand the arithmetic mean of a sequence of numbers."
+    }
+  ],
+  "workload": 1
+}

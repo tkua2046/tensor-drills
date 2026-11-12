@@ -14,11 +14,11 @@ These skills apply to both libraries. Use the drill link for your track.
 
 | Skill | What to practice | Bundled drills |
 | --- | --- | --- |
-| Allocation and dtype conversion | Allocate with a target shape and dtype. Cast existing values and check truncation. | — |
+| Allocation and dtype conversion | Allocate with a target shape and dtype. Cast existing values and check truncation. | Dtype conversion: [NumPy](../tensor_drills/practice/drills/numpy/convert-dtype/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/convert-dtype/prompt.md). General shape allocation remains deferred. |
 | Reshape | Split an axis into heads and merge them while preserving value order. | — |
 | Axis movement and insertion | Check positions after a permutation and preserve a singleton batch when squeezing. | — |
 | Stacking and concatenation | Compare stacking on a new axis with concatenating along an existing axis. | [NumPy](../tensor_drills/practice/drills/numpy/stack-concat/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/stack-concat/prompt.md) |
-| Splitting | Split unequal sections and join them in order. | — |
+| Splitting | Split unequal sections and join them in order. | [NumPy](../tensor_drills/practice/drills/numpy/split-sections/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/split-sections/prompt.md) |
 | Slicing and storage | Create a stepped view and an independent copy. Diagnose unintended mutation through a view. | Independent result and alias diagnosis: [NumPy](../tensor_drills/practice/drills/numpy/independent-slice/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/independent-slice/prompt.md). Shared-view return practice remains planned. |
 | Image layout | Reshape and permute a non-square image to channel-first layout. | — |
 | Noncontiguous layout | Flatten a transposed or stepped input in logical order and observe its storage relationship. | — |
@@ -29,11 +29,11 @@ These skills apply to both libraries. Use the drill link for your track.
 | Skill | What to practice | Bundled drills |
 | --- | --- | --- |
 | Gathering one value per row | Gather one value per row using its column index. | [NumPy](../tensor_drills/practice/drills/numpy/row-gather/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/row-gather/prompt.md) |
-| Gathering several values per row | Gather several values per row using their column indices. | — |
+| Gathering several values per row | Gather several values per row using their column indices. | [NumPy](../tensor_drills/practice/drills/numpy/row-gather-many/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/row-gather-many/prompt.md) |
 | Paired and Cartesian indexing | Select coordinate pairs and a grid of combinations. Preserve index order and repeats. | [NumPy](../tensor_drills/practice/drills/numpy/paired-cartesian/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/paired-cartesian/prompt.md) |
 | Boolean masks | Combine bounds, invert a condition, and test values at each boundary. | [NumPy](../tensor_drills/practice/drills/numpy/build-mask/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/build-mask/prompt.md) |
 | Boolean selection | Select individual elements or retain whole rows, including when no rows match. | — |
-| Masked replacement and assignment | Compare a shape-preserving new result with assignment that intentionally mutates shared storage. | — |
+| Masked replacement and assignment | Compare a shape-preserving new result with assignment that intentionally mutates shared storage. | Replacement: [NumPy](../tensor_drills/practice/drills/numpy/conditional-replace/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/conditional-replace/prompt.md). Assignment: [NumPy](../tensor_drills/practice/drills/numpy/masked-assign/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/masked-assign/prompt.md). |
 | Mask alignment | Apply each timestep flag across features without storing repeated masks. | — |
 | Slicing and masks | Select valid rows from a slice using a mask aligned to the original input. | — |
 | Repeated destinations | Sum all contributions at repeated indices and leave unused destinations at zero. | [NumPy](../tensor_drills/practice/drills/numpy/indexed-sum/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/indexed-sum/prompt.md) |
@@ -44,13 +44,13 @@ These skills apply to both libraries. Use the drill link for your track.
 
 | Skill | What to practice | Bundled drills |
 | --- | --- | --- |
-| Single-axis reductions | Reduce one axis while preserving the others. | — |
+| Single-axis reductions | Reduce one axis while preserving the others. | [NumPy row mean](../tensor_drills/practice/drills/numpy/row-mean/prompt.md) · [PyTorch time mean](../tensor_drills/practice/drills/pytorch/time-mean/prompt.md) |
 | Multi-axis reductions | Reduce across several axes and retain dimensions so the result can broadcast when centering the input. | [NumPy](../tensor_drills/practice/drills/numpy/reduce-axes/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/reduce-axes/prompt.md) |
 | Broadcasting | Align per-timestep or per-sequence operands with a batch of sequences. | Per-sequence offsets: [PyTorch](../tensor_drills/practice/drills/pytorch/sequence-offset/prompt.md) |
 | Broadcasting in a calculation | Apply sample offsets and feature scales, or broadcast a computed row mean to center an array. | — |
 | Masked mean | Count valid timesteps and handle an all-invalid sequence. | — |
 | Elementwise and matrix products | Compare the values of two products that have the same output shape. | — |
-| Batched contraction | Apply shared weights to distinct batch items with rectangular inputs. | — |
+| Batched contraction | Apply shared weights to distinct batch items with rectangular inputs. | [NumPy](../tensor_drills/practice/drills/numpy/shared-weight-matmul/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/shared-weight-matmul/prompt.md) |
 | Batched projection | Apply each batch item's own weight matrix to its masked mean. | — |
 
 ## NumPy

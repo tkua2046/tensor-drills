@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Multiply each batch item of shape `(rows, in_features)` by the same `(in_features, out_features)` matrix.",
+  "topics": [
+    "linear-algebra",
+    "shapes",
+    "broadcasting"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Read labeled batch, row, and feature axes and a matrix multiplication equation."
+    }
+  ],
+  "workload": 1
+}

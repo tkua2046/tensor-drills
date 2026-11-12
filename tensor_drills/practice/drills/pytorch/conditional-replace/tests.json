@@ -1,0 +1,141 @@
+{
+  "dependencies": [
+    "torch"
+  ],
+  "cases": [
+    {
+      "name": "mixed values",
+      "inputs": {
+        "values": [
+          [
+            -2,
+            0
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "shape": [
+          2,
+          2
+        ],
+        "dtype": "float32",
+        "strided": false
+      },
+      "expected": [
+        0,
+        0,
+        3,
+        0
+      ]
+    },
+    {
+      "name": "no negatives",
+      "inputs": {
+        "values": [
+          0,
+          3
+        ],
+        "shape": [
+          2
+        ],
+        "dtype": "float64",
+        "strided": false
+      },
+      "expected": [
+        0,
+        3
+      ]
+    },
+    {
+      "name": "all negative",
+      "inputs": {
+        "values": [
+          -2,
+          -1,
+          -9
+        ],
+        "shape": [
+          3
+        ],
+        "dtype": "int32",
+        "strided": false
+      },
+      "expected": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "strided matrix",
+      "inputs": {
+        "values": [
+          [
+            -0.5,
+            2,
+            0
+          ],
+          [
+            3.25,
+            -4,
+            1.5
+          ]
+        ],
+        "shape": [
+          2,
+          3
+        ],
+        "dtype": "float64",
+        "strided": true
+      },
+      "expected": [
+        0,
+        2,
+        0,
+        3.25,
+        0,
+        1.5
+      ]
+    },
+    {
+      "name": "empty axes",
+      "inputs": {
+        "values": [],
+        "shape": [
+          2,
+          0,
+          3
+        ],
+        "dtype": "int64",
+        "strided": false
+      },
+      "expected": []
+    },
+    {
+      "name": "singleton axes",
+      "inputs": {
+        "values": [
+          [
+            [
+              -1,
+              2
+            ]
+          ]
+        ],
+        "shape": [
+          1,
+          1,
+          2
+        ],
+        "dtype": "int64",
+        "strided": false
+      },
+      "expected": [
+        0,
+        2
+      ]
+    }
+  ]
+}

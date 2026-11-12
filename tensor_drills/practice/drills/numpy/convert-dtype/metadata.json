@@ -1,0 +1,15 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Convert numeric input to the requested dtype while preserving its shape.",
+  "topics": [
+    "dtypes",
+    "shapes"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Read the shape and dtype of an array or tensor."
+    }
+  ],
+  "workload": 1
+}

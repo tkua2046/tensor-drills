@@ -6,7 +6,7 @@ Use the delivery sequence and authoring brief for your track when adding a bundl
 
 When a plausible mistake could pass an obvious example, ask a reviewer to work through the brief before writing the drill. Give them the intended learning outcome and ask for three things.
 
-1. **Clarify the contract.** State what the learner should demonstrate and flag any missing assumption that changes which solutions are valid.
+1. **Clarify the contract.** State what the learner should demonstrate and flag any missing assumption that changes which solutions are valid. For arithmetic tasks, check that the dtype, numeric domain, and error allowance admit the intended native operations, including cancellation and underflow.
 2. **Find a case that exposes a mistake.** Name a plausible wrong approach and give a small input that separates it from correct behavior. Record the expected result or state change and what the wrong approach would do. For a debug drill, identify the symptom the starter should reproduce.
 3. **Decide how to assess it.** Say what a fixed check can observe and what the rubric should ask the learner to demonstrate in their code or explanation. Keep room for equivalent valid approaches.
 
@@ -132,6 +132,7 @@ and choose cases before authoring the drill.
 
 Write the learner contract and its examples before implementing checks.
 Define the accepted shapes, dtypes, scalar bounds, and mutations that matter.
+State whether floating inputs must be finite.
 Choose cases that distinguish plausible mistakes, including combinations of
 allowed inputs that change behavior. Derive expected results from the contract.
 

@@ -1,0 +1,17 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Gather several columns independently for each row, preserving selection order and repeats.",
+  "topics": [
+    "indexing",
+    "shapes",
+    "dtypes"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Gather one value per row using its own column index.",
+      "practice_drill": "pytorch/row-gather"
+    }
+  ],
+  "workload": 1
+}

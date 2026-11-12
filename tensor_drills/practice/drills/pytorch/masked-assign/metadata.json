@@ -1,0 +1,17 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Replace selected entries in place so existing aliases observe the change.",
+  "topics": [
+    "masking",
+    "storage",
+    "indexing"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Explain why mutation through a basic slice can reach its source.",
+      "practice_drill": "pytorch/independent-slice"
+    }
+  ],
+  "workload": 1
+}

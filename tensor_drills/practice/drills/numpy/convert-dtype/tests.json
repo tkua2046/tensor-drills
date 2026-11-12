@@ -1,0 +1,181 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "truncate toward zero",
+      "inputs": {
+        "values": [
+          [
+            -2.75,
+            2.75
+          ],
+          [
+            0,
+            1.9
+          ]
+        ],
+        "shape": [
+          2,
+          2
+        ],
+        "dtype": "float64",
+        "target_dtype": "int64",
+        "strided": false
+      },
+      "expected": [
+        -2,
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "name": "integers to float",
+      "inputs": {
+        "values": [
+          [
+            1,
+            -2,
+            3
+          ],
+          [
+            4,
+            0,
+            7
+          ]
+        ],
+        "shape": [
+          2,
+          3
+        ],
+        "dtype": "int32",
+        "target_dtype": "float32",
+        "strided": false
+      },
+      "expected": [
+        1.0,
+        -2.0,
+        3.0,
+        4.0,
+        0.0,
+        7.0
+      ]
+    },
+    {
+      "name": "widen stored float",
+      "inputs": {
+        "values": [
+          0.1,
+          -0.1,
+          1.5
+        ],
+        "shape": [
+          3
+        ],
+        "dtype": "float32",
+        "target_dtype": "float64",
+        "strided": false
+      },
+      "expected": [
+        0.10000000149011612,
+        -0.10000000149011612,
+        1.5
+      ]
+    },
+    {
+      "name": "narrow float",
+      "inputs": {
+        "values": [
+          0.1,
+          -0.1,
+          2.75
+        ],
+        "shape": [
+          3
+        ],
+        "dtype": "float64",
+        "target_dtype": "float32",
+        "strided": false
+      },
+      "expected": [
+        0.10000000149011612,
+        -0.10000000149011612,
+        2.75
+      ]
+    },
+    {
+      "name": "same dtype",
+      "inputs": {
+        "values": [
+          [
+            [
+              1.5,
+              -2.5
+            ]
+          ]
+        ],
+        "shape": [
+          1,
+          1,
+          2
+        ],
+        "dtype": "float32",
+        "target_dtype": "float32",
+        "strided": false
+      },
+      "expected": [
+        1.5,
+        -2.5
+      ]
+    },
+    {
+      "name": "empty axes",
+      "inputs": {
+        "values": [],
+        "shape": [
+          2,
+          0,
+          3
+        ],
+        "dtype": "int64",
+        "target_dtype": "float64",
+        "strided": false
+      },
+      "expected": []
+    },
+    {
+      "name": "strided input",
+      "inputs": {
+        "values": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            -4,
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          2,
+          3
+        ],
+        "dtype": "int64",
+        "target_dtype": "int32",
+        "strided": true
+      },
+      "expected": [
+        1,
+        2,
+        3,
+        -4,
+        5,
+        6
+      ]
+    }
+  ]
+}

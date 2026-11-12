@@ -1,0 +1,376 @@
+{
+  "dependencies": [
+    "torch"
+  ],
+  "cases": [
+    {
+      "name": "unequal columns",
+      "inputs": {
+        "values": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ]
+        ],
+        "shape": [
+          2,
+          7
+        ],
+        "sizes": [
+          2,
+          3,
+          2
+        ],
+        "axis": 1,
+        "dtype": "int64",
+        "strided": false
+      },
+      "expected": {
+        "parts": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              11,
+              12
+            ]
+          ],
+          [
+            [
+              3,
+              4,
+              5
+            ],
+            [
+              13,
+              14,
+              15
+            ]
+          ],
+          [
+            [
+              6,
+              7
+            ],
+            [
+              16,
+              17
+            ]
+          ]
+        ],
+        "restored": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ]
+        ]
+      }
+    },
+    {
+      "name": "split rows",
+      "inputs": {
+        "values": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          3,
+          2
+        ],
+        "sizes": [
+          1,
+          2
+        ],
+        "axis": 0,
+        "dtype": "float32",
+        "strided": false
+      },
+      "expected": {
+        "parts": [
+          [
+            [
+              1,
+              2
+            ]
+          ],
+          [
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              6
+            ]
+          ]
+        ],
+        "restored": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "name": "zero-size middle section",
+      "inputs": {
+        "values": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          2,
+          3
+        ],
+        "sizes": [
+          2,
+          0,
+          1
+        ],
+        "axis": 1,
+        "dtype": "int64",
+        "strided": false
+      },
+      "expected": {
+        "parts": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          [
+            [],
+            []
+          ],
+          [
+            [
+              3
+            ],
+            [
+              6
+            ]
+          ]
+        ],
+        "restored": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ]
+      }
+    },
+    {
+      "name": "empty axis",
+      "inputs": {
+        "values": [
+          [],
+          []
+        ],
+        "shape": [
+          2,
+          0
+        ],
+        "sizes": [
+          0,
+          0
+        ],
+        "axis": 1,
+        "dtype": "float64",
+        "strided": false
+      },
+      "expected": {
+        "parts": [
+          [
+            [],
+            []
+          ],
+          [
+            [],
+            []
+          ]
+        ],
+        "restored": [
+          [],
+          []
+        ]
+      }
+    },
+    {
+      "name": "one section",
+      "inputs": {
+        "values": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "shape": [
+          1,
+          3
+        ],
+        "sizes": [
+          1
+        ],
+        "axis": 0,
+        "dtype": "int64",
+        "strided": false
+      },
+      "expected": {
+        "parts": [
+          [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        ],
+        "restored": [
+          [
+            1,
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "name": "strided matrix",
+      "inputs": {
+        "values": [
+          [
+            1.5,
+            2,
+            3.25
+          ],
+          [
+            4,
+            -5.5,
+            6
+          ]
+        ],
+        "shape": [
+          2,
+          3
+        ],
+        "sizes": [
+          1,
+          1,
+          1
+        ],
+        "axis": 1,
+        "dtype": "float64",
+        "strided": true
+      },
+      "expected": {
+        "parts": [
+          [
+            [
+              1.5
+            ],
+            [
+              4
+            ]
+          ],
+          [
+            [
+              2
+            ],
+            [
+              -5.5
+            ]
+          ],
+          [
+            [
+              3.25
+            ],
+            [
+              6
+            ]
+          ]
+        ],
+        "restored": [
+          [
+            1.5,
+            2,
+            3.25
+          ],
+          [
+            4,
+            -5.5,
+            6
+          ]
+        ]
+      }
+    }
+  ]
+}

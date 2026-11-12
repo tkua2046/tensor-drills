@@ -1,6 +1,6 @@
 # Practice NumPy and PyTorch
 
-Start with [NumPy row gathering](drills/numpy/row-gather/prompt.md) or [PyTorch row gathering](drills/pytorch/row-gather/prompt.md). Both tracks have drills on masks, matrix joining, indexing, reductions, independent slice repair, and indexed sums. PyTorch also has per-sequence broadcasting repair.
+Start with [NumPy row gathering](drills/numpy/row-gather/prompt.md) or [PyTorch row gathering](drills/pytorch/row-gather/prompt.md). Both tracks cover core shapes, indexing, masks, storage, dtypes, reductions, and matrix products.
 
 If arrays or tensors are new to you, try the [optional warm-up](#optional-warm-up) first.
 

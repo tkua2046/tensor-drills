@@ -1,0 +1,263 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "different repeated columns",
+      "inputs": {
+        "values": [
+          [
+            10,
+            20,
+            30
+          ],
+          [
+            40,
+            50,
+            60
+          ]
+        ],
+        "shape": [
+          2,
+          3
+        ],
+        "columns": [
+          [
+            2,
+            0,
+            2
+          ],
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        "index_shape": [
+          2,
+          3
+        ],
+        "dtype": "int64",
+        "strided": false
+      },
+      "expected": [
+        30,
+        10,
+        30,
+        50,
+        50,
+        40
+      ]
+    },
+    {
+      "name": "one row",
+      "inputs": {
+        "values": [
+          [
+            2,
+            5,
+            9
+          ]
+        ],
+        "shape": [
+          1,
+          3
+        ],
+        "columns": [
+          [
+            2,
+            0
+          ]
+        ],
+        "index_shape": [
+          1,
+          2
+        ],
+        "dtype": "int32",
+        "strided": false
+      },
+      "expected": [
+        9,
+        2
+      ]
+    },
+    {
+      "name": "one selection",
+      "inputs": {
+        "values": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          3,
+          2
+        ],
+        "columns": [
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "index_shape": [
+          3,
+          1
+        ],
+        "dtype": "float32",
+        "strided": false
+      },
+      "expected": [
+        2,
+        3,
+        6
+      ]
+    },
+    {
+      "name": "zero selections",
+      "inputs": {
+        "values": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          2,
+          3
+        ],
+        "columns": [
+          [],
+          []
+        ],
+        "index_shape": [
+          2,
+          0
+        ],
+        "dtype": "float64",
+        "strided": false
+      },
+      "expected": []
+    },
+    {
+      "name": "zero rows",
+      "inputs": {
+        "values": [],
+        "shape": [
+          0,
+          4
+        ],
+        "columns": [],
+        "index_shape": [
+          0,
+          2
+        ],
+        "dtype": "int64",
+        "strided": false
+      },
+      "expected": []
+    },
+    {
+      "name": "one column",
+      "inputs": {
+        "values": [
+          [
+            1.5
+          ],
+          [
+            -2.25
+          ]
+        ],
+        "shape": [
+          2,
+          1
+        ],
+        "columns": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "index_shape": [
+          2,
+          2
+        ],
+        "dtype": "float64",
+        "strided": false
+      },
+      "expected": [
+        1.5,
+        1.5,
+        -2.25,
+        -2.25
+      ]
+    },
+    {
+      "name": "strided values",
+      "inputs": {
+        "values": [
+          [
+            1,
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ],
+        "shape": [
+          2,
+          3
+        ],
+        "columns": [
+          [
+            2,
+            0
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "index_shape": [
+          2,
+          2
+        ],
+        "dtype": "float64",
+        "strided": true
+      },
+      "expected": [
+        3,
+        1,
+        5,
+        6
+      ]
+    }
+  ]
+}

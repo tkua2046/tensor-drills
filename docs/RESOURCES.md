@@ -48,13 +48,25 @@ Link each drill record to its prompt when available. For each public source used
 | [`pytorch/independent-slice`](../tensor_drills/practice/drills/pytorch/independent-slice/prompt.md) | Original | New task and fixtures distinguish source preservation during an edit from independence under later writes. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#shapes-dtypes-and-storage). |
 | [`pytorch/indexed-sum`](../tensor_drills/practice/drills/pytorch/indexed-sum/prompt.md) | Original | New task and fixtures distinguish repeated-index accumulation, explicit output size, and dtype preservation. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
 | [`pytorch/sequence-offset`](../tensor_drills/practice/drills/pytorch/sequence-offset/prompt.md) | Original | New task and fixtures contrast unequal-axis errors with equal-axis misalignment. PyTorch broadcasting semantics remains a behavior reference in [reviewed resources](#reviewed-resources). [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#pytorch-selection-and-broadcasting). |
+| [`numpy/convert-dtype`](../tensor_drills/practice/drills/numpy/convert-dtype/prompt.md) | Original | Native casting, shape preservation, and stored-value semantics. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#shapes-dtypes-and-storage). |
+| [`numpy/split-sections`](../tensor_drills/practice/drills/numpy/split-sections/prompt.md) | Original | Unequal sections, zero-sized parts, and reconstruction. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#shapes-dtypes-and-storage). |
+| [`numpy/row-gather-many`](../tensor_drills/practice/drills/numpy/row-gather-many/prompt.md) | Original | Per-row rank-two indices, ordered repeats, and empty shapes. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
+| [`numpy/conditional-replace`](../tensor_drills/practice/drills/numpy/conditional-replace/prompt.md) | Original | Independent shape-preserving replacement, including no-op inputs. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
+| [`numpy/masked-assign`](../tensor_drills/practice/drills/numpy/masked-assign/prompt.md) | Original | Intentional mutation through aliases and noncontiguous views. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
+| [`numpy/shared-weight-matmul`](../tensor_drills/practice/drills/numpy/shared-weight-matmul/prompt.md) | Original | Shared feature contraction with batch-local results and numerical allowances. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#reductions-and-projection). |
+| [`pytorch/convert-dtype`](../tensor_drills/practice/drills/pytorch/convert-dtype/prompt.md) | Original | Native casting, shape preservation, and stored-value semantics. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#shapes-dtypes-and-storage). |
+| [`pytorch/split-sections`](../tensor_drills/practice/drills/pytorch/split-sections/prompt.md) | Original | Unequal sections, zero-sized parts, and reconstruction. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#shapes-dtypes-and-storage). |
+| [`pytorch/row-gather-many`](../tensor_drills/practice/drills/pytorch/row-gather-many/prompt.md) | Original | Per-row rank-two indices, ordered repeats, and empty shapes. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
+| [`pytorch/conditional-replace`](../tensor_drills/practice/drills/pytorch/conditional-replace/prompt.md) | Original | Independent shape-preserving replacement, including no-op inputs. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
+| [`pytorch/masked-assign`](../tensor_drills/practice/drills/pytorch/masked-assign/prompt.md) | Original | Intentional mutation through aliases and noncontiguous views. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
+| [`pytorch/shared-weight-matmul`](../tensor_drills/practice/drills/pytorch/shared-weight-matmul/prompt.md) | Original | Shared feature contraction with batch-local results and numerical allowances. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#reductions-and-projection). |
+| [`numpy/row-mean`](../tensor_drills/practice/drills/numpy/row-mean/prompt.md) | Original | Axis repair with surviving row shape. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#numpy-reductions-and-broadcasting). NumPy Quickstart remains a behavior reference in [reviewed resources](#reviewed-resources). |
+| [`pytorch/time-mean`](../tensor_drills/practice/drills/pytorch/time-mean/prompt.md) | Original | Time reduction with surviving batch and feature axes. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#pytorch-selection-and-broadcasting). PyTorch tensor fundamentals remains a curriculum reference in [reviewed resources](#reviewed-resources). |
 
 ### Planned drills
 
 | Drill | Origin | Source use |
 | --- | --- | --- |
-| `numpy/row-mean` | Original | NumPy Quickstart as a behavior reference for reductions. |
 | `numpy/row-center` | Original | NumPy broadcasting rules as a behavior reference. |
-| `pytorch/time-mean` | Original | The PyTorch Fundamentals exercises inform the position of reductions in the skill map. |
 
 Update the skill map and the drill source record in the same change as the drill. When revisiting a source, record the section or revision actually consulted. [Skill map](SKILL_MAP.md)

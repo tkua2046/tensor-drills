@@ -1,0 +1,17 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Split an array or tensor into unequal sections along a supplied axis and rejoin them in order.",
+  "topics": [
+    "shapes",
+    "axes",
+    "indexing"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Join two matrices along an existing axis.",
+      "practice_drill": "numpy/stack-concat"
+    }
+  ],
+  "workload": 2
+}

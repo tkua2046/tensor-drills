@@ -1,0 +1,189 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "rectangular rows",
+      "inputs": {
+        "values": [
+          [
+            1,
+            2,
+            6
+          ],
+          [
+            3,
+            8,
+            10
+          ]
+        ],
+        "shape": [
+          2,
+          3
+        ],
+        "dtype": "float64",
+        "strided": false
+      },
+      "expected": [
+        3.0,
+        7.0
+      ]
+    },
+    {
+      "name": "square with different row means",
+      "inputs": {
+        "values": [
+          [
+            2,
+            8
+          ],
+          [
+            10,
+            20
+          ]
+        ],
+        "shape": [
+          2,
+          2
+        ],
+        "dtype": "float32",
+        "strided": false
+      },
+      "expected": [
+        5.0,
+        15.0
+      ]
+    },
+    {
+      "name": "one row",
+      "inputs": {
+        "values": [
+          [
+            1,
+            2,
+            4
+          ]
+        ],
+        "shape": [
+          1,
+          3
+        ],
+        "dtype": "float32",
+        "strided": false
+      },
+      "expected": [
+        2.3333333333333335
+      ]
+    },
+    {
+      "name": "one column",
+      "inputs": {
+        "values": [
+          [
+            3.25
+          ],
+          [
+            -1.5
+          ]
+        ],
+        "shape": [
+          2,
+          1
+        ],
+        "dtype": "float64",
+        "strided": false
+      },
+      "expected": [
+        3.25,
+        -1.5
+      ]
+    },
+    {
+      "name": "empty rows",
+      "inputs": {
+        "values": [],
+        "shape": [
+          0,
+          3
+        ],
+        "dtype": "float32",
+        "strided": false
+      },
+      "expected": []
+    },
+    {
+      "name": "strided rows",
+      "inputs": {
+        "values": [
+          [
+            1.5,
+            2,
+            4
+          ],
+          [
+            3,
+            -0.5,
+            6
+          ]
+        ],
+        "shape": [
+          2,
+          3
+        ],
+        "dtype": "float64",
+        "strided": true
+      },
+      "expected": [
+        2.5,
+        2.8333333333333335
+      ]
+    },
+    {
+      "name": "cancellation",
+      "inputs": {
+        "values": [
+          [
+            100,
+            1e-05,
+            -100
+          ]
+        ],
+        "shape": [
+          1,
+          3
+        ],
+        "dtype": "float32",
+        "strided": false
+      },
+      "expected": [
+        3.3333333333333337e-06
+      ]
+    },
+    {
+      "name": "separate row magnitudes",
+      "inputs": {
+        "values": [
+          [
+            100,
+            100
+          ],
+          [
+            1e-05,
+            1e-05
+          ]
+        ],
+        "shape": [
+          2,
+          2
+        ],
+        "dtype": "float64",
+        "strided": false
+      },
+      "expected": [
+        100.0,
+        1e-05
+      ]
+    }
+  ]
+}
