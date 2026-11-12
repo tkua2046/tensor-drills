@@ -99,8 +99,8 @@ Start with the [shared skills](#shared-skills), then explore PyTorch autograd, m
 | --- | --- | --- |
 | Device placement | Keep model parameters, inputs, and intermediates on compatible devices. | [Device forward](../tensor_drills/practice/drills/pytorch/device-forward/prompt.md) |
 | NumPy conversion | Compare shared CPU storage with independent copies and capture a logging snapshot of a tensor that tracks gradients. | [NumPy boundary](../tensor_drills/practice/drills/pytorch/numpy-boundary/prompt.md) (requires both packages) |
-| Batched gathering | Gather a class score per token and gather beam information on a middle axis. | — |
-| Head layout and storage | Pack a sliced head tensor with a nonzero storage offset, explicit feature order, and contiguous output. | — |
+| Batched gathering | Gather a class score per token and beam information on a middle axis; trace gradients through repeated selections. | — |
+| Head layout and storage | Pack a sliced head tensor with a nonzero storage offset, explicit feature order, contiguous output and a preserved gradient path. | — |
 | Routing and accumulation | Select a shortlist, keep features aligned with destinations, and sum repeated destinations within each batch. | — |
 
 ### PyTorch autograd and training
