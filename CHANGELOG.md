@@ -2,37 +2,26 @@
 
 ## Unreleased
 
+## 0.2.0 - 2026-11-12
+
+### Added
+
+- Expand the bundled catalog to 116 independently runnable drills: 55 NumPy and 61 PyTorch, each with a learner prompt, starter, fixed cases and review rubric.
+- Practice core shapes, dtypes, indexing, masks, reductions, broadcasting, storage and matrix products in either library, with an optional indexing warm-up.
+- Practice NumPy stable numerics, sampling, grouped statistics, sequence loss, search, partition selection, overlapping windows, streaming entropy, linear systems, regression and masked attention.
+- Practice PyTorch modules, device placement, NumPy conversion, autograd, model state, token losses, routing, training updates, manual/custom gradients and causal attention diagnosis.
+- Follow independent NumPy and PyTorch learning paths through the skill map and linked prerequisite practice.
+- Author drills with documented briefs, a six-file template, fresh-workspace verification, adversarial assessment and whole-catalog review workflows.
+
+### Changed
+
+- Present Tensor Drills as a standalone NumPy and PyTorch learning library, with separate content, infrastructure and contributor documentation.
+
 ### Fixed
 
 - Detect lossy int64 comparisons and selections with adjacent-large-integer cases in eight drills.
 - Include mask construction, replacement and assignment under the `masks` topic while preserving `masking` filters.
 - Match NumPy softmax's prerequisite description to the row-mean practice it links.
-
-### Added
-
-- Document adversarial assessment and whole-catalog review workflows with a reusable content review template.
-
-- Add PyTorch Milestone 6 practice with standalone contracts, fixed cases and assessment rubrics.
-
-- Add NumPy Milestone 6 practice with standalone contracts, fixed cases and assessment rubrics.
-
-- Add PyTorch Milestone 5 practice with standalone contracts, fixed cases and assessment rubrics.
-
-- Add NumPy Milestone 5 practice with standalone contracts, fixed cases and assessment rubrics.
-
-- Add PyTorch Milestone 4 practice in layout, shared storage, selection, masks, broadcasting and per-item projection.
-
-- Add NumPy Milestone 4 practice in layout, shared storage, selection, masks, broadcasting and per-item projection.
-
-- Add PyTorch module, autograd, device, conversion, batching, state restoration, training-step and row-softmax foundations as an independent delivery.
-
-- Add NumPy numerical foundations: stable row softmax, precise float accumulation, safe integer accumulation, and local seeded sampling.
-
-- Add core practice in both tracks with dtype conversion, unequal splits, per-row multiple gathering, replacement, masked assignment, shared-weight matrix products, and single-axis means.
-- Practice independent slice repair and repeated-index accumulation in both tracks, plus PyTorch per-sequence broadcasting repair.
-- Practice Boolean masks, stacking and concatenation, paired and Cartesian indexing, and multi-axis reductions in both NumPy and PyTorch.
-- Start PyTorch practice with an atomic row-gathering drill.
-- Try an optional array and tensor indexing warm-up from the practice workspace.
 
 ## 0.1.0 - 2026-11-11
 
