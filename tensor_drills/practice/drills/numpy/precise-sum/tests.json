@@ -1,0 +1,75 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "ordinary fractions",
+      "inputs": {
+        "values": [
+          1.25,
+          -0.5,
+          2
+        ],
+        "dtype": "float32"
+      },
+      "expected": 2.75
+    },
+    {
+      "name": "lost unit residual",
+      "inputs": {
+        "values": [
+          100000000.0,
+          1,
+          -100000000.0
+        ],
+        "dtype": "float32"
+      },
+      "expected": 1
+    },
+    {
+      "name": "negative residual",
+      "inputs": {
+        "values": [
+          100000000.0,
+          -0.25,
+          -100000000.0
+        ],
+        "dtype": "float32"
+      },
+      "expected": -0.25
+    },
+    {
+      "name": "multiple contributions",
+      "inputs": {
+        "values": [
+          100000000.0,
+          0.25,
+          0.5,
+          0.75,
+          -100000000.0
+        ],
+        "dtype": "float32"
+      },
+      "expected": 1.5
+    },
+    {
+      "name": "empty readings",
+      "inputs": {
+        "values": [],
+        "dtype": "float32"
+      },
+      "expected": 0
+    },
+    {
+      "name": "one reading",
+      "inputs": {
+        "values": [
+          -2.75
+        ],
+        "dtype": "float32"
+      },
+      "expected": -2.75
+    }
+  ]
+}

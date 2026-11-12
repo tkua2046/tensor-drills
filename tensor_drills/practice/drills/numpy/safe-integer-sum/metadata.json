@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Sum int32 readings exactly in an int64 accumulator.",
+  "topics": [
+    "reductions",
+    "dtypes",
+    "numerics"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Read array shapes, dtypes, and simple reductions."
+    }
+  ],
+  "workload": 1
+}

@@ -1,0 +1,121 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "seed seven",
+      "inputs": {
+        "rows": 10,
+        "count": 4,
+        "seed": 7,
+        "other_seed": 8
+      },
+      "expected": {
+        "samples": [
+          6,
+          5,
+          9,
+          8
+        ],
+        "other": [
+          8,
+          2,
+          9,
+          5
+        ]
+      }
+    },
+    {
+      "name": "seed twenty-nine",
+      "inputs": {
+        "rows": 10,
+        "count": 4,
+        "seed": 29,
+        "other_seed": 30
+      },
+      "expected": {
+        "samples": [
+          9,
+          5,
+          0,
+          6
+        ],
+        "other": [
+          6,
+          4,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "name": "full draw",
+      "inputs": {
+        "rows": 5,
+        "count": 5,
+        "seed": 11,
+        "other_seed": 12
+      },
+      "expected": {
+        "samples": [
+          1,
+          0,
+          3,
+          4,
+          2
+        ],
+        "other": [
+          1,
+          2,
+          3,
+          4,
+          0
+        ]
+      }
+    },
+    {
+      "name": "empty draw",
+      "inputs": {
+        "rows": 5,
+        "count": 0,
+        "seed": 8,
+        "other_seed": 9
+      },
+      "expected": {
+        "samples": [],
+        "other": []
+      }
+    },
+    {
+      "name": "empty population",
+      "inputs": {
+        "rows": 0,
+        "count": 0,
+        "seed": 19,
+        "other_seed": 20
+      },
+      "expected": {
+        "samples": [],
+        "other": []
+      }
+    },
+    {
+      "name": "one row",
+      "inputs": {
+        "rows": 1,
+        "count": 1,
+        "seed": 3,
+        "other_seed": 4
+      },
+      "expected": {
+        "samples": [
+          0
+        ],
+        "other": [
+          0
+        ]
+      }
+    }
+  ]
+}

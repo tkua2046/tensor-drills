@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "debug",
+  "goal": "Sum readings with enough precision to preserve a small residual amid large values.",
+  "topics": [
+    "reductions",
+    "dtypes",
+    "numerics"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Read array shapes, dtypes, and simple reductions."
+    }
+  ],
+  "workload": 1
+}

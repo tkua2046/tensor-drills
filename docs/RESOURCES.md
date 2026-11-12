@@ -62,6 +62,10 @@ Link each drill record to its prompt when available. For each public source used
 | [`pytorch/shared-weight-matmul`](../tensor_drills/practice/drills/pytorch/shared-weight-matmul/prompt.md) | Original | Shared feature contraction with batch-local results and numerical allowances. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#reductions-and-projection). |
 | [`numpy/row-mean`](../tensor_drills/practice/drills/numpy/row-mean/prompt.md) | Original | Axis repair with surviving row shape. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#numpy-reductions-and-broadcasting). NumPy Quickstart remains a behavior reference in [reviewed resources](#reviewed-resources). |
 | [`pytorch/time-mean`](../tensor_drills/practice/drills/pytorch/time-mean/prompt.md) | Original | Time reduction with surviving batch and feature axes. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#pytorch-selection-and-broadcasting). PyTorch tensor fundamentals remains a curriculum reference in [reviewed resources](#reviewed-resources). |
+| [`numpy/row-softmax`](../tensor_drills/practice/drills/numpy/row-softmax/prompt.md) | Original | Stable per-row probabilities from elementary NumPy operations. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#row-normalization). |
+| [`numpy/precise-sum`](../tensor_drills/practice/drills/numpy/precise-sum/prompt.md) | Original | Quantized readings expose precision lost before conversion. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#numpy-numerical-workflows). |
+| [`numpy/safe-integer-sum`](../tensor_drills/practice/drills/numpy/safe-integer-sum/prompt.md) | Original | Bounded integer readings expose accumulator overflow. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#numpy-numerical-workflows). |
+| [`numpy/seeded-sample`](../tensor_drills/practice/drills/numpy/seeded-sample/prompt.md) | Original | Caller-seeded local PCG64 choice and global-state preservation. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#numpy-numerical-workflows). |
 
 ### Planned drills
 

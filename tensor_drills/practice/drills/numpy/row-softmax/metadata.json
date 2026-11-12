@@ -1,0 +1,17 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Normalize each row of logits into stable probabilities.",
+  "topics": [
+    "reductions",
+    "numerics",
+    "broadcasting"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Compute a row reduction and align it with its original rows.",
+      "practice_drill": "numpy/row-mean"
+    }
+  ],
+  "workload": 1
+}

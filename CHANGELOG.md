@@ -4,6 +4,8 @@
 
 ### Added
 
+- Add NumPy numerical foundations: stable row softmax, precise float accumulation, safe integer accumulation, and local seeded sampling.
+
 - Add core practice in both tracks with dtype conversion, unequal splits, per-row multiple gathering, replacement, masked assignment, shared-weight matrix products, and single-axis means.
 - Practice independent slice repair and repeated-index accumulation in both tracks, plus PyTorch per-sequence broadcasting repair.
 - Practice Boolean masks, stacking and concatenation, paired and Cartesian indexing, and multi-axis reductions in both NumPy and PyTorch.

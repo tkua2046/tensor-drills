@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Draw row indices without replacement using a local generator seeded by the caller.",
+  "topics": [
+    "randomness",
+    "reproducibility",
+    "indexing"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Read array shapes and understand sampling without replacement."
+    }
+  ],
+  "workload": 1
+}

@@ -61,8 +61,8 @@ Start with the [shared skills](#shared-skills), then explore NumPy numerical wor
 
 | Skill | What to practice | Bundled drills |
 | --- | --- | --- |
-| Accumulator dtype | Choose a dtype that avoids integer overflow or preserves small values in a sum. | — |
-| Stable probabilities | Compute row softmax with elementary operations and large logits. | — |
+| Accumulator dtype | Choose a dtype that avoids integer overflow or preserves small values in a sum. | [Precise floating sum](../tensor_drills/practice/drills/numpy/precise-sum/prompt.md) · [Safe integer sum](../tensor_drills/practice/drills/numpy/safe-integer-sum/prompt.md) |
+| Stable probabilities | Compute row softmax with elementary operations and large logits. | [Row softmax](../tensor_drills/practice/drills/numpy/row-softmax/prompt.md) |
 | Preprocessing and normalization | Standardize selected rows and compute a masked RMS normalization that handles empty rows and zero norms. | — |
 | Stable masked calculations | Compute masked softmax with broadcast masks and wide half-precision inputs. Practice the distinct empty-row behavior of masked log-sum-exp. | — |
 | Streaming numerics | Compute entropy with fixed-size state and check invariance to chunk boundaries. | — |
@@ -71,7 +71,7 @@ Start with the [shared skills](#shared-skills), then explore NumPy numerical wor
 
 | Skill | What to practice | Bundled drills |
 | --- | --- | --- |
-| Reproducible sampling | Sample without replacement using a caller-provided seed and a local generator. | — |
+| Reproducible sampling | Sample without replacement using a caller-provided seed and a local generator. | [Seeded sample](../tensor_drills/practice/drills/numpy/seeded-sample/prompt.md) |
 | Target score gathering | Handle ignored targets even when the sentinel is a valid class index. | — |
 | Masked ranking | Keep candidate IDs aligned and apply a deterministic rule for tied scores. | — |
 | Sorted search and partition | Find insertion boundaries, count sorted events, and select values without fully sorting. | — |
