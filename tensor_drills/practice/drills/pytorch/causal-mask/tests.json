@@ -1,0 +1,409 @@
+{
+  "dependencies": [
+    "torch"
+  ],
+  "cases": [
+    {
+      "name": "causal 0",
+      "inputs": {
+        "queries": {
+          "data": [
+            2,
+            4
+          ],
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "keys": {
+          "data": [
+            0,
+            2,
+            3,
+            5
+          ],
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "query_valid": {
+          "data": [
+            true,
+            true,
+            true,
+            false
+          ],
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "key_valid": {
+          "data": [
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "shape": [
+            2,
+            4
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        }
+      },
+      "expected": {
+        "data": [
+          true,
+          false,
+          false,
+          false,
+          true,
+          false,
+          true,
+          false,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        "shape": [
+          2,
+          2,
+          4
+        ],
+        "dtype": "bool",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "causal 1",
+      "inputs": {
+        "queries": {
+          "data": [
+            0,
+            1,
+            2
+          ],
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "keys": {
+          "data": [
+            0,
+            1,
+            2
+          ],
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "query_valid": {
+          "data": [
+            true,
+            true,
+            true
+          ],
+          "shape": [
+            1,
+            3
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "key_valid": {
+          "data": [
+            true,
+            true,
+            true
+          ],
+          "shape": [
+            1,
+            3
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        }
+      },
+      "expected": {
+        "data": [
+          true,
+          false,
+          false,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true
+        ],
+        "shape": [
+          1,
+          3,
+          3
+        ],
+        "dtype": "bool",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "causal 2",
+      "inputs": {
+        "queries": {
+          "data": [
+            3
+          ],
+          "shape": [
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "keys": {
+          "data": [
+            3
+          ],
+          "shape": [
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "query_valid": {
+          "data": [
+            false
+          ],
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "key_valid": {
+          "data": [
+            true
+          ],
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        }
+      },
+      "expected": {
+        "data": [
+          false
+        ],
+        "shape": [
+          1,
+          1,
+          1
+        ],
+        "dtype": "bool",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "causal 3",
+      "inputs": {
+        "queries": {
+          "data": [],
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "keys": {
+          "data": [
+            0,
+            1
+          ],
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "query_valid": {
+          "data": [],
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "key_valid": {
+          "data": [
+            true,
+            false
+          ],
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        }
+      },
+      "expected": {
+        "data": [],
+        "shape": [
+          1,
+          0,
+          2
+        ],
+        "dtype": "bool",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "causal 4",
+      "inputs": {
+        "queries": {
+          "data": [
+            0,
+            2
+          ],
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "keys": {
+          "data": [],
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "query_valid": {
+          "data": [
+            true,
+            false
+          ],
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "key_valid": {
+          "data": [],
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        }
+      },
+      "expected": {
+        "data": [],
+        "shape": [
+          1,
+          2,
+          0
+        ],
+        "dtype": "bool",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "extreme position comparisons",
+      "inputs": {
+        "queries": {
+          "data": [
+            -9223372036854775808,
+            9223372036854775807
+          ],
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "keys": {
+          "data": [
+            -9223372036854775808,
+            0,
+            9223372036854775807
+          ],
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "query_valid": {
+          "data": [
+            true,
+            true
+          ],
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "key_valid": {
+          "data": [
+            true,
+            true,
+            true
+          ],
+          "shape": [
+            1,
+            3
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        }
+      },
+      "expected": {
+        "data": [
+          true,
+          false,
+          false,
+          true,
+          true,
+          true
+        ],
+        "shape": [
+          1,
+          2,
+          3
+        ],
+        "dtype": "bool",
+        "layout": "contiguous"
+      }
+    }
+  ]
+}

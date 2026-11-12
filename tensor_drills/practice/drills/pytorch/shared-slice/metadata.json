@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Return both a shared stepped slice and an independent copy of its initial values.",
+  "topics": [
+    "storage",
+    "slicing"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Preserve a source when editing a copy of its slice.",
+      "practice_drill": "pytorch/independent-slice"
+    }
+  ],
+  "workload": 1
+}

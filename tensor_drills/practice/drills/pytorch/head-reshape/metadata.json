@@ -1,0 +1,15 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Split a feature axis into heads and merge it back in the same value order.",
+  "topics": [
+    "shapes",
+    "reshape"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Read shapes, dtypes and basic array or tensor indexing."
+    }
+  ],
+  "workload": 1
+}

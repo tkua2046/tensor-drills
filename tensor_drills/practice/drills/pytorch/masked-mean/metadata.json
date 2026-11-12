@@ -1,0 +1,21 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Average valid timesteps separately for each sequence and return zeros for a fully masked sequence.",
+  "topics": [
+    "masks",
+    "reductions",
+    "broadcasting"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Insert or remove a specified singleton axis while preserving other axes.",
+      "practice_drill": "pytorch/axis-layout"
+    },
+    {
+      "capability": "Average over time while retaining batch and feature axes.",
+      "practice_drill": "pytorch/time-mean"
+    }
+  ],
+  "workload": 2
+}

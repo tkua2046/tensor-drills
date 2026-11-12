@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Select rows in a specified slice using a Boolean mask aligned to the original input.",
+  "topics": [
+    "indexing",
+    "masks",
+    "slicing"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Select rows using their Boolean validity flags.",
+      "practice_drill": "pytorch/boolean-select"
+    }
+  ],
+  "workload": 2
+}

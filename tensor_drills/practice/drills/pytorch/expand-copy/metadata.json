@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Expand singleton data without materializing repeats and create a separately writable copy.",
+  "topics": [
+    "storage",
+    "broadcasting"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Distinguish shared slice storage from an independent copy.",
+      "practice_drill": "pytorch/shared-slice"
+    }
+  ],
+  "workload": 2
+}

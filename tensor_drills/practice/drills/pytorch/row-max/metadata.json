@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Return each row's maximum together with its first matching column index.",
+  "topics": [
+    "reductions",
+    "indexing"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Keep each selected value aligned with its row and column index.",
+      "practice_drill": "pytorch/row-gather"
+    }
+  ],
+  "workload": 1
+}
