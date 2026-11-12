@@ -1,0 +1,227 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "class accuracy 0",
+      "inputs": {
+        "true": {
+          "shape": [
+            6
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0,
+            0,
+            1,
+            2,
+            -1
+          ]
+        },
+        "pred": {
+          "shape": [
+            6
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            2
+          ]
+        },
+        "classes": 4
+      },
+      "expected": [
+        {
+          "shape": [
+            4
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.3333333333333333,
+            1.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            1,
+            1,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "class accuracy 1",
+      "inputs": {
+        "true": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            -1,
+            -1
+          ]
+        },
+        "pred": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            1
+          ]
+        },
+        "classes": 3
+      },
+      "expected": [
+        {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "class accuracy 2",
+      "inputs": {
+        "true": {
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "pred": {
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "classes": 2
+      },
+      "expected": [
+        {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "class accuracy 3",
+      "inputs": {
+        "true": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        "pred": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        "classes": 2
+      },
+      "expected": [
+        {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            0.6666666666666666
+          ]
+        },
+        {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            3
+          ]
+        }
+      ]
+    }
+  ]
+}

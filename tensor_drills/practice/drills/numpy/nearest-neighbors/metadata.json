@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Find each query's nearest reference row using bounded distance blocks and a deterministic tie rule.",
+  "topics": [
+    "matmul",
+    "ranking",
+    "memory"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Repair pairwise squared distances between two collections while avoiding a `(left_rows, right_rows, features)` temporary.",
+      "practice_drill": "numpy/pairwise-squared-distance"
+    }
+  ],
+  "workload": 3
+}

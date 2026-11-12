@@ -1,0 +1,21 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Rank eligible candidates while keeping their original indices, IDs and scores aligned.",
+  "topics": [
+    "ranking",
+    "masks",
+    "indexing"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Return each row's maximum together with its first matching column index.",
+      "practice_drill": "numpy/row-max"
+    },
+    {
+      "capability": "Select individual elements and whole rows with their respective Boolean masks.",
+      "practice_drill": "numpy/boolean-select"
+    }
+  ],
+  "workload": 2
+}

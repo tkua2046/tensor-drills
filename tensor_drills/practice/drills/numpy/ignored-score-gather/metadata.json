@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Gather each target score while returning zero at ignored targets.",
+  "topics": [
+    "indexing",
+    "masks"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Gather one score per row using its supplied column index and verify the result's shape and dtype.",
+      "practice_drill": "numpy/row-gather"
+    }
+  ],
+  "workload": 1
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Compute stable float32 probabilities over allowed positions and return zeros for fully masked rows.",
+  "topics": [
+    "masks",
+    "numerics",
+    "broadcasting"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Normalize each row of logits into stable probabilities.",
+      "practice_drill": "numpy/row-softmax"
+    }
+  ],
+  "workload": 3
+}

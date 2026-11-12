@@ -1,0 +1,166 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "ignored gather 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            16,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "targets": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            2
+          ]
+        },
+        "ignore": 0
+      },
+      "expected": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.0,
+          6
+        ]
+      }
+    },
+    {
+      "name": "ignored gather 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "strided",
+          "data": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "targets": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            -100,
+            1
+          ]
+        },
+        "ignore": -100
+      },
+      "expected": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.0,
+          5
+        ]
+      }
+    },
+    {
+      "name": "ignored gather 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            7,
+            8
+          ]
+        },
+        "targets": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0
+          ]
+        },
+        "ignore": 0
+      },
+      "expected": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "ignored gather 3",
+      "inputs": {
+        "x": {
+          "shape": [
+            0,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "targets": {
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "ignore": -100
+      },
+      "expected": {
+        "shape": [
+          0
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": []
+      }
+    }
+  ]
+}

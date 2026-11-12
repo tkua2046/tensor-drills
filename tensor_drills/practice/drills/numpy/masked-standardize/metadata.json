@@ -1,0 +1,21 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Select valid observations and standardize each feature using the selected rows.",
+  "topics": [
+    "masks",
+    "numerics",
+    "reductions"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Subtract each row's own mean from its entries.",
+      "practice_drill": "numpy/row-center"
+    },
+    {
+      "capability": "Select individual elements and whole rows with their respective Boolean masks.",
+      "practice_drill": "numpy/boolean-select"
+    }
+  ],
+  "workload": 2
+}

@@ -1,0 +1,340 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "nearest block 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            3,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0,
+            2,
+            1,
+            -1,
+            3
+          ]
+        },
+        "y": {
+          "shape": [
+            7,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            3,
+            1,
+            0,
+            -1,
+            0,
+            8,
+            8,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "block": 1
+      },
+      "expected": [
+        {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            5,
+            4,
+            2
+          ]
+        },
+        {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "name": "nearest block 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            3,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0,
+            2,
+            1,
+            -1,
+            3
+          ]
+        },
+        "y": {
+          "shape": [
+            7,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            3,
+            1,
+            0,
+            -1,
+            0,
+            8,
+            8,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "block": 2
+      },
+      "expected": [
+        {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            5,
+            4,
+            2
+          ]
+        },
+        {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "name": "nearest block 3",
+      "inputs": {
+        "x": {
+          "shape": [
+            3,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0,
+            2,
+            1,
+            -1,
+            3
+          ]
+        },
+        "y": {
+          "shape": [
+            7,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            3,
+            1,
+            0,
+            -1,
+            0,
+            8,
+            8,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "block": 3
+      },
+      "expected": [
+        {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            5,
+            4,
+            2
+          ]
+        },
+        {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "name": "nearest block 64",
+      "inputs": {
+        "x": {
+          "shape": [
+            3,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0,
+            2,
+            1,
+            -1,
+            3
+          ]
+        },
+        "y": {
+          "shape": [
+            7,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            3,
+            1,
+            0,
+            -1,
+            0,
+            8,
+            8,
+            2,
+            1,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "block": 64
+      },
+      "expected": [
+        {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            5,
+            4,
+            2
+          ]
+        },
+        {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0,
+            9
+          ]
+        }
+      ]
+    },
+    {
+      "name": "no queries",
+      "inputs": {
+        "x": {
+          "shape": [
+            0,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "y": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            2
+          ]
+        },
+        "block": 1
+      },
+      "expected": [
+        {
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        },
+        {
+          "shape": [
+            0
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        }
+      ]
+    }
+  ]
+}

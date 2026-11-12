@@ -1,0 +1,256 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "group means 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            5,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "strided",
+          "data": [
+            -1.5,
+            -1.25,
+            -1.0,
+            -0.75,
+            -0.5,
+            -0.25,
+            16.0,
+            16.0,
+            0.5,
+            0.75
+          ]
+        },
+        "ids": {
+          "shape": [
+            5
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            2,
+            0,
+            2,
+            -1,
+            0
+          ]
+        },
+        "groups": 4
+      },
+      "expected": [
+        {
+          "shape": [
+            4,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -0.25,
+            0.0,
+            0.0,
+            0.0,
+            -1.0,
+            -0.75,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            2,
+            0,
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "group means 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            3,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            16.0,
+            16.0,
+            16.0
+          ]
+        },
+        "ids": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            -1,
+            -1,
+            -1
+          ]
+        },
+        "groups": 2
+      },
+      "expected": [
+        {
+          "shape": [
+            2,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "group means 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            0,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "ids": {
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "groups": 3
+      },
+      "expected": [
+        {
+          "shape": [
+            3,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "group means 3",
+      "inputs": {
+        "x": {
+          "shape": [
+            4,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1.5,
+            -1.25,
+            -1.0,
+            -0.75,
+            -0.5,
+            -0.25,
+            0.0,
+            0.25
+          ]
+        },
+        "ids": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        "groups": 2
+      },
+      "expected": [
+        {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -0.5,
+            -0.25,
+            -0.8333333333333334,
+            -0.5833333333333334
+          ]
+        },
+        {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            3
+          ]
+        }
+      ]
+    }
+  ]
+}

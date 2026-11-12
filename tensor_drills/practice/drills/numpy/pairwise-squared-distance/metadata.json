@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "debug",
+  "goal": "Repair pairwise squared distances between two collections while avoiding a `(left_rows, right_rows, features)` temporary.",
+  "topics": [
+    "matmul",
+    "numerics",
+    "memory"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Multiply each batch item of shape `(rows, in_features)` by the same `(in_features, out_features)` matrix.",
+      "practice_drill": "numpy/shared-weight-matmul"
+    }
+  ],
+  "workload": 3
+}

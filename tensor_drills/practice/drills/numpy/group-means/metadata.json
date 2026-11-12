@@ -1,0 +1,16 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Compute each group's feature mean while excluding ignored observations.",
+  "topics": [
+    "grouping",
+    "reductions"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Sum values into indexed destinations, adding all contributions at repeated indices.",
+      "practice_drill": "numpy/indexed-sum"
+    }
+  ],
+  "workload": 2
+}

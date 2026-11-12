@@ -1,0 +1,25 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Compute each sequence's mean cross-entropy over its valid prefix.",
+  "topics": [
+    "sequences",
+    "losses",
+    "numerics"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Normalize each row of logits into stable probabilities.",
+      "practice_drill": "numpy/row-softmax"
+    },
+    {
+      "capability": "Gather each target score while returning zero at ignored targets.",
+      "practice_drill": "numpy/ignored-score-gather"
+    },
+    {
+      "capability": "Summarize each valid sequence prefix with its mean and last valid feature vector.",
+      "practice_drill": "numpy/prefix-summary"
+    }
+  ],
+  "workload": 3
+}

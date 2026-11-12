@@ -1,0 +1,183 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "RMS 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            4,
+            16,
+            -2,
+            0,
+            -2
+          ]
+        },
+        "flags": {
+          "shape": [
+            2,
+            3
+          ],
+          "dtype": "bool",
+          "layout": "contiguous",
+          "data": [
+            true,
+            true,
+            false,
+            true,
+            false,
+            true
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          2,
+          3
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.848528137423857,
+          1.131370849898476,
+          0.0,
+          -1.0,
+          0.0,
+          -1.0
+        ]
+      }
+    },
+    {
+      "name": "RMS 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "strided",
+          "data": [
+            0,
+            0,
+            7,
+            8,
+            0,
+            0
+          ]
+        },
+        "flags": {
+          "shape": [
+            2,
+            3
+          ],
+          "dtype": "bool",
+          "layout": "contiguous",
+          "data": [
+            true,
+            true,
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          2,
+          3
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "RMS 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            0
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "flags": {
+          "shape": [
+            2,
+            0
+          ],
+          "dtype": "bool",
+          "layout": "contiguous",
+          "data": []
+        }
+      },
+      "expected": {
+        "shape": [
+          2,
+          0
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": []
+      }
+    },
+    {
+      "name": "RMS 3",
+      "inputs": {
+        "x": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1e-06
+          ]
+        },
+        "flags": {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "bool",
+          "layout": "contiguous",
+          "data": [
+            true
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          1,
+          1
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          -1.0
+        ]
+      }
+    }
+  ]
+}

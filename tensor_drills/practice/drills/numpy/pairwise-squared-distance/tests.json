@@ -1,0 +1,295 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "distances 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            4
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1.5,
+            -1.25,
+            -1.0,
+            -0.75,
+            -0.5,
+            -0.25,
+            0.0,
+            0.25
+          ]
+        },
+        "y": {
+          "shape": [
+            3,
+            4
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1.5,
+            -1.25,
+            -1.0,
+            -0.75,
+            -0.5,
+            -0.25,
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          2,
+          3
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.0,
+          4.0,
+          16.0,
+          4.0,
+          0.0,
+          4.0
+        ]
+      }
+    },
+    {
+      "name": "distances 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            3,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "strided",
+          "data": [
+            -1.5,
+            -1.25,
+            -1.0,
+            -0.75,
+            -0.5,
+            -0.25,
+            0.0,
+            0.25,
+            0.5
+          ]
+        },
+        "y": {
+          "shape": [
+            3,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1.5,
+            -1.25,
+            -1.0,
+            -0.75,
+            -0.5,
+            -0.25,
+            0.0,
+            0.25,
+            0.5
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          3,
+          3
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.0,
+          1.6875,
+          6.75,
+          1.6875,
+          0.0,
+          1.6875,
+          6.75,
+          1.6875,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "distances 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            0,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "y": {
+          "shape": [
+            2,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1.5,
+            -1.25,
+            -1.0,
+            -0.75,
+            -0.5,
+            -0.25
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          0,
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": []
+      }
+    },
+    {
+      "name": "distances 3",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1.5,
+            -1.25,
+            -1.0,
+            -0.75,
+            -0.5,
+            -0.25
+          ]
+        },
+        "y": {
+          "shape": [
+            0,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        }
+      },
+      "expected": {
+        "shape": [
+          2,
+          0
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": []
+      }
+    },
+    {
+      "name": "distances 4",
+      "inputs": {
+        "x": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1.5,
+            -1.25
+          ]
+        },
+        "y": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1.5,
+            -1.25
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          1,
+          1
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "nearby floating coordinates",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1.0,
+            1.0,
+            1.0,
+            1.0000001
+          ]
+        },
+        "y": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1.0,
+            1.0000002,
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          2,
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          3.999999995789153e-14,
+          2.0,
+          9.999999967268422e-15,
+          2.0000002000000103
+        ]
+      }
+    }
+  ]
+}

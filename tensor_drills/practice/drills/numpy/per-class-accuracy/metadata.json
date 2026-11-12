@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Measure accuracy separately for each true class using that class's observation count.",
+  "topics": [
+    "grouping",
+    "metrics",
+    "masks"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Sum values into indexed destinations, adding all contributions at repeated indices.",
+      "practice_drill": "numpy/indexed-sum"
+    }
+  ],
+  "workload": 2
+}

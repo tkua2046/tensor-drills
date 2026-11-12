@@ -1,0 +1,220 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "standardize 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            3,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            2,
+            16,
+            5,
+            6,
+            -16,
+            3,
+            4,
+            16
+          ]
+        },
+        "flags": {
+          "shape": [
+            3
+          ],
+          "dtype": "bool",
+          "layout": "contiguous",
+          "data": [
+            true,
+            true,
+            false
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          2,
+          3
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          -1.0,
+          -1.0,
+          1.0,
+          1.0,
+          1.0,
+          -1.0
+        ]
+      }
+    },
+    {
+      "name": "standardize 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            3,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "strided",
+          "data": [
+            0.1,
+            1,
+            0.1,
+            2,
+            0.1,
+            4
+          ]
+        },
+        "flags": {
+          "shape": [
+            3
+          ],
+          "dtype": "bool",
+          "layout": "contiguous",
+          "data": [
+            true,
+            true,
+            true
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          3,
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.0,
+          -1.0690449676496978,
+          0.0,
+          -0.2672612419124245,
+          0.0,
+          1.3363062095621219
+        ]
+      }
+    },
+    {
+      "name": "standardize 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "flags": {
+          "shape": [
+            2
+          ],
+          "dtype": "bool",
+          "layout": "contiguous",
+          "data": [
+            false,
+            true
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          1,
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "standardize 3",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "flags": {
+          "shape": [
+            2
+          ],
+          "dtype": "bool",
+          "layout": "contiguous",
+          "data": [
+            false,
+            false
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          0,
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": []
+      }
+    },
+    {
+      "name": "standardize 4",
+      "inputs": {
+        "x": {
+          "shape": [
+            0,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "flags": {
+          "shape": [
+            0
+          ],
+          "dtype": "bool",
+          "layout": "contiguous",
+          "data": []
+        }
+      },
+      "expected": {
+        "shape": [
+          0,
+          3
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": []
+      }
+    }
+  ]
+}

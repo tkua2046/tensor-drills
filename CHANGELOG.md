@@ -4,6 +4,8 @@
 
 ### Added
 
+- Add NumPy Milestone 5 practice with standalone contracts, fixed cases and assessment rubrics.
+
 - Add PyTorch Milestone 4 practice in layout, shared storage, selection, masks, broadcasting and per-item projection.
 
 - Add NumPy Milestone 4 practice in layout, shared storage, selection, masks, broadcasting and per-item projection.

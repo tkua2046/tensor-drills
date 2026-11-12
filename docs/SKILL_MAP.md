@@ -37,7 +37,7 @@ These skills apply to both libraries. Use the drill link for your track.
 | Mask alignment | Apply each timestep flag across features without storing repeated masks. | [NumPy masked mean (applied practice)](../tensor_drills/practice/drills/numpy/masked-mean/prompt.md) · [PyTorch masked mean (applied practice)](../tensor_drills/practice/drills/pytorch/masked-mean/prompt.md) |
 | Slicing and masks | Select valid rows from a slice using a mask aligned to the original input. | [NumPy window mask](../tensor_drills/practice/drills/numpy/window-mask/prompt.md) · [PyTorch window mask](../tensor_drills/practice/drills/pytorch/window-mask/prompt.md) |
 | Repeated destinations | Sum all contributions at repeated indices and leave unused destinations at zero. | [NumPy](../tensor_drills/practice/drills/numpy/indexed-sum/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/indexed-sum/prompt.md) |
-| Aligning values and indices | Pair row maxima with their indices and keep labels aligned through a top-k selection. | [NumPy row max](../tensor_drills/practice/drills/numpy/row-max/prompt.md) · [PyTorch row max](../tensor_drills/practice/drills/pytorch/row-max/prompt.md). Top-k label alignment remains planned. |
+| Aligning values and indices | Pair row maxima with their indices and keep labels aligned through a top-k selection. | [NumPy row max](../tensor_drills/practice/drills/numpy/row-max/prompt.md) · [PyTorch row max](../tensor_drills/practice/drills/pytorch/row-max/prompt.md) · [Masked ranking](../tensor_drills/practice/drills/numpy/masked-ranking/prompt.md) |
 | Causal masking | Compare query and key positions, then combine the mask with padding. | [NumPy causal mask](../tensor_drills/practice/drills/numpy/causal-mask/prompt.md) · [PyTorch causal mask](../tensor_drills/practice/drills/pytorch/causal-mask/prompt.md) |
 
 ### Shared reductions, broadcasting, and products
@@ -63,8 +63,8 @@ Start with the [shared skills](#shared-skills), then explore NumPy numerical wor
 | --- | --- | --- |
 | Accumulator dtype | Choose a dtype that avoids integer overflow or preserves small values in a sum. | [Precise floating sum](../tensor_drills/practice/drills/numpy/precise-sum/prompt.md) · [Safe integer sum](../tensor_drills/practice/drills/numpy/safe-integer-sum/prompt.md) |
 | Stable probabilities | Compute row softmax with elementary operations and large logits. | [Row softmax](../tensor_drills/practice/drills/numpy/row-softmax/prompt.md) |
-| Preprocessing and normalization | Standardize selected rows and compute a masked RMS normalization that handles empty rows and zero norms. | — |
-| Stable masked calculations | Compute masked softmax with broadcast masks and wide half-precision inputs. Practice the distinct empty-row behavior of masked log-sum-exp. | — |
+| Preprocessing and normalization | Standardize selected rows and compute a masked RMS normalization that handles empty rows and zero norms. | [Masked rms](../tensor_drills/practice/drills/numpy/masked-rms/prompt.md) · [Masked standardize](../tensor_drills/practice/drills/numpy/masked-standardize/prompt.md) |
+| Stable masked calculations | Compute masked softmax with broadcast masks and wide half-precision inputs. Practice the distinct empty-row behavior of masked log-sum-exp. | [Masked softmax](../tensor_drills/practice/drills/numpy/masked-softmax/prompt.md) |
 | Streaming numerics | Compute entropy with fixed-size state and check invariance to chunk boundaries. | — |
 
 ### NumPy sampling, selection, and grouping
@@ -72,20 +72,20 @@ Start with the [shared skills](#shared-skills), then explore NumPy numerical wor
 | Skill | What to practice | Bundled drills |
 | --- | --- | --- |
 | Reproducible sampling | Sample without replacement using a caller-provided seed and a local generator. | [Seeded sample](../tensor_drills/practice/drills/numpy/seeded-sample/prompt.md) |
-| Target score gathering | Handle ignored targets even when the sentinel is a valid class index. | — |
-| Masked ranking | Keep candidate IDs aligned and apply a deterministic rule for tied scores. | — |
+| Target score gathering | Handle ignored targets even when the sentinel is a valid class index. | [Ignored score gather](../tensor_drills/practice/drills/numpy/ignored-score-gather/prompt.md) |
+| Masked ranking | Keep candidate IDs aligned and apply a deterministic rule for tied scores. | [Masked ranking](../tensor_drills/practice/drills/numpy/masked-ranking/prompt.md) |
 | Sorted search and partition | Find insertion boundaries, count sorted events, and select values without fully sorting. | — |
 | Windows and unique groups | Build moving sums and window views. Recover original rows from unique rows and inverse indices. | — |
-| Group statistics and metrics | Use indexed sums and counts for group means and per-class accuracy. Handle discarded entries and missing groups. | — |
+| Group statistics and metrics | Use indexed sums and counts for group means and per-class accuracy. Handle discarded entries and missing groups. | [Group means](../tensor_drills/practice/drills/numpy/group-means/prompt.md) · [Per class accuracy](../tensor_drills/practice/drills/numpy/per-class-accuracy/prompt.md) |
 | Grouped extrema and probabilities | Distinguish absent groups from groups with negative infinity and normalize scores within groups. | — |
 
 ### NumPy sequence and pairwise calculations
 
 | Skill | What to practice | Bundled drills |
 | --- | --- | --- |
-| Padded sequence summaries | Join the mean of the valid prefix and its last timestep, including empty sequences. | — |
-| Per-sequence token loss | Combine stable normalization and target gathering with a mean over each sequence's valid prefix. | — |
-| Distances and nearest neighbors | Compute pairwise squared distances without storing differences for each feature of each pair. Select nearest rows and handle ties. | — |
+| Padded sequence summaries | Join the mean of the valid prefix and its last timestep, including empty sequences. | [Prefix summary](../tensor_drills/practice/drills/numpy/prefix-summary/prompt.md) |
+| Per-sequence token loss | Combine stable normalization and target gathering with a mean over each sequence's valid prefix. | [Sequence cross entropy](../tensor_drills/practice/drills/numpy/sequence-cross-entropy/prompt.md) |
+| Distances and nearest neighbors | Compute pairwise squared distances without storing differences for each feature of each pair. Select nearest rows and handle ties. | [Pairwise squared distance](../tensor_drills/practice/drills/numpy/pairwise-squared-distance/prompt.md) · [Nearest neighbors](../tensor_drills/practice/drills/numpy/nearest-neighbors/prompt.md) |
 | Solves and pairwise metrics | Work with different right-hand-side ranks, ridge regression, and pairwise cosine similarity. | — |
 | Masked attention | Combine scaled scores, empty-query handling, and value weighting. | — |
 

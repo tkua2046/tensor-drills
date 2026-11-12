@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Normalize each row by its valid-entry RMS while leaving excluded and zero-norm rows at zero.",
+  "topics": [
+    "masks",
+    "numerics",
+    "reductions"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Average valid timesteps separately for each sequence and return zeros for a fully masked sequence.",
+      "practice_drill": "numpy/masked-mean"
+    }
+  ],
+  "workload": 2
+}

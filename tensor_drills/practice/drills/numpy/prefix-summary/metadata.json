@@ -1,0 +1,21 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Summarize each valid sequence prefix with its mean and last valid feature vector.",
+  "topics": [
+    "sequences",
+    "masks",
+    "reductions"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Average valid timesteps separately for each sequence and return zeros for a fully masked sequence.",
+      "practice_drill": "numpy/masked-mean"
+    },
+    {
+      "capability": "Gather one score per row using its supplied column index and verify the result's shape and dtype.",
+      "practice_drill": "numpy/row-gather"
+    }
+  ],
+  "workload": 2
+}
