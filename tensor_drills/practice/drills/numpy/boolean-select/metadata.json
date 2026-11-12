@@ -1,0 +1,15 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Select individual elements and whole rows with their respective Boolean masks.",
+  "topics": [
+    "indexing",
+    "masks"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Read shapes, dtypes and basic array or tensor indexing."
+    }
+  ],
+  "workload": 1
+}

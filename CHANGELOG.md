@@ -4,6 +4,8 @@
 
 ### Added
 
+- Add NumPy Milestone 4 practice in layout, shared storage, selection, masks, broadcasting and per-item projection.
+
 - Add PyTorch module, autograd, device, conversion, batching, state restoration, training-step and row-softmax foundations as an independent delivery.
 
 - Add NumPy numerical foundations: stable row softmax, precise float accumulation, safe integer accumulation, and local seeded sampling.

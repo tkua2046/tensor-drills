@@ -1,0 +1,21 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Convert pixels shaped (height * width, channels) to a batch of one in channel-first layout.",
+  "topics": [
+    "shapes",
+    "axes",
+    "images"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Insert or remove a specified singleton axis while preserving other axes.",
+      "practice_drill": "numpy/axis-layout"
+    },
+    {
+      "capability": "Split and merge a feature axis in logical value order.",
+      "practice_drill": "numpy/head-reshape"
+    }
+  ],
+  "workload": 2
+}

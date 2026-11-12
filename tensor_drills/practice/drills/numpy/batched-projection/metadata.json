@@ -1,0 +1,21 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Apply each batch item's own projection matrix to its mean over valid timesteps.",
+  "topics": [
+    "matmul",
+    "masks",
+    "reductions"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Pool valid timesteps separately for each sequence.",
+      "practice_drill": "numpy/masked-mean"
+    },
+    {
+      "capability": "Contract feature dimensions in a batched matrix product.",
+      "practice_drill": "numpy/shared-weight-matmul"
+    }
+  ],
+  "workload": 3
+}

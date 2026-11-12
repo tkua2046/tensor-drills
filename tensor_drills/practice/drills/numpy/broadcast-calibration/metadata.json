@@ -1,0 +1,16 @@
+{
+  "scope": "composite",
+  "task_type": "debug",
+  "goal": "Combine sequence offsets, timestep biases and feature scales on their intended axes.",
+  "topics": [
+    "broadcasting",
+    "axes"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Insert or remove a specified singleton axis while preserving other axes.",
+      "practice_drill": "numpy/axis-layout"
+    }
+  ],
+  "workload": 2
+}

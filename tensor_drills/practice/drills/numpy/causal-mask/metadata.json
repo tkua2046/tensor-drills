@@ -1,0 +1,20 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Build a causal query\u2013key mask that also excludes padded queries and keys.",
+  "topics": [
+    "masks",
+    "broadcasting"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Construct and combine Boolean conditions.",
+      "practice_drill": "numpy/build-mask"
+    },
+    {
+      "capability": "Insert or remove a specified singleton axis while preserving other axes.",
+      "practice_drill": "numpy/axis-layout"
+    }
+  ],
+  "workload": 2
+}

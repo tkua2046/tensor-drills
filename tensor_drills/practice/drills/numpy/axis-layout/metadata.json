@@ -1,0 +1,15 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Reorder sequence axes and insert or remove only the named singleton axis.",
+  "topics": [
+    "shapes",
+    "axes"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Read shapes, dtypes and basic array or tensor indexing."
+    }
+  ],
+  "workload": 1
+}

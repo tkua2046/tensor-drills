@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Flatten noncontiguous inputs in logical order and demonstrate the resulting storage relationship.",
+  "topics": [
+    "shapes",
+    "storage"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Distinguish shared slice storage from an independent copy.",
+      "practice_drill": "numpy/shared-slice"
+    }
+  ],
+  "workload": 2
+}

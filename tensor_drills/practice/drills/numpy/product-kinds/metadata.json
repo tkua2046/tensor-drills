@@ -1,0 +1,15 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Distinguish elementwise multiplication from matrix multiplication when output shapes agree.",
+  "topics": [
+    "matmul",
+    "reductions"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Read shapes, dtypes and basic array or tensor indexing."
+    }
+  ],
+  "workload": 1
+}

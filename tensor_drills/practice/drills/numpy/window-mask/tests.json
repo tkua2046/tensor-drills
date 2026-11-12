@@ -1,0 +1,260 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "window 8-2-8-2 contiguous",
+      "inputs": {
+        "x": {
+          "data": [
+            -17,
+            -16,
+            -15,
+            -14,
+            -13,
+            -12,
+            -11,
+            -10,
+            -9,
+            -8,
+            -7,
+            -6,
+            -5,
+            -4,
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "shape": [
+            8,
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "flags": {
+          "data": [
+            true,
+            false,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true
+          ],
+          "shape": [
+            8
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "start": 2,
+        "stop": 8,
+        "step": 2
+      },
+      "expected": {
+        "data": [
+          -11,
+          -10,
+          -9,
+          1,
+          2,
+          3
+        ],
+        "shape": [
+          2,
+          3
+        ],
+        "dtype": "int64",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "window 5-1-4-1 strided",
+      "inputs": {
+        "x": {
+          "data": [
+            -17,
+            -16,
+            -15,
+            -14,
+            -13,
+            -12,
+            -11,
+            -10,
+            -9,
+            -8
+          ],
+          "shape": [
+            5,
+            2
+          ],
+          "dtype": "int64",
+          "layout": "strided"
+        },
+        "flags": {
+          "data": [
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "shape": [
+            5
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "start": 1,
+        "stop": 4,
+        "step": 1
+      },
+      "expected": {
+        "data": [
+          -13,
+          -12
+        ],
+        "shape": [
+          1,
+          2
+        ],
+        "dtype": "int64",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "window 3-0-3-1 contiguous",
+      "inputs": {
+        "x": {
+          "data": [
+            -17,
+            -16,
+            -15
+          ],
+          "shape": [
+            3,
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "flags": {
+          "data": [
+            false,
+            false,
+            false
+          ],
+          "shape": [
+            3
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "start": 0,
+        "stop": 3,
+        "step": 1
+      },
+      "expected": {
+        "data": [],
+        "shape": [
+          0,
+          1
+        ],
+        "dtype": "int64",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "window 4-2-2-1 contiguous",
+      "inputs": {
+        "x": {
+          "data": [
+            -17,
+            -16,
+            -15,
+            -14,
+            -13,
+            -12,
+            -11,
+            -10
+          ],
+          "shape": [
+            4,
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "flags": {
+          "data": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "shape": [
+            4
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "start": 2,
+        "stop": 2,
+        "step": 1
+      },
+      "expected": {
+        "data": [],
+        "shape": [
+          0,
+          2
+        ],
+        "dtype": "int64",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "window 0-0-0-1 contiguous",
+      "inputs": {
+        "x": {
+          "data": [],
+          "shape": [
+            0,
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "flags": {
+          "data": [],
+          "shape": [
+            0
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "start": 0,
+        "stop": 0,
+        "step": 1
+      },
+      "expected": {
+        "data": [],
+        "shape": [
+          0,
+          3
+        ],
+        "dtype": "int64",
+        "layout": "contiguous"
+      }
+    }
+  ]
+}

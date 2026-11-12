@@ -1,0 +1,151 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "flatten (2, 3) transpose",
+      "inputs": {
+        "x": {
+          "data": [
+            -17,
+            -16,
+            -15,
+            -14,
+            -13,
+            -12
+          ],
+          "shape": [
+            2,
+            3
+          ],
+          "dtype": "int64",
+          "layout": "transpose"
+        }
+      },
+      "expected": {
+        "data": [
+          -17,
+          -16,
+          -15,
+          -14,
+          -13,
+          -12
+        ],
+        "shape": [
+          6
+        ],
+        "dtype": "int64",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "flatten (3, 4) strided",
+      "inputs": {
+        "x": {
+          "data": [
+            -17,
+            -16,
+            -15,
+            -14,
+            -13,
+            -12,
+            -11,
+            -10,
+            -9,
+            -8,
+            -7,
+            -6
+          ],
+          "shape": [
+            3,
+            4
+          ],
+          "dtype": "int64",
+          "layout": "strided"
+        }
+      },
+      "expected": {
+        "data": [
+          -17,
+          -16,
+          -15,
+          -14,
+          -13,
+          -12,
+          -11,
+          -10,
+          -9,
+          -8,
+          -7,
+          -6
+        ],
+        "shape": [
+          12
+        ],
+        "dtype": "int64",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "flatten (1, 4) strided",
+      "inputs": {
+        "x": {
+          "data": [
+            -17,
+            -16,
+            -15,
+            -14
+          ],
+          "shape": [
+            1,
+            4
+          ],
+          "dtype": "int64",
+          "layout": "strided"
+        }
+      },
+      "expected": {
+        "data": [
+          -17,
+          -16,
+          -15,
+          -14
+        ],
+        "shape": [
+          4
+        ],
+        "dtype": "int64",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "flatten (2, 1) transpose",
+      "inputs": {
+        "x": {
+          "data": [
+            -17,
+            -16
+          ],
+          "shape": [
+            2,
+            1
+          ],
+          "dtype": "int64",
+          "layout": "transpose"
+        }
+      },
+      "expected": {
+        "data": [
+          -17,
+          -16
+        ],
+        "shape": [
+          2
+        ],
+        "dtype": "int64",
+        "layout": "contiguous"
+      }
+    }
+  ]
+}

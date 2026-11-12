@@ -1,0 +1,21 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Average valid timesteps separately for each sequence and return zeros for a fully masked sequence.",
+  "topics": [
+    "masks",
+    "reductions",
+    "broadcasting"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Insert or remove a specified singleton axis while preserving other axes.",
+      "practice_drill": "numpy/axis-layout"
+    },
+    {
+      "capability": "Compute a mean along the row axis.",
+      "practice_drill": "numpy/row-mean"
+    }
+  ],
+  "workload": 2
+}

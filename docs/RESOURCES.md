@@ -80,11 +80,20 @@ Link each drill record to its prompt when available. For each public source used
 | [`pytorch/labeled-batches`](../tensor_drills/practice/drills/pytorch/labeled-batches/prompt.md) | Original | Self-contained native-operation and state evidence for the [planned outcome](CONTENT_IMPLEMENTATION_PLAN.md#pytorch-data-and-model-state). |
 | [`pytorch/model-roundtrip`](../tensor_drills/practice/drills/pytorch/model-roundtrip/prompt.md) | Original | Self-contained native-operation and state evidence for the [planned outcome](CONTENT_IMPLEMENTATION_PLAN.md#pytorch-data-and-model-state). |
 | [`pytorch/row-softmax`](../tensor_drills/practice/drills/pytorch/row-softmax/prompt.md) | Original | Self-contained native-operation and state evidence for the [planned outcome](CONTENT_IMPLEMENTATION_PLAN.md#row-normalization). |
-
-### Planned drills
-
-| Drill | Origin | Source use |
-| --- | --- | --- |
-| `numpy/row-center` | Original | NumPy broadcasting rules as a behavior reference. |
+| [`numpy/axis-layout`](../tensor_drills/practice/drills/numpy/axis-layout/prompt.md) | Original | Named singleton handling and coordinate-preserving permutation. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#shapes-dtypes-and-storage). |
+| [`numpy/head-reshape`](../tensor_drills/practice/drills/numpy/head-reshape/prompt.md) | Original | Independent split/merge checks for logical feature factorization. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#shapes-dtypes-and-storage). |
+| [`numpy/image-layout`](../tensor_drills/practice/drills/numpy/image-layout/prompt.md) | Original | Pixel coordinate checks for a practical channel-first conversion. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#shapes-dtypes-and-storage). |
+| [`numpy/shared-slice`](../tensor_drills/practice/drills/numpy/shared-slice/prompt.md) | Original | Intentional stepped-view return and independently copied data. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#shapes-dtypes-and-storage). |
+| [`numpy/flatten-layout`](../tensor_drills/practice/drills/numpy/flatten-layout/prompt.md) | Original | Logical traversal plus separately demonstrated storage behavior. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#shapes-dtypes-and-storage). |
+| [`numpy/expand-copy`](../tensor_drills/practice/drills/numpy/expand-copy/prompt.md) | Original | Shared zero-stride expansion versus independently writable repeated values. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#shapes-dtypes-and-storage). |
+| [`numpy/boolean-select`](../tensor_drills/practice/drills/numpy/boolean-select/prompt.md) | Original | Element filtering versus row selection, including full and empty results. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
+| [`numpy/row-max`](../tensor_drills/practice/drills/numpy/row-max/prompt.md) | Original | First-tie indices aligned with per-row maxima. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
+| [`numpy/window-mask`](../tensor_drills/practice/drills/numpy/window-mask/prompt.md) | Original | Original-coordinate validity after positional slicing. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
+| [`numpy/causal-mask`](../tensor_drills/practice/drills/numpy/causal-mask/prompt.md) | Original | Position comparisons combined with both padding axes. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#indexing-and-masks). |
+| [`numpy/broadcast-calibration`](../tensor_drills/practice/drills/numpy/broadcast-calibration/prompt.md) | Original | Timestep-bias diagnosis distinct from sequence-offset alignment. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#reductions-and-projection). |
+| [`numpy/product-kinds`](../tensor_drills/practice/drills/numpy/product-kinds/prompt.md) | Original | Value-based distinction between elementwise multiplication and contraction. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#reductions-and-projection). |
+| [`numpy/masked-mean`](../tensor_drills/practice/drills/numpy/masked-mean/prompt.md) | Original | Per-sequence denominators, empty sequences and mask alignment. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#reductions-and-projection). |
+| [`numpy/batched-projection`](../tensor_drills/practice/drills/numpy/batched-projection/prompt.md) | Original | Independent per-item weights combined with valid-timestep pooling. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#reductions-and-projection). |
+| [`numpy/row-center`](../tensor_drills/practice/drills/numpy/row-center/prompt.md) | Original | Alignment of each row with its computed mean. [Curriculum rationale](CONTENT_IMPLEMENTATION_PLAN.md#numpy-reductions-and-broadcasting). |
 
 Update the skill map and the drill source record in the same change as the drill. When revisiting a source, record the section or revision actually consulted. [Skill map](SKILL_MAP.md)

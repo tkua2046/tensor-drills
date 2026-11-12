@@ -1,0 +1,20 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Subtract each row's own mean from its entries.",
+  "topics": [
+    "reductions",
+    "broadcasting"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Compute a mean along the row axis.",
+      "practice_drill": "numpy/row-mean"
+    },
+    {
+      "capability": "Insert or remove a specified singleton axis while preserving other axes.",
+      "practice_drill": "numpy/axis-layout"
+    }
+  ],
+  "workload": 2
+}
