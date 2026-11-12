@@ -3,6 +3,7 @@
   "task_type": "create",
   "goal": "Return an independent, shape-preserving result with negative entries replaced by zero.",
   "topics": [
+    "masks",
     "masking",
     "storage",
     "shapes"

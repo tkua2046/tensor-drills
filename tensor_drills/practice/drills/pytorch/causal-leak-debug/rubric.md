@@ -10,8 +10,10 @@ Diagnosis evidence: save original and repaired results for the same future-only 
 
 An active equality case includes a key at exactly the query position; strict inequality must fail both values and gradients.
 
-Fixed cases: `shifted rectangular`, `future probe baseline`, `future probe changed`, `all excluded`, `no keys`, `no queries`, `active equal positions`.
-
 Use saved code, output and reasoning as evidence. Native operation and allocation requirements need code inspection in addition to fixed values. Accept equivalent correct approaches; general style suggestions are advisory.
+
+Integer precision: `adjacent large causal positions`, `adjacent negative positions with gradients` exercise adjacent large int64 values. Preserve their exact ordering when comparing positions or choosing indices; inspect conversions for loss of integer distinctions. Equivalent operations that preserve the full input domain are valid.
+
+Fixed cases: `shifted rectangular`, `future probe baseline`, `future probe changed`, `all excluded`, `no keys`, `no queries`, `active equal positions`, `adjacent large causal positions`, `adjacent negative positions with gradients`.
 
 [Fixed cases](tests.json)

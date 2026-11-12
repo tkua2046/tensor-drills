@@ -10,4 +10,8 @@ Rectangular and shifted positions expose triangular-only masks; equality exposes
 
 Use the saved code, check output and explanation as evidence. Required native operations and ownership explanations are assessed here in addition to fixed values. Equivalent approaches that meet the prompt are valid; general style suggestions are advisory.
 
+Integer precision: `adjacent large int64 positions` exercise adjacent large int64 values. Preserve their exact ordering when comparing positions or choosing indices; inspect conversions for loss of integer distinctions. Equivalent operations that preserve the full input domain are valid.
+
+Fixed cases: `causal 0`, `causal 1`, `causal 2`, `causal 3`, `causal 4`, `extreme position comparisons`, `adjacent large int64 positions`.
+
 [Fixed cases](tests.json)

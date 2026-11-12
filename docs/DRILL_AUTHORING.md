@@ -102,6 +102,8 @@ Confirm that the copied prompt's goal matches the metadata. Check that each link
 
 Reuse the same topic label for the same concept across related drills. Try a relevant `--topic` filter together with `--library` and compare the results with the intended family, including its foundations. Keep distinct concepts, such as matrix products and linear solves, separately labelled.
 
+Use `masks` for Boolean-mask practice, including construction, selection, replacement and assignment. Existing `masking` tags remain as additional labels so that filter continues to work.
+
 ### Check attempts
 
 Prepare two materially different valid attempts and plausible wrong attempts in the scratch directory, outside the copied workspace. Choose wrong attempts that target different cases when the drill covers several distinct mistakes. Run the checks from the copied workspace root, as the learner will, and record the exit status and case results of each command.

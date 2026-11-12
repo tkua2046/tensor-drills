@@ -1548,6 +1548,330 @@
           ]
         }
       }
+    },
+    {
+      "name": "adjacent large causal positions",
+      "inputs": {
+        "q": {
+          "data": [
+            0.0
+          ],
+          "shape": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        },
+        "k": {
+          "data": [
+            0.0,
+            0.0
+          ],
+          "shape": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "strided"
+        },
+        "v": {
+          "data": [
+            2.0,
+            4.0
+          ],
+          "shape": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        },
+        "qpos": {
+          "data": [
+            9007199254740992
+          ],
+          "shape": [
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "kpos": {
+          "data": [
+            9007199254740991,
+            9007199254740993
+          ],
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "qvalid": {
+          "data": [
+            true
+          ],
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "kvalid": {
+          "data": [
+            true,
+            true
+          ],
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "u": {
+          "data": [
+            1.0
+          ],
+          "shape": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        }
+      },
+      "expected": {
+        "out": {
+          "data": [
+            2.0
+          ],
+          "shape": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        },
+        "dq": {
+          "data": [
+            0.0
+          ],
+          "shape": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        },
+        "dk": {
+          "data": [
+            0.0,
+            0.0
+          ],
+          "shape": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        },
+        "dv": {
+          "data": [
+            1.0,
+            0.0
+          ],
+          "shape": [
+            1,
+            1,
+            2,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        }
+      }
+    },
+    {
+      "name": "adjacent negative positions with gradients",
+      "inputs": {
+        "q": {
+          "data": [
+            1.0
+          ],
+          "shape": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        },
+        "k": {
+          "data": [
+            1.0,
+            -1.0,
+            2.0
+          ],
+          "shape": [
+            1,
+            1,
+            3,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "strided"
+        },
+        "v": {
+          "data": [
+            2.0,
+            4.0,
+            -1.0
+          ],
+          "shape": [
+            1,
+            1,
+            3,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        },
+        "qpos": {
+          "data": [
+            -9007199254740993
+          ],
+          "shape": [
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "kpos": {
+          "data": [
+            -9007199254740994,
+            -9007199254740993,
+            -9007199254740992
+          ],
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous"
+        },
+        "qvalid": {
+          "data": [
+            true
+          ],
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "kvalid": {
+          "data": [
+            true,
+            true,
+            true
+          ],
+          "shape": [
+            1,
+            3
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "u": {
+          "data": [
+            2.0
+          ],
+          "shape": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        }
+      },
+      "expected": {
+        "out": {
+          "data": [
+            2.2384058440442347
+          ],
+          "shape": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        },
+        "dq": {
+          "data": [
+            -0.8399486832280514
+          ],
+          "shape": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        },
+        "dk": {
+          "data": [
+            -0.4199743416140253,
+            0.41997434161402614,
+            0.0
+          ],
+          "shape": [
+            1,
+            1,
+            3,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        },
+        "dv": {
+          "data": [
+            1.7615941559557646,
+            0.2384058440442351,
+            0.0
+          ],
+          "shape": [
+            1,
+            1,
+            3,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous"
+        }
+      }
     }
   ]
 }

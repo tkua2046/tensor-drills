@@ -8,9 +8,9 @@ Two independent reviewers assessed curriculum breadth and assessment robustness.
 
 | ID | Priority | Finding | Recommended action | Disposition |
 | --- | --- | --- | --- | --- |
-| A-D1 | P2 | Eight integer-domain drills accept a lossy floating-point comparison or selection approach on their current fixtures. | Add adjacent-large-integer cases, retain direct-integer valid alternatives, and replay the original counterexamples. | Open; reproduced during review. |
-| C-D1 | P2 | `masks` and `masking` split direct filtered catalog entries for the same practice family. | Use a consistent preferred mask label across construction and applications. | Open; reproduced in both tracks. |
-| C-D2 | P3 | A NumPy softmax prerequisite link promises statistic alignment that its target does not assess. | Narrow the capability statement or link practice that also assesses alignment. | Open; established by tracing the linked materials. |
+| A-D1 | P2 | Eight integer-domain drills accept a lossy floating-point comparison or selection approach on their current fixtures. | Add adjacent-large-integer cases, retain direct-integer valid alternatives, and replay the original counterexamples. | Closed; original assessment reviewer verified the repair below. |
+| C-D1 | P2 | `masks` and `masking` split direct filtered catalog entries for the same practice family. | Use a consistent preferred mask label across construction and applications. | Closed; original curriculum reviewer replayed both filters in each track. |
+| C-D2 | P3 | A NumPy softmax prerequisite link promises statistic alignment that its target does not assess. | Narrow the capability statement or link practice that also assesses alignment. | Closed; original curriculum reviewer traced the narrowed capability to row-mean. |
 
 These reviews did not change drill content, metadata, or curriculum scope. Reusable review instructions and a report template were added separately. Future repairs should append their revised candidate and verification to this record, preserving the original findings.
 
@@ -42,6 +42,16 @@ Choose a preferred label consistently. This correction can preserve multi-label,
 [NumPy row-softmax metadata](../../tensor_drills/practice/drills/numpy/row-softmax/metadata.json) links `numpy/row-mean` for the capability “Compute a row reduction and align it with its original rows.” [Row mean](../../tensor_drills/practice/drills/numpy/row-mean/prompt.md) returns `(R,)` and assesses reduction, without the alignment step.
 
 Narrowing the statement to row reduction would match its evidence. [Row centering](../../tensor_drills/practice/drills/numpy/row-center/prompt.md) is another available practice link when alignment is the intended prerequisite. The softmax drill itself remains useful.
+
+## Repair and recheck — 2026-11-12
+
+The repairs were prepared from `0d6c004` and checked by the original reviewers against a frozen candidate. The original findings and reproductions above remain preserved. All three findings are now reviewer-verified closed; curriculum recommendations below remain separate.
+
+- **A-D1:** Added 12 fixed cases across the eight affected drills, retaining every original case. Comparisons, search and ranking now exercise adjacent positive/negative large integers and int64 endpoints. Both attention drills add the original future-key reproducer and a negative-position case with nonzero Q/K gradients and an exact-zero forbidden value gradient. Rubrics name the full case lists and address integer precision. The reviewer's eight unchanged bad attempts fail only appended cases; their eight independent native implementations pass every full suite. All 12 expected cases agree with independent integer/scalar calculations, including 24 finite-difference checks of attention gradients.
+- **C-D1:** Added preferred `masks` tags to the six construction, replacement and assignment records while retaining `masking` as an additional label. Independent CLI replays return 17 NumPy and 12 PyTorch entries for `masks`, adding exactly three foundations per track without losing applications. The `masking` results remain unchanged at three entries per track. The authoring guide documents the preferred label, and a catalog regression test covers both filters.
+- **C-D2:** Narrowed the NumPy softmax prerequisite to “Compute a mean for each row of a 2D array.” The `numpy/row-mean` practice link remains unchanged and its prompt/rubric support that capability.
+
+Author checks also ran two different valid approaches per affected drill in separate installed NumPy and PyTorch workspaces. All 15 repository tests pass. Catalog size remains 116 drills, with 551 fixed cases after these additions. No learner prompt, verifier behavior, or curriculum scope changed in these repairs.
 
 ## Curriculum recommendations
 

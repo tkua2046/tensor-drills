@@ -404,6 +404,116 @@
         "dtype": "bool",
         "layout": "contiguous"
       }
+    },
+    {
+      "name": "adjacent large int64 positions",
+      "inputs": {
+        "queries": {
+          "data": [
+            9007199254740992,
+            -9007199254740993,
+            9223372036854775806,
+            -9223372036854775808
+          ],
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "strided"
+        },
+        "keys": {
+          "data": [
+            9007199254740993,
+            9007199254740992,
+            -9007199254740992,
+            -9007199254740993,
+            9223372036854775807,
+            9223372036854775806,
+            -9223372036854775808,
+            -9223372036854775807
+          ],
+          "shape": [
+            8
+          ],
+          "dtype": "int64",
+          "layout": "strided"
+        },
+        "query_valid": {
+          "data": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "shape": [
+            1,
+            4
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        },
+        "key_valid": {
+          "data": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "shape": [
+            1,
+            8
+          ],
+          "dtype": "bool",
+          "layout": "contiguous"
+        }
+      },
+      "expected": {
+        "data": [
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false
+        ],
+        "shape": [
+          1,
+          4,
+          8
+        ],
+        "dtype": "bool",
+        "layout": "contiguous"
+      }
     }
   ]
 }

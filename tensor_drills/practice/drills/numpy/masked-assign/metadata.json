@@ -3,6 +3,7 @@
   "task_type": "create",
   "goal": "Replace selected entries in place so existing aliases observe the change.",
   "topics": [
+    "masks",
     "masking",
     "storage",
     "indexing"

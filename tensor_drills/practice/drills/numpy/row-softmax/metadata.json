@@ -9,7 +9,7 @@
   ],
   "prerequisites": [
     {
-      "capability": "Compute a row reduction and align it with its original rows.",
+      "capability": "Compute a mean for each row of a 2D array.",
       "practice_drill": "numpy/row-mean"
     }
   ],

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Fixed
+
+- Detect lossy int64 comparisons and selections with adjacent-large-integer cases in eight drills.
+- Include mask construction, replacement and assignment under the `masks` topic while preserving `masking` filters.
+- Match NumPy softmax's prerequisite description to the row-mean practice it links.
+
 ### Added
 
 - Document adversarial assessment and whole-catalog review workflows with a reusable content review template.

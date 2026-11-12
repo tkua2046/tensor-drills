@@ -91,6 +91,28 @@ class ListTests(unittest.TestCase):
                 self.assertNotIn("numpy/row-gather", result.stdout)
                 self.assertNotIn("pytorch/classifier", result.stdout)
 
+    def test_mask_topic_includes_foundations_and_applications(self):
+        for library in ("numpy", "pytorch"):
+            with self.subTest(library=library):
+                result = self.run_list("--library", library, "--topic", "masks")
+                self.assertEqual(result.returncode, 0, result.stderr)
+                listed_ids = {
+                    line.split(" (", 1)[0]
+                    for line in result.stdout.splitlines()
+                    if " (" in line and not line.startswith(" ")
+                }
+                for drill in (
+                    "build-mask", "conditional-replace", "masked-assign",
+                    "boolean-select", "masked-mean", "causal-mask",
+                ):
+                    self.assertIn(f"{library}/{drill}", listed_ids)
+                self.assertTrue(all(item.startswith(f"{library}/") for item in listed_ids))
+
+                compatible = self.run_list("--library", library, "--topic", "masking")
+                self.assertEqual(compatible.returncode, 0, compatible.stderr)
+                for drill in ("build-mask", "conditional-replace", "masked-assign"):
+                    self.assertIn(f"{library}/{drill} (", compatible.stdout)
+
     def test_reports_invalid_metadata_with_its_path(self):
         metadata = self.workspace / "drills/pytorch/classifier/metadata.json"
         broken = json.loads(metadata.read_text(encoding="utf-8"))

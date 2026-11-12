@@ -164,6 +164,91 @@
         "layout": "contiguous",
         "data": []
       }
+    },
+    {
+      "name": "adjacent int64 partition positive",
+      "inputs": {
+        "x": {
+          "data": [
+            9007199254740993,
+            9007199254740992
+          ],
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "strided"
+        },
+        "k": 1
+      },
+      "expected": {
+        "data": [
+          9007199254740993
+        ],
+        "shape": [
+          1
+        ],
+        "dtype": "int64",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "adjacent int64 partition negative",
+      "inputs": {
+        "x": {
+          "data": [
+            -9007199254740992,
+            -9007199254740993
+          ],
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "strided"
+        },
+        "k": 1
+      },
+      "expected": {
+        "data": [
+          -9007199254740992
+        ],
+        "shape": [
+          1
+        ],
+        "dtype": "int64",
+        "layout": "contiguous"
+      }
+    },
+    {
+      "name": "adjacent int64 partition extremal",
+      "inputs": {
+        "x": {
+          "data": [
+            -9223372036854775807,
+            -9223372036854775808,
+            9223372036854775807,
+            9223372036854775806
+          ],
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "strided"
+        },
+        "k": 3
+      },
+      "expected": {
+        "data": [
+          9223372036854775807,
+          9223372036854775806,
+          -9223372036854775807
+        ],
+        "shape": [
+          3
+        ],
+        "dtype": "int64",
+        "layout": "contiguous"
+      }
     }
   ]
 }

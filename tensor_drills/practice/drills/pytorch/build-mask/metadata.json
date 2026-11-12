@@ -2,7 +2,12 @@
   "scope": "atomic",
   "task_type": "create",
   "goal": "Construct a Boolean mask from two bounds and return its complement.",
-  "topics": ["masking", "dtypes", "shapes"],
+  "topics": [
+    "masks",
+    "masking",
+    "dtypes",
+    "shapes"
+  ],
   "prerequisites": [
     {
       "capability": "Read elementwise comparisons on an array of numbers."
