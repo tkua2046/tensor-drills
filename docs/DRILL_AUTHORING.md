@@ -12,6 +12,17 @@ When a plausible mistake could pass an obvious example, ask a reviewer to work t
 
 For shared briefs, check whether the same case exposes the mistake in each library. Give the author the contract questions and proposed cases, then revisit them when reviewing the completed drill.
 
+Use a small evidence table when a drill combines requirements. It can stay in the review notes; it is not another drill file.
+
+| Requirement from the prompt | Input or state that exercises it | Plausible mistake | Evidence |
+| --- | --- | --- | --- |
+| Include equal query/key positions in causal attention | Both positions are valid and the equal-position key affects the result | Use `<` instead of `<=` | A named fixed case distinguishes values or gradients. |
+| Use a custom backward | A nonuniform upstream gradient reaches the supplied input | Use ordinary native composition | Fixed values and gradients check correctness; the rubric inspects actual custom Function participation. |
+
+Keep fixture inputs inside the published contract. A boundary only counts as exercised when it can affect the checked result: an equality hidden by padding does not test the inclusive comparison.
+
+For integer comparisons or searches that accept the full int64 range, include adjacent large values as well as opposite extremes. A conversion to floating point can preserve the order of the extremes while losing the distinction between nearby integers.
+
 ## Start from the template
 
 Use the six files in [drill template](../templates/drill/) for either NumPy or PyTorch. From the repository root, choose an unused ID and copy the files into the bundled catalog. Set `track=pytorch` for a PyTorch drill.
@@ -89,6 +100,8 @@ PY
 
 Confirm that the copied prompt's goal matches the metadata. Check that each linked prerequisite practices the capability stated in the metadata.
 
+Reuse the same topic label for the same concept across related drills. Try a relevant `--topic` filter together with `--library` and compare the results with the intended family, including its foundations. Keep distinct concepts, such as matrix products and linear solves, separately labelled.
+
 ### Check attempts
 
 Prepare two materially different valid attempts and plausible wrong attempts in the scratch directory, outside the copied workspace. Choose wrong attempts that target different cases when the drill covers several distinct mistakes. Run the checks from the copied workspace root, as the learner will, and record the exit status and case results of each command.
@@ -115,7 +128,32 @@ Exit `2` indicates a setup error. Resolve it before interpreting an attempt. Use
 
 Give the reviewer the brief, the exact candidate revision or snapshot, and the attempt files or complete steps to recreate them. Record the Python and library versions, commands, and expected and observed exit statuses and case results. Include any limits. Ask the reviewer to check that a learner can start from the prompt and that the fixed cases and rubric assess the stated skill. Send revised files back for recheck when a finding changes the drill.
 
+Use the [content review template](../templates/content-review.md) when it helps record the scope, evidence and follow-up. Keep findings tied to the reviewed revision; accepted curriculum decisions belong in their owning documents. [Review records](reviews/README.md)
+
+### Challenge the assessment
+
+For a new drill, a changed contract or checker, or a delivery assessment audit:
+
+1. **Read the learner materials first.** Form an interpretation from the prompt and starter before consulting the rubric or author solutions. Write an independent valid approach where practical.
+2. **Trace the requirements.** Use the evidence table above to check the important boundaries and interactions. Include relevant numeric domains, empty selections, repeated indices, storage relationships, incoming state and backward behavior. Compare fixed fixtures with the prompt's input assumptions.
+3. **Try a semantic near miss.** Change one meaningful behavior while preserving the others, such as a denominator, boundary, axis or state transition. Run the saved attempt through the learner CLI. A wrong attempt targeting fixed-test behavior should fail the intended case; accept valid alternatives.
+4. **Interpret surviving attempts.** A numerical pass can be appropriate when the prompt and rubric explicitly assess an operation, allocation bound or diagnosis artifact through code and explanation. Report a gap when the combined assessment misses a stated requirement, or when a valid attempt is rejected. General style preferences do not establish failure.
+5. **Probe beyond the fixtures.** Use small independent scalar expectations, generated inputs or contract-derived properties where they address a specific risk. Record seeds and domains for generated probes. Keep these review experiments separate from the shipped checker. Turn a useful, deterministic counterexample into a fixed regression case when repairing a defect.
+
+For each finding, preserve the original candidate, attempt, trigger, expected behavior and actual CLI output. Recheck the repair with the original reproducer and valid alternatives, including any other drills that share the affected check. Record the revised candidate and disposition separately from the original finding. State which materials were inspected and which probes were executed; sampling is not an all-catalog runtime check.
+
 When a bundled drill is ready to ship, link it beside its skill and update its source record. [Skill map](SKILL_MAP.md) · [Drill source records](RESOURCES.md#drill-source-records)
+
+## Review the catalog
+
+Review the catalog as a whole when adding a substantial skill family or preparing a content release. This complements per-drill review and can reveal gaps between individually useful exercises.
+
+1. Start from the [fluency goal and selection criteria](CONTENT_DESIGN.md), supported by relevant public references. Assess NumPy and PyTorch separately. The existing map and completed delivery plan are evidence of current choices, not the boundary of useful practice.
+2. Inventory the drills by primary outcome and group overlapping families. For each, trace the prompt's goal to a fixed case or rubric criterion, identify assumed capabilities, and state what makes the exercise distinct. Different mutation, denominator, gradient or diagnosis requirements can justify separate drills.
+3. Walk through plausible entry and follow-up choices using the actual metadata. Check that prerequisite links teach their stated capability and that topic labels and relative workload help discovery. Distinguish a missing skill from missing standalone practice of a skill already assessed in a composite task.
+4. Prioritize meaningful gaps and redundancies by frequency of use, transfer value and consequences of misunderstanding. Suggest strengthening, combining, adding or deferring practice with a reason; avoid a target drill count or a checklist of every library API.
+
+Report assessment defects separately from curriculum recommendations and optional improvements. Cite the drill materials and the learning consequence. An explicit deferral can be reconsidered with evidence. Accepted curriculum decisions belong in the design, skill map and delivery plan; review notes preserve the findings and their disposition. [Document responsibilities](README.md)
 
 ## Author and reviewer prompts
 
@@ -157,10 +195,31 @@ and rubric. Use docs/DRILL_AUTHORING.md to check the fresh workspace flow.
 Try a missing boundary case and a plausible solution that passes the fixed
 checks while skipping the intended skill. Judge whether the rubric catches
 the latter. Check each affected library and report what you actually ran.
+Use Challenge the assessment in docs/DRILL_AUTHORING.md. Distinguish a
+fixed-test escape covered fairly by the rubric from an assessment defect.
+Preserve reproducers and exact outcomes so repairs can be rechecked.
 
 Report findings with file locations, reproductions, and suggested fixes.
 For documentation changes, use Editing and review in docs/README.md to
 check each document's responsibility and trace changed claims to their
 source.
 Review the candidate read-only and run experiments in a disposable copy.
+```
+
+### Catalog reviewer prompt
+
+```text
+Review the catalog at <commit or snapshot> against the NumPy/PyTorch
+fluency goal in docs/CONTENT_DESIGN.md. Follow Review the catalog in
+docs/DRILL_AUTHORING.md and use docs/README.md for document ownership.
+
+Inventory the stated scope by primary outcome and overlapping families.
+Trace actual assessed skills, prerequisite capabilities, discovery metadata
+and plausible learning routes. Look beyond the existing map and milestones
+for meaningful gaps. Explain which apparent duplicates earn separate practice.
+
+Report concrete assessment defects, curriculum recommendations and optional
+improvements separately, with locations, evidence and learning consequences.
+State the inspected scope, executed probes and limits. Keep the candidate
+read-only and preserve review evidence for later decisions or rechecks.
 ```

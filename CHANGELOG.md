@@ -4,6 +4,8 @@
 
 ### Added
 
+- Document adversarial assessment and whole-catalog review workflows with a reusable content review template.
+
 - Add PyTorch Milestone 6 practice with standalone contracts, fixed cases and assessment rubrics.
 
 - Add NumPy Milestone 6 practice with standalone contracts, fixed cases and assessment rubrics.

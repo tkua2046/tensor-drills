@@ -1,4 +1,5 @@
 include CHANGELOG.md DEVNOTES.md docs/INFRA_DESIGN.md docs/drill-metadata.schema.json check.py
 include docs/CONTENT_DESIGN.md docs/CONTENT_IMPLEMENTATION_PLAN.md docs/SKILL_MAP.md docs/RESOURCES.md
 include docs/README.md docs/AGENTS.md docs/DRILL_AUTHORING.md
+recursive-include docs/reviews *.md
 recursive-include templates *.md *.json *.py

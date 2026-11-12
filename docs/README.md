@@ -10,7 +10,8 @@ Tensor Drills helps learners who know basic Python become fluent in NumPy and Py
 | [Infrastructure Design](INFRA_DESIGN.md) | Defines how drills are packaged, discovered, run, and assessed, including the roles of fixed tests and rubrics. |
 | [Drill metadata schema](drill-metadata.schema.json) | Defines the fields and allowed values in a drill's catalog metadata. |
 | [Resources and Drill Sources](RESOURCES.md) | Records public references, drill origins, and applicable attribution. |
-| [Drill Authoring Guide](DRILL_AUTHORING.md) | Explains how to use the drill template, verify a drill in a fresh workspace, and hand it off for review. Includes author and reviewer prompts. |
+| [Drill Authoring Guide](DRILL_AUTHORING.md) | Explains how to use the drill template, verify and challenge its assessment, and review a whole catalog. Includes author and reviewer prompts. |
+| [Content review records](reviews/README.md) | Preserve findings, evidence and dispositions at identified revisions. Accepted goals, coverage and delivery decisions stay in their owning documents above. |
 | [Development Notes](../DEVNOTES.md) | Explains how to run project checks and build distributions. |
 
 For a specific drill, use the prompt for the learner's task and contract, the fixed cases for expected behavior, and the rubric for review evidence. [Drill package and assessment](INFRA_DESIGN.md#drill-package-and-assessment)
