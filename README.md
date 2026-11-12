@@ -25,7 +25,9 @@ The starter is unfinished, so this first check should fail. Edit `attempt.py` ne
 
 ## Choose a drill
 
-Both tracks offer core practice in shapes, indexing, masks, storage, dtypes, reductions, and matrix products. If you already know how a PyTorch training loop works, try [classifier debugging](tensor_drills/practice/drills/pytorch/classifier/prompt.md) and [inline validation](tensor_drills/practice/drills/pytorch/inline-validation/prompt.md).
+Both tracks offer core practice in shapes, indexing, masks, storage, dtypes, reductions, and matrix products. NumPy practice continues into stable numerics, grouped data, streaming calculations and linear systems. PyTorch practice continues into autograd, model state, training updates and attention.
+
+If you already know how a PyTorch training loop works, try [classifier debugging](tensor_drills/practice/drills/pytorch/classifier/prompt.md) and [inline validation](tensor_drills/practice/drills/pytorch/inline-validation/prompt.md).
 
 See the skill map for available drills and what to practice next. [Shared skills](docs/SKILL_MAP.md#shared-skills) · [NumPy skills](docs/SKILL_MAP.md#numpy) · [PyTorch skills](docs/SKILL_MAP.md#pytorch)
 
