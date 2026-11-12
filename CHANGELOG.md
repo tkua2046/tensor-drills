@@ -4,6 +4,8 @@
 
 ### Added
 
+- Add PyTorch Milestone 6 practice with standalone contracts, fixed cases and assessment rubrics.
+
 - Add NumPy Milestone 6 practice with standalone contracts, fixed cases and assessment rubrics.
 
 - Add PyTorch Milestone 5 practice with standalone contracts, fixed cases and assessment rubrics.

@@ -1,0 +1,1022 @@
+{
+  "dependencies": [
+    "torch"
+  ],
+  "cases": [
+    {
+      "name": "optimizer windows 0",
+      "inputs": {
+        "windows": [
+          [
+            {
+              "features": {
+                "shape": [
+                  3,
+                  2
+                ],
+                "dtype": "float64",
+                "layout": "contiguous",
+                "data": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  2.0,
+                  1.0,
+                  -1.0
+                ]
+              },
+              "targets": {
+                "shape": [
+                  3
+                ],
+                "dtype": "int64",
+                "layout": "contiguous",
+                "data": [
+                  0,
+                  -100,
+                  1
+                ]
+              }
+            },
+            {
+              "features": {
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype": "float64",
+                "layout": "contiguous",
+                "data": [
+                  2.0,
+                  1.0
+                ]
+              },
+              "targets": {
+                "shape": [
+                  1
+                ],
+                "dtype": "int64",
+                "layout": "contiguous",
+                "data": [
+                  1
+                ]
+              }
+            }
+          ],
+          [
+            {
+              "features": {
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype": "float64",
+                "layout": "contiguous",
+                "data": [
+                  1.0,
+                  2.0
+                ]
+              },
+              "targets": {
+                "shape": [
+                  1
+                ],
+                "dtype": "int64",
+                "layout": "contiguous",
+                "data": [
+                  -100
+                ]
+              }
+            },
+            {
+              "features": {
+                "shape": [
+                  0,
+                  2
+                ],
+                "dtype": "float64",
+                "layout": "contiguous",
+                "data": []
+              },
+              "targets": {
+                "shape": [
+                  0
+                ],
+                "dtype": "int64",
+                "layout": "contiguous",
+                "data": []
+              }
+            }
+          ],
+          [
+            {
+              "features": {
+                "shape": [
+                  0,
+                  2
+                ],
+                "dtype": "float64",
+                "layout": "contiguous",
+                "data": []
+              },
+              "targets": {
+                "shape": [
+                  0
+                ],
+                "dtype": "int64",
+                "layout": "contiguous",
+                "data": []
+              }
+            },
+            {
+              "features": {
+                "shape": [
+                  2,
+                  2
+                ],
+                "dtype": "float64",
+                "layout": "contiguous",
+                "data": [
+                  0.5,
+                  -1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              "targets": {
+                "shape": [
+                  2
+                ],
+                "dtype": "int64",
+                "layout": "contiguous",
+                "data": [
+                  0,
+                  1
+                ]
+              }
+            }
+          ]
+        ],
+        "weight": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.2,
+            -0.4,
+            -0.1,
+            0.3
+          ]
+        },
+        "bias": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.1,
+            -0.2
+          ]
+        }
+      },
+      "expected": [
+        {
+          "weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.14876135720355635,
+              -0.391733300475664,
+              -0.04886135720355633,
+              0.29183330047566397
+            ]
+          },
+          "bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.06718915711397228,
+              -0.16708915711397226
+            ]
+          },
+          "momentum_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.5123864279644367,
+              -0.08266699524336024,
+              -0.5113864279644367,
+              0.08166699524336024
+            ]
+          },
+          "momentum_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.32810842886027736,
+              -0.32910842886027736
+            ]
+          },
+          "gradient_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.5103864279644367,
+              -0.07866699524336024,
+              -0.5103864279644367,
+              0.07866699524336024
+            ]
+          },
+          "gradient_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.32710842886027736,
+              -0.32710842886027736
+            ]
+          },
+          "loss": {
+            "shape": [],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.9255450912334899
+            ]
+          },
+          "valid": 3,
+          "has_state": true
+        },
+        {
+          "weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.14876135720355635,
+              -0.391733300475664,
+              -0.04886135720355633,
+              0.29183330047566397
+            ]
+          },
+          "bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.06718915711397228,
+              -0.16708915711397226
+            ]
+          },
+          "momentum_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.5123864279644367,
+              -0.08266699524336024,
+              -0.5113864279644367,
+              0.08166699524336024
+            ]
+          },
+          "momentum_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.32810842886027736,
+              -0.32910842886027736
+            ]
+          },
+          "gradient_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "gradient_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0,
+              0.0
+            ]
+          },
+          "loss": {
+            "shape": [],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0
+            ]
+          },
+          "valid": 0,
+          "has_state": true
+        },
+        {
+          "weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0872691186938995,
+              -0.41905617846371085,
+              0.01244098130610053,
+              0.31934607846371077
+            ]
+          },
+          "bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.02900549146536964,
+              -0.12871559146536965
+            ]
+          },
+          "momentum_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.6149223850965685,
+              0.2732287798804682,
+              -0.6130233850965686,
+              -0.2751277798804682
+            ]
+          },
+          "momentum_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.3818366564860263,
+              -0.38373565648602626
+            ]
+          },
+          "gradient_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.15228698635653998,
+              0.35154640860424907,
+              -0.15228698635653998,
+              -0.35154640860424907
+            ]
+          },
+          "gradient_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.08586717894063695,
+              -0.08586717894063695
+            ]
+          },
+          "loss": {
+            "shape": [],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.44200993179219816
+            ]
+          },
+          "valid": 2,
+          "has_state": true
+        }
+      ]
+    },
+    {
+      "name": "optimizer windows 1",
+      "inputs": {
+        "windows": [
+          [],
+          [
+            {
+              "features": {
+                "shape": [
+                  0,
+                  2
+                ],
+                "dtype": "float64",
+                "layout": "contiguous",
+                "data": []
+              },
+              "targets": {
+                "shape": [
+                  0
+                ],
+                "dtype": "int64",
+                "layout": "contiguous",
+                "data": []
+              }
+            },
+            {
+              "features": {
+                "shape": [
+                  2,
+                  2
+                ],
+                "dtype": "float64",
+                "layout": "contiguous",
+                "data": [
+                  1.0,
+                  0.0,
+                  2.0,
+                  1.0
+                ]
+              },
+              "targets": {
+                "shape": [
+                  2
+                ],
+                "dtype": "int64",
+                "layout": "contiguous",
+                "data": [
+                  -100,
+                  -100
+                ]
+              }
+            }
+          ],
+          [
+            {
+              "features": {
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype": "float64",
+                "layout": "contiguous",
+                "data": [
+                  1.0,
+                  0.0
+                ]
+              },
+              "targets": {
+                "shape": [
+                  1
+                ],
+                "dtype": "int64",
+                "layout": "contiguous",
+                "data": [
+                  1
+                ]
+              }
+            },
+            {
+              "features": {
+                "shape": [
+                  2,
+                  2
+                ],
+                "dtype": "float64",
+                "layout": "contiguous",
+                "data": [
+                  0.0,
+                  1.0,
+                  1.0,
+                  1.0
+                ]
+              },
+              "targets": {
+                "shape": [
+                  2
+                ],
+                "dtype": "int64",
+                "layout": "contiguous",
+                "data": [
+                  0,
+                  1
+                ]
+              }
+            }
+          ]
+        ],
+        "weight": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.2,
+            -0.4,
+            -0.1,
+            0.3
+          ]
+        },
+        "bias": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.1,
+            -0.2
+          ]
+        }
+      },
+      "expected": [
+        {
+          "weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.2,
+              -0.4,
+              -0.1,
+              0.3
+            ]
+          },
+          "bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.1,
+              -0.2
+            ]
+          },
+          "momentum_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "momentum_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0,
+              0.0
+            ]
+          },
+          "gradient_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "gradient_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0,
+              0.0
+            ]
+          },
+          "loss": {
+            "shape": [],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0
+            ]
+          },
+          "valid": 0,
+          "has_state": false
+        },
+        {
+          "weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.2,
+              -0.4,
+              -0.1,
+              0.3
+            ]
+          },
+          "bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.1,
+              -0.2
+            ]
+          },
+          "momentum_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "momentum_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0,
+              0.0
+            ]
+          },
+          "gradient_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "gradient_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0,
+              0.0
+            ]
+          },
+          "loss": {
+            "shape": [],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.0
+            ]
+          },
+          "valid": 0,
+          "has_state": false
+        },
+        {
+          "weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.1624440960417715,
+              -0.39547777174695364,
+              -0.06254409604177148,
+              0.2955777717469536
+            ]
+          },
+          "bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.08250035137885323,
+              -0.18240035137885321
+            ]
+          },
+          "momentum_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.3755590395822851,
+              -0.04522228253046401,
+              -0.3745590395822852,
+              0.04422228253046395
+            ]
+          },
+          "momentum_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.1749964862114678,
+              -0.17599648621146788
+            ]
+          },
+          "gradient_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.3735590395822851,
+              -0.041222282530464005,
+              -0.3735590395822852,
+              0.04122228253046395
+            ]
+          },
+          "gradient_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.1739964862114678,
+              -0.17399648621146788
+            ]
+          },
+          "loss": {
+            "shape": [],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.8649666209864697
+            ]
+          },
+          "valid": 3,
+          "has_state": true
+        }
+      ]
+    },
+    {
+      "name": "optimizer windows 2",
+      "inputs": {
+        "windows": [
+          [
+            {
+              "features": {
+                "shape": [
+                  1,
+                  2
+                ],
+                "dtype": "float64",
+                "layout": "contiguous",
+                "data": [
+                  1.0,
+                  2.0
+                ]
+              },
+              "targets": {
+                "shape": [
+                  1
+                ],
+                "dtype": "int64",
+                "layout": "contiguous",
+                "data": [
+                  -100
+                ]
+              }
+            },
+            {
+              "features": {
+                "shape": [
+                  2,
+                  2
+                ],
+                "dtype": "float64",
+                "layout": "contiguous",
+                "data": [
+                  0.0,
+                  1.0,
+                  2.0,
+                  0.0
+                ]
+              },
+              "targets": {
+                "shape": [
+                  2
+                ],
+                "dtype": "int64",
+                "layout": "contiguous",
+                "data": [
+                  0,
+                  1
+                ]
+              }
+            }
+          ]
+        ],
+        "weight": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.2,
+            -0.4,
+            -0.1,
+            0.3
+          ]
+        },
+        "bias": {
+          "shape": [
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.1,
+            -0.2
+          ]
+        }
+      },
+      "expected": [
+        {
+          "weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.12870504973749963,
+              -0.36966561699437744,
+              -0.028805049737499602,
+              0.2697656169943774
+            ]
+          },
+          "bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.09428690787437241,
+              -0.1941869078743724
+            ]
+          },
+          "momentum_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.7129495026250039,
+              -0.303343830056226,
+              -0.711949502625004,
+              0.302343830056226
+            ]
+          },
+          "momentum_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.057130921256275946,
+              -0.058130921256276
+            ]
+          },
+          "gradient_weight": {
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.7109495026250039,
+              -0.299343830056226,
+              -0.710949502625004,
+              0.299343830056226
+            ]
+          },
+          "gradient_bias": {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              0.056130921256275945,
+              -0.056130921256276
+            ]
+          },
+          "loss": {
+            "shape": [],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              1.0770845635660202
+            ]
+          },
+          "valid": 2,
+          "has_state": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Implement a custom autograd backward for the smooth Swish operation.",
+  "topics": [
+    "autograd",
+    "numerics"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Compute input and weight vector-Jacobian products for a matrix product without autograd.",
+      "practice_drill": "pytorch/matrix-vjp"
+    },
+    {
+      "capability": "Use an explicit upstream tensor and retain the gradient of a non-leaf intermediate.",
+      "practice_drill": "pytorch/non-scalar-backward"
+    }
+  ],
+  "workload": 3
+}

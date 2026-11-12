@@ -1,0 +1,20 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Compute input and weight vector-Jacobian products for a matrix product without autograd.",
+  "topics": [
+    "autograd",
+    "matmul"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Multiply each batch item of shape `(rows, in_features)` by the same `(in_features, out_features)` matrix.",
+      "practice_drill": "pytorch/shared-weight-matmul"
+    },
+    {
+      "capability": "Use an explicit upstream tensor and retain the gradient of a non-leaf intermediate.",
+      "practice_drill": "pytorch/non-scalar-backward"
+    }
+  ],
+  "workload": 2
+}

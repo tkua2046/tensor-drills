@@ -1,0 +1,15 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Use an explicit upstream tensor and retain the gradient of a non-leaf intermediate.",
+  "topics": [
+    "autograd"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Use backward() to compute the gradient of a nonlinear scalar objective on a trainable leaf.",
+      "practice_drill": "pytorch/scalar-gradient"
+    }
+  ],
+  "workload": 2
+}

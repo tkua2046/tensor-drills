@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Reduce shared weight and bias gradients across batch and time axes.",
+  "topics": [
+    "autograd",
+    "matmul",
+    "reductions"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Compute input and weight vector-Jacobian products for a matrix product without autograd.",
+      "practice_drill": "pytorch/matrix-vjp"
+    }
+  ],
+  "workload": 3
+}

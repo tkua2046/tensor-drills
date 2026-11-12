@@ -1,0 +1,172 @@
+{
+  "dependencies": [
+    "torch"
+  ],
+  "cases": [
+    {
+      "name": "custom derivative 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -4.0,
+            -1.0,
+            0.0,
+            2.0,
+            4.0
+          ]
+        },
+        "u": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.5,
+            -2.0,
+            1.0,
+            0.0,
+            3.0
+          ]
+        }
+      },
+      "expected": {
+        "y": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -0.07194483984836623,
+            -0.2689414213699951,
+            0.0,
+            1.7615941559557646,
+            3.928055160151634
+          ]
+        },
+        "dx": {
+          "shape": [
+            5
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -0.026332307445536454,
+            -0.1446589762570265,
+            0.5,
+            0.0,
+            3.1579938446732183
+          ]
+        }
+      }
+    },
+    {
+      "name": "custom derivative 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.25
+          ]
+        },
+        "u": {
+          "shape": [
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1.5
+          ]
+        }
+      },
+      "expected": {
+        "y": {
+          "shape": [
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.14054412522144952
+          ]
+        },
+        "dx": {
+          "shape": [
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -0.9355650323552964
+          ]
+        }
+      }
+    },
+    {
+      "name": "custom derivative 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1.0,
+            -2.0,
+            0.5
+          ]
+        },
+        "u": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            2.0,
+            -1.0
+          ]
+        }
+      },
+      "expected": {
+        "y": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.7310585786300049,
+            -0.2384058440442351,
+            0.3112296656009273
+          ]
+        },
+        "dx": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            -0.18156849756979093,
+            -0.7399611873026518
+          ]
+        }
+      }
+    }
+  ]
+}

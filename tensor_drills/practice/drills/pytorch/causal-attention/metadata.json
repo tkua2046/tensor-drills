@@ -1,0 +1,26 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Compute rectangular causal attention with absolute positions and finite Q/K/V gradients.",
+  "topics": [
+    "attention",
+    "masks",
+    "autograd",
+    "matmul"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Build a causal query\u2013key mask that also excludes padded queries and keys.",
+      "practice_drill": "pytorch/causal-mask"
+    },
+    {
+      "capability": "Normalize over allowed positions with finite backward gradients and zero outputs for fully masked rows.",
+      "practice_drill": "pytorch/masked-softmax"
+    },
+    {
+      "capability": "Pack head features into contiguous sequence order while preserving their gradient path.",
+      "practice_drill": "pytorch/head-pack"
+    }
+  ],
+  "workload": 4
+}

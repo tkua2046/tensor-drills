@@ -1,0 +1,18 @@
+{
+  "scope": "composite",
+  "task_type": "debug",
+  "goal": "Diagnose and repair future-token leakage using a controlled perturbation probe.",
+  "topics": [
+    "attention",
+    "debugging",
+    "masks",
+    "autograd"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Compute rectangular causal attention with absolute positions and finite Q/K/V gradients.",
+      "practice_drill": "pytorch/causal-attention"
+    }
+  ],
+  "workload": 4
+}

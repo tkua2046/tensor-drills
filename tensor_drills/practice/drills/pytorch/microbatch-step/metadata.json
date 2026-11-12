@@ -1,0 +1,26 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Make one optimizer update using the global valid-token denominator across microbatches.",
+  "topics": [
+    "training",
+    "autograd",
+    "losses",
+    "state"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Compute mean cross-entropy over valid tokens, ignoring target `-100` and returning a differentiable zero when all tokens are ignored.",
+      "practice_drill": "pytorch/token-cross-entropy"
+    },
+    {
+      "capability": "Observe gradient accumulation across fresh forwards and clear it before a new objective.",
+      "practice_drill": "pytorch/gradient-sequence"
+    },
+    {
+      "capability": "Implement one labeled training update with a supplied model, loss, and optimizer.",
+      "practice_drill": "pytorch/train-step"
+    }
+  ],
+  "workload": 4
+}

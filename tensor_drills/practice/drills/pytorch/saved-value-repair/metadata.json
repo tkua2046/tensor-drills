@@ -1,0 +1,21 @@
+{
+  "scope": "atomic",
+  "task_type": "debug",
+  "goal": "Repair mutation of a value needed by backward without changing the intended loss or update.",
+  "topics": [
+    "autograd",
+    "views",
+    "debugging"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Produce detached tensors with the same values and different storage relationships to a trainable source.",
+      "practice_drill": "pytorch/detach-snapshots"
+    },
+    {
+      "capability": "Use backward() to compute the gradient of a nonlinear scalar objective on a trainable leaf.",
+      "practice_drill": "pytorch/scalar-gradient"
+    }
+  ],
+  "workload": 2
+}
