@@ -1,0 +1,21 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Compute mean cross-entropy over valid tokens, ignoring target `-100` and returning a differentiable zero when all tokens are ignored.",
+  "topics": [
+    "losses",
+    "autograd",
+    "sequences"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Gather each token's target-class score while preserving its gradient path.",
+      "practice_drill": "pytorch/token-score-gather"
+    },
+    {
+      "capability": "Use backward() to compute the gradient of a nonlinear scalar objective on a trainable leaf.",
+      "practice_drill": "pytorch/scalar-gradient"
+    }
+  ],
+  "workload": 3
+}

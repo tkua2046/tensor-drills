@@ -1,0 +1,25 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Select beam features along the middle axis while preserving batch identity and repeated-parent gradients.",
+  "topics": [
+    "indexing",
+    "autograd",
+    "storage"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Gather several columns independently for each row, preserving selection order and repeats.",
+      "practice_drill": "pytorch/row-gather-many"
+    },
+    {
+      "capability": "Sum values into indexed destinations, adding all contributions at repeated indices.",
+      "practice_drill": "pytorch/indexed-sum"
+    },
+    {
+      "capability": "Use backward() to compute the gradient of a nonlinear scalar objective on a trainable leaf.",
+      "practice_drill": "pytorch/scalar-gradient"
+    }
+  ],
+  "workload": 2
+}

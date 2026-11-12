@@ -1,0 +1,25 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Select the highest scores per batch while keeping labels and score gradients aligned.",
+  "topics": [
+    "ranking",
+    "indexing",
+    "autograd"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Return each row's maximum together with its first matching column index.",
+      "practice_drill": "pytorch/row-max"
+    },
+    {
+      "capability": "Gather several columns independently for each row, preserving selection order and repeats.",
+      "practice_drill": "pytorch/row-gather-many"
+    },
+    {
+      "capability": "Use backward() to compute the gradient of a nonlinear scalar objective on a trainable leaf.",
+      "practice_drill": "pytorch/scalar-gradient"
+    }
+  ],
+  "workload": 2
+}

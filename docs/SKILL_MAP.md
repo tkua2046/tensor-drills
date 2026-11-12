@@ -37,7 +37,7 @@ These skills apply to both libraries. Use the drill link for your track.
 | Mask alignment | Apply each timestep flag across features without storing repeated masks. | [NumPy masked mean (applied practice)](../tensor_drills/practice/drills/numpy/masked-mean/prompt.md) · [PyTorch masked mean (applied practice)](../tensor_drills/practice/drills/pytorch/masked-mean/prompt.md) |
 | Slicing and masks | Select valid rows from a slice using a mask aligned to the original input. | [NumPy window mask](../tensor_drills/practice/drills/numpy/window-mask/prompt.md) · [PyTorch window mask](../tensor_drills/practice/drills/pytorch/window-mask/prompt.md) |
 | Repeated destinations | Sum all contributions at repeated indices and leave unused destinations at zero. | [NumPy](../tensor_drills/practice/drills/numpy/indexed-sum/prompt.md) · [PyTorch](../tensor_drills/practice/drills/pytorch/indexed-sum/prompt.md) |
-| Aligning values and indices | Pair row maxima with their indices and keep labels aligned through a top-k selection. | [NumPy row max](../tensor_drills/practice/drills/numpy/row-max/prompt.md) · [PyTorch row max](../tensor_drills/practice/drills/pytorch/row-max/prompt.md) · [Masked ranking](../tensor_drills/practice/drills/numpy/masked-ranking/prompt.md) |
+| Aligning values and indices | Pair row maxima with their indices and keep labels aligned through a top-k selection. | [NumPy row max](../tensor_drills/practice/drills/numpy/row-max/prompt.md) · [PyTorch row max](../tensor_drills/practice/drills/pytorch/row-max/prompt.md) · [Masked ranking](../tensor_drills/practice/drills/numpy/masked-ranking/prompt.md) · [Topk labels](../tensor_drills/practice/drills/pytorch/topk-labels/prompt.md) |
 | Causal masking | Compare query and key positions, then combine the mask with padding. | [NumPy causal mask](../tensor_drills/practice/drills/numpy/causal-mask/prompt.md) · [PyTorch causal mask](../tensor_drills/practice/drills/pytorch/causal-mask/prompt.md) |
 
 ### Shared reductions, broadcasting, and products
@@ -99,9 +99,9 @@ Start with the [shared skills](#shared-skills), then explore PyTorch autograd, m
 | --- | --- | --- |
 | Device placement | Keep model parameters, inputs, and intermediates on compatible devices. | [Device forward](../tensor_drills/practice/drills/pytorch/device-forward/prompt.md) |
 | NumPy conversion | Compare shared CPU storage with independent copies and capture a logging snapshot of a tensor that tracks gradients. | [NumPy boundary](../tensor_drills/practice/drills/pytorch/numpy-boundary/prompt.md) (requires both packages) |
-| Batched gathering | Gather a class score per token and beam information on a middle axis; trace gradients through repeated selections. | — |
-| Head layout and storage | Pack a sliced head tensor with a nonzero storage offset, explicit feature order, contiguous output and a preserved gradient path. | — |
-| Routing and accumulation | Select a shortlist, keep features aligned with destinations, and sum repeated destinations within each batch. | — |
+| Batched gathering | Gather a class score per token and beam information on a middle axis; trace gradients through repeated selections. | [Token score gather](../tensor_drills/practice/drills/pytorch/token-score-gather/prompt.md) · [Beam gather](../tensor_drills/practice/drills/pytorch/beam-gather/prompt.md) |
+| Head layout and storage | Pack a sliced head tensor with a nonzero storage offset, explicit feature order, contiguous output and a preserved gradient path. | [Head pack](../tensor_drills/practice/drills/pytorch/head-pack/prompt.md) |
+| Routing and accumulation | Select a shortlist, keep features aligned with destinations, and sum repeated destinations within each batch. | [Topk route](../tensor_drills/practice/drills/pytorch/topk-route/prompt.md) |
 
 ### PyTorch autograd and training
 
@@ -123,14 +123,14 @@ Start with the [shared skills](#shared-skills), then explore PyTorch autograd, m
 | --- | --- | --- |
 | Module construction | Register layers and produce class logits with the expected batch shape. | [Classifier forward](../tensor_drills/practice/drills/pytorch/classifier-forward/prompt.md) |
 | Batching and persistence | Keep samples paired with labels in minibatches. Restore parameters and confirm predictions. | [Labeled batches](../tensor_drills/practice/drills/pytorch/labeled-batches/prompt.md) · [Model roundtrip](../tensor_drills/practice/drills/pytorch/model-roundtrip/prompt.md) |
-| Parameters and buffers | Register trainable parameters, persistent buffers, and temporary buffers that follow module dtype and device. | — |
+| Parameters and buffers | Register trainable parameters, persistent buffers, and temporary buffers that follow module dtype and device. | [Registered affine](../tensor_drills/practice/drills/pytorch/registered-affine/prompt.md) |
 
 ### PyTorch masking and sequence models
 
 | Skill | What to practice | Bundled drills |
 | --- | --- | --- |
 | Softmax | Normalize logits over the intended axis and check the probability values. | [Row softmax](../tensor_drills/practice/drills/pytorch/row-softmax/prompt.md) |
-| Differentiable masking | Normalize over allowed positions and check gradients, including fully masked rows. Build a mask from key lengths. | — |
-| Global valid-token loss | Check ignored gradients and the differentiable zero when every token is ignored. Practice shifting targets for next-token loss. | — |
+| Differentiable masking | Normalize over allowed positions and check gradients, including fully masked rows. Build a mask from key lengths. | [Key length mask](../tensor_drills/practice/drills/pytorch/key-length-mask/prompt.md) · [Masked softmax](../tensor_drills/practice/drills/pytorch/masked-softmax/prompt.md) |
+| Global valid-token loss | Check ignored gradients and the differentiable zero when every token is ignored. Practice shifting targets for next-token loss. | [Token cross entropy](../tensor_drills/practice/drills/pytorch/token-cross-entropy/prompt.md) · [Next token cross entropy](../tensor_drills/practice/drills/pytorch/next-token-cross-entropy/prompt.md) |
 | Rectangular causal attention | Use absolute positions, handle empty queries, and check outputs and gradients with independent fixtures. | — |
 | Transformer debugging | Diagnose a causal masking bug using the invariant that later tokens cannot change earlier outputs. | — |

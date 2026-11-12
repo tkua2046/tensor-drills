@@ -1,0 +1,313 @@
+{
+  "dependencies": [
+    "torch"
+  ],
+  "cases": [
+    {
+      "name": "next-token 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            3,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "strided",
+          "data": [
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            -2,
+            -1
+          ]
+        },
+        "targets": {
+          "shape": [
+            2,
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            -100,
+            -100,
+            1,
+            0,
+            1
+          ]
+        }
+      },
+      "expected": {
+        "value": {
+          "shape": [],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.8132616875182229
+          ]
+        },
+        "gradient": {
+          "shape": [
+            2,
+            3,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            -0.36552928931500245,
+            0.36552928931500245,
+            0.13447071068499755,
+            -0.13447071068499755,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "name": "next-token 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            1,
+            2,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1000,
+            0,
+            -1000,
+            -1000,
+            0,
+            1000
+          ]
+        },
+        "targets": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            2,
+            0
+          ]
+        }
+      },
+      "expected": {
+        "value": {
+          "shape": [],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0
+          ]
+        },
+        "gradient": {
+          "shape": [
+            1,
+            2,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "name": "next-token 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            1.5,
+            1.75
+          ]
+        },
+        "targets": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            -100,
+            -100,
+            -100,
+            -100
+          ]
+        }
+      },
+      "expected": {
+        "value": {
+          "shape": [],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0
+          ]
+        },
+        "gradient": {
+          "shape": [
+            2,
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "name": "next-token 3",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            1,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "targets": {
+          "shape": [
+            2,
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            1
+          ]
+        }
+      },
+      "expected": {
+        "value": {
+          "shape": [],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0
+          ]
+        },
+        "gradient": {
+          "shape": [
+            2,
+            1,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "name": "next-token 4",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            0,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "targets": {
+          "shape": [
+            2,
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        }
+      },
+      "expected": {
+        "value": {
+          "shape": [],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0
+          ]
+        },
+        "gradient": {
+          "shape": [
+            2,
+            0,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        }
+      }
+    }
+  ]
+}

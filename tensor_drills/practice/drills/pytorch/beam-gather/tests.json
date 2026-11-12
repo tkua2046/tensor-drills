@@ -1,0 +1,283 @@
+{
+  "dependencies": [
+    "torch"
+  ],
+  "cases": [
+    {
+      "name": "beam features 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            3,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "strided",
+          "data": [
+            -1.5,
+            -1.25,
+            -1.0,
+            -0.75,
+            -0.5,
+            -0.25,
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25
+          ]
+        },
+        "parents": {
+          "shape": [
+            2,
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            1,
+            0,
+            0,
+            1,
+            2,
+            1,
+            1
+          ]
+        },
+        "upstream": {
+          "shape": [
+            2,
+            4,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5,
+            3.0,
+            3.5,
+            0.5,
+            1.0,
+            1.5,
+            2.0,
+            2.5,
+            3.0,
+            3.5,
+            0.5,
+            1.0
+          ]
+        }
+      },
+      "expected": {
+        "values": {
+          "shape": [
+            2,
+            4,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1.5,
+            -1.25,
+            -1.0,
+            -0.75,
+            -1.5,
+            -1.25,
+            -1.5,
+            -1.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25,
+            0.5,
+            0.75,
+            0.5,
+            0.75
+          ]
+        },
+        "gradient": {
+          "shape": [
+            2,
+            3,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            6.5,
+            4.5,
+            1.5,
+            2.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            4.5,
+            6.0,
+            2.0,
+            2.5
+          ]
+        }
+      }
+    },
+    {
+      "name": "beam features 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            1,
+            1,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1.5
+          ]
+        },
+        "parents": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0
+          ]
+        },
+        "upstream": {
+          "shape": [
+            1,
+            2,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.5,
+            1.0
+          ]
+        }
+      },
+      "expected": {
+        "values": {
+          "shape": [
+            1,
+            2,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1.5,
+            -1.5
+          ]
+        },
+        "gradient": {
+          "shape": [
+            1,
+            1,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1.5
+          ]
+        }
+      }
+    },
+    {
+      "name": "beam features 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            3,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -1.5,
+            -1.25,
+            -1.0,
+            -0.75,
+            -0.5,
+            -0.25,
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0,
+            1.25
+          ]
+        },
+        "parents": {
+          "shape": [
+            2,
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "upstream": {
+          "shape": [
+            2,
+            0,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        }
+      },
+      "expected": {
+        "values": {
+          "shape": [
+            2,
+            0,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "gradient": {
+          "shape": [
+            2,
+            3,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    }
+  ]
+}

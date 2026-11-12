@@ -1,0 +1,300 @@
+{
+  "dependencies": [
+    "torch"
+  ],
+  "cases": [
+    {
+      "name": "ranked labels 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            4
+          ],
+          "dtype": "float64",
+          "layout": "strided",
+          "data": [
+            -2.0,
+            1.0,
+            0.0,
+            -1.0,
+            0.0,
+            -1.0,
+            -2.0,
+            1.0
+          ]
+        },
+        "labels": {
+          "shape": [
+            2,
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            7,
+            3,
+            -1,
+            7,
+            3,
+            -1,
+            7,
+            3
+          ]
+        },
+        "k": 2,
+        "upstream": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.5,
+            1.5,
+            2.5,
+            3.5
+          ]
+        }
+      },
+      "expected": {
+        "indices": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            2,
+            3,
+            0
+          ]
+        },
+        "scores": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1.0,
+            0.0,
+            1.0,
+            0.0
+          ]
+        },
+        "labels": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            -1,
+            3,
+            3
+          ]
+        },
+        "gradient": {
+          "shape": [
+            2,
+            4
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            0.5,
+            1.5,
+            0.0,
+            3.5,
+            0.0,
+            0.0,
+            2.5
+          ]
+        }
+      }
+    },
+    {
+      "name": "ranked labels 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            1,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            3.0,
+            -1.0,
+            2.0
+          ]
+        },
+        "labels": {
+          "shape": [
+            1,
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            7,
+            3,
+            -1
+          ]
+        },
+        "k": 0,
+        "upstream": {
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        }
+      },
+      "expected": {
+        "indices": {
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "scores": {
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "labels": {
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "gradient": {
+          "shape": [
+            1,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    {
+      "name": "ranked labels 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -0.5,
+            -0.5
+          ]
+        },
+        "labels": {
+          "shape": [
+            2,
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            7,
+            3
+          ]
+        },
+        "k": 1,
+        "upstream": {
+          "shape": [
+            2,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.5,
+            1.5
+          ]
+        }
+      },
+      "expected": {
+        "indices": {
+          "shape": [
+            2,
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0
+          ]
+        },
+        "scores": {
+          "shape": [
+            2,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            -0.5,
+            -0.5
+          ]
+        },
+        "labels": {
+          "shape": [
+            2,
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            7,
+            3
+          ]
+        },
+        "gradient": {
+          "shape": [
+            2,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.5,
+            1.5
+          ]
+        }
+      }
+    }
+  ]
+}

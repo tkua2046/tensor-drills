@@ -1,0 +1,20 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Gather each token's target-class score while preserving its gradient path.",
+  "topics": [
+    "indexing",
+    "autograd"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Gather several columns independently for each row, preserving selection order and repeats.",
+      "practice_drill": "pytorch/row-gather-many"
+    },
+    {
+      "capability": "Use backward() to compute the gradient of a nonlinear scalar objective on a trainable leaf.",
+      "practice_drill": "pytorch/scalar-gradient"
+    }
+  ],
+  "workload": 2
+}

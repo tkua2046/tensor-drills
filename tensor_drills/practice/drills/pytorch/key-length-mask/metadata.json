@@ -1,0 +1,20 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Construct a broadcastable key-validity mask from each sequence's length.",
+  "topics": [
+    "masks",
+    "broadcasting"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Construct a Boolean mask from two bounds and return its complement.",
+      "practice_drill": "pytorch/build-mask"
+    },
+    {
+      "capability": "Reorder sequence axes and insert or remove only the named singleton axis.",
+      "practice_drill": "pytorch/axis-layout"
+    }
+  ],
+  "workload": 1
+}

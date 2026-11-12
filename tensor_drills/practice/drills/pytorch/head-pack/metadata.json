@@ -1,0 +1,29 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Pack head features into contiguous sequence order while preserving their gradient path.",
+  "topics": [
+    "shapes",
+    "storage",
+    "autograd"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Reorder sequence axes and insert or remove only the named singleton axis.",
+      "practice_drill": "pytorch/axis-layout"
+    },
+    {
+      "capability": "Split a feature axis into heads and merge it back in the same value order.",
+      "practice_drill": "pytorch/head-reshape"
+    },
+    {
+      "capability": "Flatten noncontiguous inputs in logical order and demonstrate the resulting storage relationship.",
+      "practice_drill": "pytorch/flatten-layout"
+    },
+    {
+      "capability": "Use backward() to compute the gradient of a nonlinear scalar objective on a trainable leaf.",
+      "practice_drill": "pytorch/scalar-gradient"
+    }
+  ],
+  "workload": 2
+}

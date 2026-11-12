@@ -1,0 +1,25 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Normalize over allowed positions with finite backward gradients and zero outputs for fully masked rows.",
+  "topics": [
+    "masks",
+    "autograd",
+    "numerics"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Normalize each row of logits into stable probabilities.",
+      "practice_drill": "pytorch/row-softmax"
+    },
+    {
+      "capability": "Construct a broadcastable key-validity mask from each sequence's length.",
+      "practice_drill": "pytorch/key-length-mask"
+    },
+    {
+      "capability": "Use backward() to compute the gradient of a nonlinear scalar objective on a trainable leaf.",
+      "practice_drill": "pytorch/scalar-gradient"
+    }
+  ],
+  "workload": 3
+}

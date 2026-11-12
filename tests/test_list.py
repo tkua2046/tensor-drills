@@ -69,8 +69,19 @@ class ListTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("numpy/row-gather", result.stdout)
 
+        result = self.run_list("--topic", "indexing", "--topic", "autograd")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        listed_ids = {
+            line.split(" (", 1)[0]
+            for line in result.stdout.splitlines()
+            if " (" in line and not line.startswith(" ")
+        }
+        self.assertIn("pytorch/token-score-gather", listed_ids)
+        self.assertNotIn("numpy/row-gather", listed_ids)
+        self.assertNotIn("pytorch/classifier", listed_ids)
+
         for filters in (
-            ("--topic", "indexing", "--topic", "autograd"),
+            ("--topic", "indexing", "--topic", "__missing_topic__"),
             ("--library", "numpy", "--topic", "__missing_topic__"),
         ):
             with self.subTest(filters=filters):

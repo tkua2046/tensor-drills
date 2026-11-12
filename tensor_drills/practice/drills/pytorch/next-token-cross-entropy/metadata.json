@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Compute global valid-token cross-entropy after aligning each logit with the next token.",
+  "topics": [
+    "losses",
+    "autograd",
+    "sequences"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Compute mean cross-entropy over valid tokens, ignoring target `-100` and returning a differentiable zero when all tokens are ignored.",
+      "practice_drill": "pytorch/token-cross-entropy"
+    }
+  ],
+  "workload": 3
+}

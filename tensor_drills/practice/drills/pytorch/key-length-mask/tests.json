@@ -1,0 +1,142 @@
+{
+  "dependencies": [
+    "torch"
+  ],
+  "cases": [
+    {
+      "name": "key lengths 0",
+      "inputs": {
+        "lengths": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "strided",
+          "data": [
+            3,
+            0,
+            1
+          ]
+        },
+        "keys": 4
+      },
+      "expected": {
+        "shape": [
+          3,
+          1,
+          1,
+          4
+        ],
+        "dtype": "bool",
+        "layout": "contiguous",
+        "data": [
+          true,
+          true,
+          true,
+          false,
+          false,
+          false,
+          false,
+          false,
+          true,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "name": "key lengths 1",
+      "inputs": {
+        "lengths": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0
+          ]
+        },
+        "keys": 0
+      },
+      "expected": {
+        "shape": [
+          1,
+          1,
+          1,
+          0
+        ],
+        "dtype": "bool",
+        "layout": "contiguous",
+        "data": []
+      }
+    },
+    {
+      "name": "key lengths 2",
+      "inputs": {
+        "lengths": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            1
+          ]
+        },
+        "keys": 1
+      },
+      "expected": {
+        "shape": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "dtype": "bool",
+        "layout": "contiguous",
+        "data": [
+          true
+        ]
+      }
+    },
+    {
+      "name": "key lengths 3",
+      "inputs": {
+        "lengths": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            2,
+            4
+          ]
+        },
+        "keys": 4
+      },
+      "expected": {
+        "shape": [
+          2,
+          1,
+          1,
+          4
+        ],
+        "dtype": "bool",
+        "layout": "contiguous",
+        "data": [
+          true,
+          true,
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    }
+  ]
+}

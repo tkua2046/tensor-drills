@@ -1,0 +1,25 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Register trainable, persistent and temporary module state with the required conversion and checkpoint behavior.",
+  "topics": [
+    "modules",
+    "state",
+    "autograd"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Build a registered two-layer classifier that returns raw logits.",
+      "practice_drill": "pytorch/classifier-forward"
+    },
+    {
+      "capability": "Save a supplied model's parameters and load them into a fresh instance.",
+      "practice_drill": "pytorch/model-roundtrip"
+    },
+    {
+      "capability": "Run a supplied model on a requested device with inputs and intermediate tensors on a compatible device.",
+      "practice_drill": "pytorch/device-forward"
+    }
+  ],
+  "workload": 3
+}

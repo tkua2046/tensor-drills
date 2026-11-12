@@ -1,0 +1,25 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Select the highest-scoring items in each batch and sum their feature vectors at the associated destinations.",
+  "topics": [
+    "ranking",
+    "grouping",
+    "autograd"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Select the highest scores per batch while keeping labels and score gradients aligned.",
+      "practice_drill": "pytorch/topk-labels"
+    },
+    {
+      "capability": "Sum values into indexed destinations, adding all contributions at repeated indices.",
+      "practice_drill": "pytorch/indexed-sum"
+    },
+    {
+      "capability": "Use backward() to compute the gradient of a nonlinear scalar objective on a trainable leaf.",
+      "practice_drill": "pytorch/scalar-gradient"
+    }
+  ],
+  "workload": 3
+}
