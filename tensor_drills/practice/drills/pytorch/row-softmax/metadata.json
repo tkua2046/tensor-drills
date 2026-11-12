@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Normalize each row of logits into stable probabilities.",
+  "topics": [
+    "reductions",
+    "numerics"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Reduce over a selected axis while preserving the surviving axes.",
+      "practice_drill": "pytorch/time-mean"
+    }
+  ],
+  "workload": 1
+}

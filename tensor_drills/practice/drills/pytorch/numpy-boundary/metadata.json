@@ -1,0 +1,17 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Share CPU array storage while creating an independent logging snapshot.",
+  "topics": [
+    "storage",
+    "conversion",
+    "autograd"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Distinguish detached views and independent data.",
+      "practice_drill": "pytorch/detach-snapshots"
+    }
+  ],
+  "workload": 1
+}

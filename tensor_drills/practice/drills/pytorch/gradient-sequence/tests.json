@@ -1,0 +1,76 @@
+{
+  "dependencies": [
+    "torch"
+  ],
+  "cases": [
+    {
+      "name": "signed values",
+      "inputs": {
+        "values": [
+          -2,
+          0,
+          1
+        ]
+      },
+      "expected": {
+        "first": [
+          -4,
+          0,
+          2
+        ],
+        "accumulated": [
+          -1,
+          3,
+          5
+        ],
+        "cleared": [
+          12,
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "name": "fractional values",
+      "inputs": {
+        "values": [
+          0.5,
+          -1.5
+        ]
+      },
+      "expected": {
+        "first": [
+          1.0,
+          -3.0
+        ],
+        "accumulated": [
+          4.0,
+          0.0
+        ],
+        "cleared": [
+          0.75,
+          6.75
+        ]
+      }
+    },
+    {
+      "name": "zero leaf",
+      "inputs": {
+        "values": [
+          0
+        ]
+      },
+      "expected": {
+        "first": [
+          0
+        ],
+        "accumulated": [
+          3
+        ],
+        "cleared": [
+          0
+        ]
+      }
+    }
+  ]
+}

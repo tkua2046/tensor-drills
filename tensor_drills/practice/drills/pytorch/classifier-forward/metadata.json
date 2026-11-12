@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Build a registered two-layer classifier that returns raw logits.",
+  "topics": [
+    "modules",
+    "shapes",
+    "linear-algebra"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Read tensor shapes and follow the supplied mathematical contract."
+    }
+  ],
+  "workload": 1
+}

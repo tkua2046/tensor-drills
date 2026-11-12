@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Run a supplied model on a requested device with inputs and intermediate tensors on a compatible device.",
+  "topics": [
+    "devices",
+    "modules",
+    "broadcasting"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Follow a registered model forward.",
+      "practice_drill": "pytorch/classifier-forward"
+    }
+  ],
+  "workload": 2
+}

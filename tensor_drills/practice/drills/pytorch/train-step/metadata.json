@@ -1,0 +1,21 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Implement one labeled training update with a supplied model, loss, and optimizer.",
+  "topics": [
+    "training-loop",
+    "autograd",
+    "losses"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Build a registered model forward.",
+      "practice_drill": "pytorch/classifier-forward"
+    },
+    {
+      "capability": "Backpropagate a scalar loss.",
+      "practice_drill": "pytorch/scalar-gradient"
+    }
+  ],
+  "workload": 2
+}

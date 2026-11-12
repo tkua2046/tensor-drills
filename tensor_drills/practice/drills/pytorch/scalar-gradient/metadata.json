@@ -1,0 +1,15 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Use backward() to compute the gradient of a nonlinear scalar objective on a trainable leaf.",
+  "topics": [
+    "autograd",
+    "reductions"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Follow tensor arithmetic and a scalar reduction."
+    }
+  ],
+  "workload": 1
+}

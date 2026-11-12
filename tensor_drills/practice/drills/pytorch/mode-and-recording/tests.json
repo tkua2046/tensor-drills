@@ -1,0 +1,123 @@
+{
+  "dependencies": [
+    "torch"
+  ],
+  "cases": [
+    {
+      "name": "incoming True, recording True",
+      "inputs": {
+        "training": true,
+        "recording": true
+      },
+      "expected": {
+        "eval": [
+          [
+            -0.75,
+            2
+          ],
+          [
+            -1.75,
+            0
+          ]
+        ],
+        "train": [
+          [
+            0.25,
+            -0.5
+          ],
+          [
+            0.25,
+            -0.5
+          ]
+        ]
+      }
+    },
+    {
+      "name": "incoming True, recording False",
+      "inputs": {
+        "training": true,
+        "recording": false
+      },
+      "expected": {
+        "eval": [
+          [
+            -0.75,
+            2
+          ],
+          [
+            -1.75,
+            0
+          ]
+        ],
+        "train": [
+          [
+            0.25,
+            -0.5
+          ],
+          [
+            0.25,
+            -0.5
+          ]
+        ]
+      }
+    },
+    {
+      "name": "incoming False, recording True",
+      "inputs": {
+        "training": false,
+        "recording": true
+      },
+      "expected": {
+        "eval": [
+          [
+            -0.75,
+            2
+          ],
+          [
+            -1.75,
+            0
+          ]
+        ],
+        "train": [
+          [
+            0.25,
+            -0.5
+          ],
+          [
+            0.25,
+            -0.5
+          ]
+        ]
+      }
+    },
+    {
+      "name": "incoming False, recording False",
+      "inputs": {
+        "training": false,
+        "recording": false
+      },
+      "expected": {
+        "eval": [
+          [
+            -0.75,
+            2
+          ],
+          [
+            -1.75,
+            0
+          ]
+        ],
+        "train": [
+          [
+            0.25,
+            -0.5
+          ],
+          [
+            0.25,
+            -0.5
+          ]
+        ]
+      }
+    }
+  ]
+}

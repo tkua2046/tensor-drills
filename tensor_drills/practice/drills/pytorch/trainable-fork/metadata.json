@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Create an independent trainable leaf from a tensor with existing history.",
+  "topics": [
+    "autograd",
+    "storage"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Distinguish detached views from independent snapshots.",
+      "practice_drill": "pytorch/detach-snapshots"
+    }
+  ],
+  "workload": 1
+}

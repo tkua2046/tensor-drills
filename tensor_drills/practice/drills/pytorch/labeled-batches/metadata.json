@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Produce ordered minibatches that keep each sample paired with its label.",
+  "topics": [
+    "data",
+    "indexing",
+    "shapes"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Split arrays or tensors while retaining axis shape.",
+      "practice_drill": "pytorch/split-sections"
+    }
+  ],
+  "workload": 2
+}

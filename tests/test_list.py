@@ -56,8 +56,13 @@ class ListTests(unittest.TestCase):
             with self.subTest(option=option):
                 result = self.run_list(option, value)
                 self.assertEqual(result.returncode, 0, result.stderr)
-                self.assertIn(expected, result.stdout)
-                self.assertNotIn(excluded, result.stdout)
+                listed_ids = {
+                    line.split(" (", 1)[0]
+                    for line in result.stdout.splitlines()
+                    if " (" in line and not line.startswith(" ")
+                }
+                self.assertIn(expected, listed_ids)
+                self.assertNotIn(excluded, listed_ids)
 
     def test_requires_every_topic_and_combines_filters(self):
         result = self.run_list("--library", "numpy", "--topic", "indexing", "--topic", "shapes")

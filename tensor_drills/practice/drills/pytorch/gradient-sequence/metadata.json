@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Observe gradient accumulation across fresh forwards and clear it before a new objective.",
+  "topics": [
+    "autograd",
+    "gradients"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Backpropagate a scalar objective and inspect a leaf gradient.",
+      "practice_drill": "pytorch/scalar-gradient"
+    }
+  ],
+  "workload": 2
+}

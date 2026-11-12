@@ -4,6 +4,8 @@
 
 ### Added
 
+- Add PyTorch module, autograd, device, conversion, batching, state restoration, training-step and row-softmax foundations as an independent delivery.
+
 - Add NumPy numerical foundations: stable row softmax, precise float accumulation, safe integer accumulation, and local seeded sampling.
 
 - Add core practice in both tracks with dtype conversion, unequal splits, per-row multiple gathering, replacement, masked assignment, shared-weight matrix products, and single-axis means.

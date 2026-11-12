@@ -1,0 +1,75 @@
+{
+  "dependencies": [
+    "torch",
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "contiguous sources",
+      "inputs": {
+        "array": [
+          [
+            1.0,
+            2.0
+          ],
+          [
+            3.0,
+            4.0
+          ]
+        ],
+        "dtype": "float64",
+        "values": [
+          -1.0,
+          2.0
+        ],
+        "nonleaf": false
+      },
+      "expected": {}
+    },
+    {
+      "name": "positive-stride view and tracked nonleaf",
+      "inputs": {
+        "array": [
+          [
+            1.0,
+            2.0
+          ],
+          [
+            3.0,
+            4.0
+          ]
+        ],
+        "dtype": "float32",
+        "strided": true,
+        "values": [
+          0.5,
+          -2.0
+        ],
+        "nonleaf": true
+      },
+      "expected": {}
+    },
+    {
+      "name": "different source dtypes",
+      "inputs": {
+        "array": [
+          [
+            -1,
+            2
+          ],
+          [
+            3,
+            -4
+          ]
+        ],
+        "dtype": "float32",
+        "tracked_dtype": "float64",
+        "values": [
+          1.5,
+          -0.5
+        ]
+      },
+      "expected": {}
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Save a supplied model's parameters and load them into a fresh instance.",
+  "topics": [
+    "modules",
+    "serialization",
+    "state"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Build and inspect registered model state.",
+      "practice_drill": "pytorch/classifier-forward"
+    }
+  ],
+  "workload": 2
+}

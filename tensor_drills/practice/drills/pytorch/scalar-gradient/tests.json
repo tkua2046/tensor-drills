@@ -1,0 +1,57 @@
+{
+  "dependencies": [
+    "torch"
+  ],
+  "cases": [
+    {
+      "name": "signed values",
+      "inputs": {
+        "values": [
+          -2,
+          0,
+          1
+        ]
+      },
+      "expected": {
+        "loss": -9,
+        "grad": [
+          14,
+          2,
+          5
+        ]
+      }
+    },
+    {
+      "name": "fractional values",
+      "inputs": {
+        "values": [
+          0.25,
+          -0.5,
+          2
+        ]
+      },
+      "expected": {
+        "loss": 11.390625,
+        "grad": [
+          2.1875,
+          2.75,
+          14
+        ]
+      }
+    },
+    {
+      "name": "one value",
+      "inputs": {
+        "values": [
+          0
+        ]
+      },
+      "expected": {
+        "loss": 0,
+        "grad": [
+          2
+        ]
+      }
+    }
+  ]
+}

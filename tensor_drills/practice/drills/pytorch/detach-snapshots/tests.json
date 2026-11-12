@@ -1,0 +1,42 @@
+{
+  "dependencies": [
+    "torch"
+  ],
+  "cases": [
+    {
+      "name": "leaf",
+      "inputs": {
+        "values": [
+          -2,
+          0,
+          1
+        ]
+      },
+      "expected": {}
+    },
+    {
+      "name": "nonleaf",
+      "inputs": {
+        "values": [
+          0.5,
+          2,
+          -1
+        ],
+        "nonleaf": true
+      },
+      "expected": {}
+    },
+    {
+      "name": "strided nonleaf",
+      "inputs": {
+        "values": [
+          1,
+          -2,
+          3
+        ],
+        "strided": true
+      },
+      "expected": {}
+    }
+  ]
+}

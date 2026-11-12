@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Produce detached tensors with the same values and different storage relationships to a trainable source.",
+  "topics": [
+    "autograd",
+    "storage"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Explain basic-slice storage sharing.",
+      "practice_drill": "pytorch/independent-slice"
+    }
+  ],
+  "workload": 1
+}

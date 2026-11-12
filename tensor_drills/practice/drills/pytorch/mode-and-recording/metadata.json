@@ -1,0 +1,17 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Control model mode and gradient recording independently across three forwards.",
+  "topics": [
+    "evaluation",
+    "autograd",
+    "modules"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Inspect leaf gradients and gradient recording.",
+      "practice_drill": "pytorch/scalar-gradient"
+    }
+  ],
+  "workload": 2
+}

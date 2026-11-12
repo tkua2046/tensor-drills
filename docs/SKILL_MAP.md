@@ -97,8 +97,8 @@ Start with the [shared skills](#shared-skills), then explore PyTorch autograd, m
 
 | Skill | What to practice | Bundled drills |
 | --- | --- | --- |
-| Device placement | Keep model parameters, inputs, and intermediates on compatible devices. | — |
-| NumPy conversion | Compare shared CPU storage with independent copies and capture a logging snapshot of a tensor that tracks gradients. | — |
+| Device placement | Keep model parameters, inputs, and intermediates on compatible devices. | [Device forward](../tensor_drills/practice/drills/pytorch/device-forward/prompt.md) |
+| NumPy conversion | Compare shared CPU storage with independent copies and capture a logging snapshot of a tensor that tracks gradients. | [NumPy boundary](../tensor_drills/practice/drills/pytorch/numpy-boundary/prompt.md) (requires both packages) |
 | Batched gathering | Gather a class score per token and gather beam information on a middle axis. | — |
 | Head layout and storage | Pack a sliced head tensor with a nonzero storage offset, explicit feature order, and contiguous output. | — |
 | Routing and accumulation | Select a shortlist, keep features aligned with destinations, and sum repeated destinations within each batch. | — |
@@ -107,13 +107,13 @@ Start with the [shared skills](#shared-skills), then explore PyTorch autograd, m
 
 | Skill | What to practice | Bundled drills |
 | --- | --- | --- |
-| Scalar backward | Compute the gradient of a scalar objective and inspect it on the input. | — |
-| Gradient accumulation | Isolate how gradients accumulate and clear across fresh forwards. | [Classifier debugging](../tensor_drills/practice/drills/pytorch/classifier/prompt.md) (applied practice) |
-| Detach and storage | Produce both shared and independent detached tensors and observe the effects of mutation. | — |
-| Evaluation mode and gradient recording | Distinguish evaluation mode from disabled gradient recording and check both during evaluation. | [Classifier debugging](../tensor_drills/practice/drills/pytorch/classifier/prompt.md) (applied practice) |
-| Supervised updates | Write one training step from a stub and diagnose wrong loss inputs or update ordering in a repair task. | — |
+| Scalar backward | Compute the gradient of a scalar objective and inspect it on the input. | [Scalar gradient](../tensor_drills/practice/drills/pytorch/scalar-gradient/prompt.md) |
+| Gradient accumulation | Isolate how gradients accumulate and clear across fresh forwards. | [Gradient sequence](../tensor_drills/practice/drills/pytorch/gradient-sequence/prompt.md) · [Classifier debugging](../tensor_drills/practice/drills/pytorch/classifier/prompt.md) (applied practice) |
+| Detach and storage | Produce both shared and independent detached tensors and observe the effects of mutation. | [Detach snapshots](../tensor_drills/practice/drills/pytorch/detach-snapshots/prompt.md) |
+| Evaluation mode and gradient recording | Distinguish evaluation mode from disabled gradient recording and check both during evaluation. | [Mode and recording](../tensor_drills/practice/drills/pytorch/mode-and-recording/prompt.md) · [Classifier debugging](../tensor_drills/practice/drills/pytorch/classifier/prompt.md) (applied practice) |
+| Supervised updates | Write one training step from a stub and diagnose wrong loss inputs or update ordering in a repair task. | [Train step](../tensor_drills/practice/drills/pytorch/train-step/prompt.md) |
 | Training and evaluation loops | Diagnose gradient carryover and active dropout during evaluation. Restore training behavior when validation runs between updates. | [Classifier debugging](../tensor_drills/practice/drills/pytorch/classifier/prompt.md) · [Inline validation](../tensor_drills/practice/drills/pytorch/inline-validation/prompt.md) |
-| Gradients and mutation | Create an independent trainable fork. Trace non-scalar backward, retained intermediate gradients, and mutations to tensors saved for backward. | — |
+| Gradients and mutation | Create an independent trainable fork. Trace non-scalar backward, retained intermediate gradients, and mutations to tensors saved for backward. | Independent leaf: [Trainable fork](../tensor_drills/practice/drills/pytorch/trainable-fork/prompt.md). Saved-tensor mutation and non-scalar backward remain planned. |
 | Manual and custom gradients | Derive matrix gradients, extend them to shared weights and bias across batches, and verify a custom backward numerically. | — |
 | Microbatch updates | Weight the update by valid-token counts and check optimizer state when no tokens are valid. | — |
 
@@ -121,15 +121,15 @@ Start with the [shared skills](#shared-skills), then explore PyTorch autograd, m
 
 | Skill | What to practice | Bundled drills |
 | --- | --- | --- |
-| Module construction | Register layers and produce class logits with the expected batch shape. | — |
-| Batching and persistence | Keep samples paired with labels in minibatches. Restore parameters and confirm predictions. | — |
+| Module construction | Register layers and produce class logits with the expected batch shape. | [Classifier forward](../tensor_drills/practice/drills/pytorch/classifier-forward/prompt.md) |
+| Batching and persistence | Keep samples paired with labels in minibatches. Restore parameters and confirm predictions. | [Labeled batches](../tensor_drills/practice/drills/pytorch/labeled-batches/prompt.md) · [Model roundtrip](../tensor_drills/practice/drills/pytorch/model-roundtrip/prompt.md) |
 | Parameters and buffers | Register trainable parameters, persistent buffers, and temporary buffers that follow module dtype and device. | — |
 
 ### PyTorch masking and sequence models
 
 | Skill | What to practice | Bundled drills |
 | --- | --- | --- |
-| Softmax | Normalize logits over the intended axis and check the probability values. | — |
+| Softmax | Normalize logits over the intended axis and check the probability values. | [Row softmax](../tensor_drills/practice/drills/pytorch/row-softmax/prompt.md) |
 | Differentiable masking | Normalize over allowed positions and check gradients, including fully masked rows. Build a mask from key lengths. | — |
 | Global valid-token loss | Check ignored gradients and the differentiable zero when every token is ignored. Practice shifting targets for next-token loss. | — |
 | Rectangular causal attention | Use absolute positions, handle empty queries, and check outputs and gradients with independent fixtures. | — |
