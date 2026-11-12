@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Deduplicate rows and reconstruct original row order through inverse indices.",
+  "topics": [
+    "grouping",
+    "indexing"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Sum values into indexed destinations, adding all contributions at repeated indices.",
+      "practice_drill": "numpy/indexed-sum"
+    }
+  ],
+  "workload": 2
+}

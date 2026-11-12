@@ -1,0 +1,211 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "stream partition 0",
+      "inputs": {
+        "chunks": [
+          {
+            "shape": [
+              0
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": []
+          },
+          {
+            "shape": [
+              1
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              1.0
+            ]
+          },
+          {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              1.0,
+              1.0
+            ]
+          },
+          {
+            "shape": [
+              0
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": []
+          }
+        ]
+      },
+      "expected": [
+        0.0,
+        0.0,
+        1.0986122886681098,
+        1.0986122886681098
+      ]
+    },
+    {
+      "name": "stream partition 1",
+      "inputs": {
+        "chunks": [
+          {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              -1000.0,
+              -999.0
+            ]
+          },
+          {
+            "shape": [
+              0
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": []
+          },
+          {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              1000.0,
+              999.0
+            ]
+          }
+        ]
+      },
+      "expected": [
+        0.582203108888218,
+        0.582203108888218,
+        0.582203108888218
+      ]
+    },
+    {
+      "name": "stream partition 2",
+      "inputs": {
+        "chunks": [
+          {
+            "shape": [
+              5
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              2.0,
+              -1.0,
+              0.0,
+              4.0,
+              -2.0
+            ]
+          }
+        ]
+      },
+      "expected": [
+        0.48841273148749864
+      ]
+    },
+    {
+      "name": "stream partition 3",
+      "inputs": {
+        "chunks": [
+          {
+            "shape": [
+              1
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              2.0
+            ]
+          },
+          {
+            "shape": [
+              2
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              -1.0,
+              0.0
+            ]
+          },
+          {
+            "shape": [
+              1
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              4.0
+            ]
+          },
+          {
+            "shape": [
+              0
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": []
+          },
+          {
+            "shape": [
+              1
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": [
+              -2.0
+            ]
+          }
+        ]
+      },
+      "expected": [
+        0.0,
+        0.5242666167276728,
+        0.47418303282350704,
+        0.47418303282350704,
+        0.48841273148749864
+      ]
+    },
+    {
+      "name": "stream partition 4",
+      "inputs": {
+        "chunks": []
+      },
+      "expected": []
+    },
+    {
+      "name": "stream partition 5",
+      "inputs": {
+        "chunks": [
+          {
+            "shape": [
+              0
+            ],
+            "dtype": "float64",
+            "layout": "contiguous",
+            "data": []
+          }
+        ]
+      },
+      "expected": [
+        0.0
+      ]
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "window ownership 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            5
+          ],
+          "dtype": "int64",
+          "layout": "strided",
+          "data": [
+            1,
+            -3,
+            5,
+            2,
+            7
+          ]
+        },
+        "width": 3
+      },
+      "expected": [
+        {
+          "shape": [
+            3,
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            -3,
+            5,
+            -3,
+            5,
+            2,
+            5,
+            2,
+            7
+          ]
+        },
+        {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            4,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "name": "window ownership 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            2,
+            -1,
+            3
+          ]
+        },
+        "width": 1
+      },
+      "expected": [
+        {
+          "shape": [
+            3,
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            2,
+            -1,
+            3
+          ]
+        },
+        {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            2,
+            -1,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "name": "window ownership 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "strided",
+          "data": [
+            3,
+            4,
+            -2
+          ]
+        },
+        "width": 3
+      },
+      "expected": [
+        {
+          "shape": [
+            1,
+            3
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            4,
+            -2
+          ]
+        },
+        {
+          "shape": [
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "name": "window ownership 3",
+      "inputs": {
+        "x": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            8
+          ]
+        },
+        "width": 1
+      },
+      "expected": [
+        {
+          "shape": [
+            1,
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            8
+          ]
+        },
+        {
+          "shape": [
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            8
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Compute pairwise cosine similarities with exact zeros for zero-vector pairs.",
+  "topics": [
+    "linalg",
+    "numerics",
+    "matmul"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Repair pairwise squared distances between two collections while avoiding a `(left_rows, right_rows, features)` temporary.",
+      "practice_drill": "numpy/pairwise-squared-distance"
+    }
+  ],
+  "workload": 3
+}

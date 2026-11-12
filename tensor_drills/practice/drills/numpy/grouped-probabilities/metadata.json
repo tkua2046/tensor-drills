@@ -1,0 +1,21 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Normalize scores within groups while distinguishing absent groups from all-negative-infinity groups.",
+  "topics": [
+    "grouping",
+    "numerics",
+    "reductions"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Compute each group's feature mean while excluding ignored observations.",
+      "practice_drill": "numpy/group-means"
+    },
+    {
+      "capability": "Compute stable float32 probabilities over allowed positions and return zeros for fully masked rows.",
+      "practice_drill": "numpy/masked-softmax"
+    }
+  ],
+  "workload": 3
+}

@@ -1,0 +1,185 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "signed cosine 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            4,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "strided",
+          "data": [
+            1,
+            0,
+            -2,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        "y": {
+          "shape": [
+            3,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            0,
+            0,
+            -2,
+            0,
+            0
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          4,
+          3
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          1.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "signed cosine 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "strided",
+          "data": [
+            1e-06,
+            0,
+            0,
+            2e-06
+          ]
+        },
+        "y": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1e-06,
+            0,
+            1e-06,
+            1e-06
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          2,
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          1.0,
+          0.7071067811865476,
+          0.0,
+          0.7071067811865476
+        ]
+      }
+    },
+    {
+      "name": "signed cosine 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            0,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "strided",
+          "data": []
+        },
+        "y": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            2
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          0,
+          1
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": []
+      }
+    },
+    {
+      "name": "signed cosine 3",
+      "inputs": {
+        "x": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "strided",
+          "data": [
+            1,
+            2
+          ]
+        },
+        "y": {
+          "shape": [
+            0,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        }
+      },
+      "expected": {
+        "shape": [
+          1,
+          0
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": []
+      }
+    }
+  ]
+}

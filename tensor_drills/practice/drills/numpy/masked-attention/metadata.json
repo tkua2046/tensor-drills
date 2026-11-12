@@ -1,0 +1,22 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Combine scaled query-key scores, safe masked normalization and value weighting.",
+  "topics": [
+    "attention",
+    "masks",
+    "matmul",
+    "numerics"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Compute stable float32 probabilities over allowed positions and return zeros for fully masked rows.",
+      "practice_drill": "numpy/masked-softmax"
+    },
+    {
+      "capability": "Apply each batch item's own projection matrix to its mean over valid timesteps.",
+      "practice_drill": "numpy/batched-projection"
+    }
+  ],
+  "workload": 4
+}

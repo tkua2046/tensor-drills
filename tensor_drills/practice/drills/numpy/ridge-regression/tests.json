@@ -1,0 +1,177 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "ridge objective 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            3,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            0.5,
+            1.0,
+            1.0,
+            2.0,
+            -0.5,
+            -1.0
+          ]
+        },
+        "targets": {
+          "shape": [
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            3,
+            -1
+          ]
+        },
+        "lam": 0.25
+      },
+      "expected": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.5161290322580645,
+          1.032258064516129
+        ]
+      }
+    },
+    {
+      "name": "ridge objective 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            1,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            1,
+            0
+          ]
+        },
+        "targets": {
+          "shape": [
+            1,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            2,
+            3
+          ]
+        },
+        "lam": 2
+      },
+      "expected": {
+        "shape": [
+          3,
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.49999999999999994,
+          0.75,
+          0.5000000000000001,
+          0.75,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "ridge objective 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            0,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "targets": {
+          "shape": [
+            0
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "lam": 1
+      },
+      "expected": {
+        "shape": [
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    {
+      "name": "ridge objective 3",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            -1,
+            0,
+            2
+          ]
+        },
+        "targets": {
+          "shape": [
+            2,
+            1
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            1,
+            4
+          ]
+        },
+        "lam": 4
+      },
+      "expected": {
+        "shape": [
+          2,
+          1
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.36363636363636365,
+          0.8181818181818181
+        ]
+      }
+    }
+  ]
+}

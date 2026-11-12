@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Maintain softmax entropy with fixed-size state independent of chunk boundaries.",
+  "topics": [
+    "numerics",
+    "streaming",
+    "memory"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Normalize each row of logits into stable probabilities.",
+      "practice_drill": "numpy/row-softmax"
+    }
+  ],
+  "workload": 4
+}

@@ -1,0 +1,16 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Locate insertion boundaries and count sorted events in half-open intervals.",
+  "topics": [
+    "indexing",
+    "sorting"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Rank eligible candidates while keeping their original indices, IDs and scores aligned.",
+      "practice_drill": "numpy/masked-ranking"
+    }
+  ],
+  "workload": 2
+}

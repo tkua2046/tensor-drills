@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Return overlapping shared windows and their moving-sum snapshots.",
+  "topics": [
+    "views",
+    "reductions",
+    "memory"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Edit a slice and return it with storage independent of the source.",
+      "practice_drill": "numpy/independent-slice"
+    }
+  ],
+  "workload": 2
+}

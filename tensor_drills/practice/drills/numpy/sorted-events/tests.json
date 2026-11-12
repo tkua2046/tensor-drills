@@ -1,0 +1,337 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "event boundaries 0",
+      "inputs": {
+        "events": {
+          "shape": [
+            7
+          ],
+          "dtype": "int64",
+          "layout": "strided",
+          "data": [
+            -5,
+            0,
+            0,
+            3,
+            3,
+            3,
+            9
+          ]
+        },
+        "queries": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            -6,
+            10,
+            0
+          ]
+        },
+        "lower": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            3,
+            3,
+            -5
+          ]
+        },
+        "upper": {
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            3,
+            9,
+            10
+          ]
+        }
+      },
+      "expected": [
+        {
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            0,
+            7,
+            1
+          ]
+        },
+        {
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            6,
+            0,
+            7,
+            3
+          ]
+        },
+        {
+          "shape": [
+            4
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            2,
+            0,
+            3,
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "name": "event boundaries 1",
+      "inputs": {
+        "events": {
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "strided",
+          "data": []
+        },
+        "queries": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            -1,
+            2
+          ]
+        },
+        "lower": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            -1
+          ]
+        },
+        "upper": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            2
+          ]
+        }
+      },
+      "expected": [
+        {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0
+          ]
+        },
+        {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0,
+            0
+          ]
+        },
+        {
+          "shape": [
+            1
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "event boundaries 2",
+      "inputs": {
+        "events": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "strided",
+          "data": [
+            -9223372036854775808,
+            0,
+            9223372036854775807
+          ]
+        },
+        "queries": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            9223372036854775807,
+            -9223372036854775808
+          ]
+        },
+        "lower": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            -9223372036854775808,
+            9223372036854775807
+          ]
+        },
+        "upper": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            9223372036854775807,
+            9223372036854775807
+          ]
+        }
+      },
+      "expected": [
+        {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            2,
+            0
+          ]
+        },
+        {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            3,
+            1
+          ]
+        },
+        {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": [
+            2,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "event boundaries 3",
+      "inputs": {
+        "events": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "strided",
+          "data": [
+            1,
+            2
+          ]
+        },
+        "queries": {
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "lower": {
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "upper": {
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        }
+      },
+      "expected": [
+        {
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        },
+        {
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        },
+        {
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "contiguous",
+          "data": []
+        }
+      ]
+    }
+  ]
+}

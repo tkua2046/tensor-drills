@@ -1,0 +1,154 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "masked log mass 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            2,
+            3
+          ],
+          "dtype": "float64",
+          "layout": "strided",
+          "data": [
+            1000,
+            0,
+            -1000,
+            3,
+            4,
+            5,
+            -1000,
+            -999,
+            -998,
+            1,
+            2,
+            3
+          ]
+        },
+        "mask": {
+          "shape": [
+            2,
+            2,
+            3
+          ],
+          "dtype": "bool",
+          "layout": "contiguous",
+          "data": [
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          2,
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          0.0,
+          "-inf",
+          -997.5923940355556,
+          2.0
+        ]
+      }
+    },
+    {
+      "name": "masked log mass 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            1,
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "mask": {
+          "shape": [
+            1,
+            1,
+            2
+          ],
+          "dtype": "bool",
+          "layout": "contiguous",
+          "data": [
+            true,
+            false
+          ]
+        }
+      },
+      "expected": {
+        "shape": [
+          1,
+          2
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          2.0,
+          4.0
+        ]
+      }
+    },
+    {
+      "name": "masked log mass 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            2,
+            1,
+            0
+          ],
+          "dtype": "float64",
+          "layout": "contiguous",
+          "data": []
+        },
+        "mask": {
+          "shape": [
+            1,
+            1,
+            0
+          ],
+          "dtype": "bool",
+          "layout": "contiguous",
+          "data": []
+        }
+      },
+      "expected": {
+        "shape": [
+          2,
+          1
+        ],
+        "dtype": "float64",
+        "layout": "contiguous",
+        "data": [
+          "-inf",
+          "-inf"
+        ]
+      }
+    }
+  ]
+}

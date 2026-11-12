@@ -1,0 +1,17 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Compute masked log-sum-exp with negative infinity for empty rows.",
+  "topics": [
+    "numerics",
+    "masks",
+    "reductions"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Compute stable float32 probabilities over allowed positions and return zeros for fully masked rows.",
+      "practice_drill": "numpy/masked-softmax"
+    }
+  ],
+  "workload": 3
+}

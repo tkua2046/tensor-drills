@@ -64,8 +64,8 @@ Start with the [shared skills](#shared-skills), then explore NumPy numerical wor
 | Accumulator dtype | Choose a dtype that avoids integer overflow or preserves small values in a sum. | [Precise floating sum](../tensor_drills/practice/drills/numpy/precise-sum/prompt.md) · [Safe integer sum](../tensor_drills/practice/drills/numpy/safe-integer-sum/prompt.md) |
 | Stable probabilities | Compute row softmax with elementary operations and large logits. | [Row softmax](../tensor_drills/practice/drills/numpy/row-softmax/prompt.md) |
 | Preprocessing and normalization | Standardize selected rows and compute a masked RMS normalization that handles empty rows and zero norms. | [Masked rms](../tensor_drills/practice/drills/numpy/masked-rms/prompt.md) · [Masked standardize](../tensor_drills/practice/drills/numpy/masked-standardize/prompt.md) |
-| Stable masked calculations | Compute masked softmax with broadcast masks and wide half-precision inputs. Practice the distinct empty-row behavior of masked log-sum-exp. | [Masked softmax](../tensor_drills/practice/drills/numpy/masked-softmax/prompt.md) |
-| Streaming numerics | Compute entropy with fixed-size state and check invariance to chunk boundaries. | — |
+| Stable masked calculations | Compute masked softmax with broadcast masks and wide half-precision inputs. Practice the distinct empty-row behavior of masked log-sum-exp. | [Masked softmax](../tensor_drills/practice/drills/numpy/masked-softmax/prompt.md) · [Masked logsumexp](../tensor_drills/practice/drills/numpy/masked-logsumexp/prompt.md) |
+| Streaming numerics | Compute entropy with fixed-size state and check invariance to chunk boundaries. | [Streaming entropy](../tensor_drills/practice/drills/numpy/streaming-entropy/prompt.md) |
 
 ### NumPy sampling, selection, and grouping
 
@@ -74,10 +74,10 @@ Start with the [shared skills](#shared-skills), then explore NumPy numerical wor
 | Reproducible sampling | Sample without replacement using a caller-provided seed and a local generator. | [Seeded sample](../tensor_drills/practice/drills/numpy/seeded-sample/prompt.md) |
 | Target score gathering | Handle ignored targets even when the sentinel is a valid class index. | [Ignored score gather](../tensor_drills/practice/drills/numpy/ignored-score-gather/prompt.md) |
 | Masked ranking | Keep candidate IDs aligned and apply a deterministic rule for tied scores. | [Masked ranking](../tensor_drills/practice/drills/numpy/masked-ranking/prompt.md) |
-| Sorted search and partition | Find insertion boundaries, count sorted events, and select values without fully sorting. | — |
-| Windows and unique groups | Build moving sums and window views. Recover original rows from unique rows and inverse indices. | — |
+| Sorted search and partition | Find insertion boundaries, count sorted events, and select values without fully sorting. | [Sorted events](../tensor_drills/practice/drills/numpy/sorted-events/prompt.md) · [Partition topk](../tensor_drills/practice/drills/numpy/partition-topk/prompt.md) |
+| Windows and unique groups | Build moving sums and window views. Recover original rows from unique rows and inverse indices. | [Window sums](../tensor_drills/practice/drills/numpy/window-sums/prompt.md) · [Unique rows](../tensor_drills/practice/drills/numpy/unique-rows/prompt.md) |
 | Group statistics and metrics | Use indexed sums and counts for group means and per-class accuracy. Handle discarded entries and missing groups. | [Group means](../tensor_drills/practice/drills/numpy/group-means/prompt.md) · [Per class accuracy](../tensor_drills/practice/drills/numpy/per-class-accuracy/prompt.md) |
-| Grouped extrema and probabilities | Distinguish absent groups from groups with negative infinity and normalize scores within groups. | — |
+| Grouped extrema and probabilities | Distinguish absent groups from groups with negative infinity and normalize scores within groups. | [Grouped probabilities](../tensor_drills/practice/drills/numpy/grouped-probabilities/prompt.md) |
 
 ### NumPy sequence and pairwise calculations
 
@@ -86,8 +86,8 @@ Start with the [shared skills](#shared-skills), then explore NumPy numerical wor
 | Padded sequence summaries | Join the mean of the valid prefix and its last timestep, including empty sequences. | [Prefix summary](../tensor_drills/practice/drills/numpy/prefix-summary/prompt.md) |
 | Per-sequence token loss | Combine stable normalization and target gathering with a mean over each sequence's valid prefix. | [Sequence cross entropy](../tensor_drills/practice/drills/numpy/sequence-cross-entropy/prompt.md) |
 | Distances and nearest neighbors | Compute pairwise squared distances without storing differences for each feature of each pair. Select nearest rows and handle ties. | [Pairwise squared distance](../tensor_drills/practice/drills/numpy/pairwise-squared-distance/prompt.md) · [Nearest neighbors](../tensor_drills/practice/drills/numpy/nearest-neighbors/prompt.md) |
-| Solves and pairwise metrics | Work with different right-hand-side ranks, ridge regression, and pairwise cosine similarity. | — |
-| Masked attention | Combine scaled scores, empty-query handling, and value weighting. | — |
+| Solves and pairwise metrics | Work with different right-hand-side ranks, ridge regression, and pairwise cosine similarity. | [Solve system](../tensor_drills/practice/drills/numpy/solve-system/prompt.md) · [Ridge regression](../tensor_drills/practice/drills/numpy/ridge-regression/prompt.md) · [Pairwise cosine](../tensor_drills/practice/drills/numpy/pairwise-cosine/prompt.md) |
+| Masked attention | Combine scaled scores, empty-query handling, and value weighting. | [Masked attention](../tensor_drills/practice/drills/numpy/masked-attention/prompt.md) |
 
 ## PyTorch
 

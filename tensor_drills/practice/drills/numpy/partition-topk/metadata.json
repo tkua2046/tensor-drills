@@ -1,0 +1,16 @@
+{
+  "scope": "atomic",
+  "task_type": "create",
+  "goal": "Select the largest k values and their original indices using partition selection.",
+  "topics": [
+    "sorting",
+    "indexing"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Rank eligible candidates while keeping their original indices, IDs and scores aligned.",
+      "practice_drill": "numpy/masked-ranking"
+    }
+  ],
+  "workload": 2
+}

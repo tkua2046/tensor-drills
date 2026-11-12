@@ -1,0 +1,169 @@
+{
+  "dependencies": [
+    "numpy"
+  ],
+  "cases": [
+    {
+      "name": "partial selection 0",
+      "inputs": {
+        "x": {
+          "shape": [
+            5
+          ],
+          "dtype": "int64",
+          "layout": "strided",
+          "data": [
+            3,
+            -8,
+            6,
+            1,
+            -2
+          ]
+        },
+        "k": 2
+      },
+      "expected": {
+        "shape": [
+          2
+        ],
+        "dtype": "int64",
+        "layout": "contiguous",
+        "data": [
+          6,
+          3
+        ]
+      }
+    },
+    {
+      "name": "partial selection 1",
+      "inputs": {
+        "x": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "strided",
+          "data": [
+            -9,
+            -1,
+            -4
+          ]
+        },
+        "k": 1
+      },
+      "expected": {
+        "shape": [
+          1
+        ],
+        "dtype": "int64",
+        "layout": "contiguous",
+        "data": [
+          -1
+        ]
+      }
+    },
+    {
+      "name": "partial selection 2",
+      "inputs": {
+        "x": {
+          "shape": [
+            2
+          ],
+          "dtype": "int64",
+          "layout": "strided",
+          "data": [
+            2,
+            1
+          ]
+        },
+        "k": 0
+      },
+      "expected": {
+        "shape": [
+          0
+        ],
+        "dtype": "int64",
+        "layout": "contiguous",
+        "data": []
+      }
+    },
+    {
+      "name": "partial selection 3",
+      "inputs": {
+        "x": {
+          "shape": [
+            3
+          ],
+          "dtype": "int64",
+          "layout": "strided",
+          "data": [
+            3,
+            -1,
+            5
+          ]
+        },
+        "k": 3
+      },
+      "expected": {
+        "shape": [
+          3
+        ],
+        "dtype": "int64",
+        "layout": "contiguous",
+        "data": [
+          5,
+          3,
+          -1
+        ]
+      }
+    },
+    {
+      "name": "partial selection 4",
+      "inputs": {
+        "x": {
+          "shape": [
+            1
+          ],
+          "dtype": "int64",
+          "layout": "strided",
+          "data": [
+            7
+          ]
+        },
+        "k": 1
+      },
+      "expected": {
+        "shape": [
+          1
+        ],
+        "dtype": "int64",
+        "layout": "contiguous",
+        "data": [
+          7
+        ]
+      }
+    },
+    {
+      "name": "partial selection 5",
+      "inputs": {
+        "x": {
+          "shape": [
+            0
+          ],
+          "dtype": "int64",
+          "layout": "strided",
+          "data": []
+        },
+        "k": 0
+      },
+      "expected": {
+        "shape": [
+          0
+        ],
+        "dtype": "int64",
+        "layout": "contiguous",
+        "data": []
+      }
+    }
+  ]
+}

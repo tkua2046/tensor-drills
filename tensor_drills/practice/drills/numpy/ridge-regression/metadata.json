@@ -1,0 +1,16 @@
+{
+  "scope": "composite",
+  "task_type": "create",
+  "goal": "Fit ridge coefficients for an explicitly unaveraged regularized least-squares objective.",
+  "topics": [
+    "linalg",
+    "regression"
+  ],
+  "prerequisites": [
+    {
+      "capability": "Solve a supplied linear system while preserving vector or matrix right-hand-side rank.",
+      "practice_drill": "numpy/solve-system"
+    }
+  ],
+  "workload": 3
+}
